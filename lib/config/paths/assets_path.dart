@@ -13,4 +13,6 @@ class ImagesPath {
   // SVGs //
 
   // PNGs //
+  static const splashimagepath = '$_pngImagesPath/logo.png';
+  static const onboardpage1 = '$_pngImagesPath/calendar.png';
 }

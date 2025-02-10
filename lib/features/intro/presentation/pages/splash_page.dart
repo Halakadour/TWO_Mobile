@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:two_mobile/config/paths/assets_path.dart';
+import 'package:two_mobile/features/intro/presentation/pages/onboardpage1.dart';
 
-import '../../../../config/routes/app_route_config.dart';
+//import '../../../../config/routes/app_route_config.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -12,18 +13,23 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
-  void didChangeDependencies() {
-    Future.delayed(const Duration(seconds: 1));
-    context.pushReplacementNamed(AppRouteConfig.login);
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 4),
+      () {
+        Navigator.pushReplacement(context, MaterialPageRoute(
+          builder: (context) {
+            return const OnboardPage1();
+          },
+        ));
+      },
+    );
   }
 
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [Text("Splash")],
-      ),
+    return Center(
+      child: Image.asset(ImagesPath.splashimagepath),
     );
   }
 }
