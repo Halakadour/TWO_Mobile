@@ -15,4 +15,6 @@ class ImagesPath {
   // PNGs //
   static const splashimagepath = '$_pngImagesPath/logo.png';
   static const onboardpage1 = '$_pngImagesPath/calendar.png';
+  static const onboardpage2 = '$_pngImagesPath/message.png';
+  static const onboardpage3 = '$_pngImagesPath/diagram.png';
 }

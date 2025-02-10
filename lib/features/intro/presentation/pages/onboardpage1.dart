@@ -5,6 +5,7 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 //import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/mywidegt/myElevatedbutton.dart';
+import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
 import 'package:two_mobile/features/intro/presentation/pages/onboardpage2.dart';
 
 class OnboardPage1 extends StatelessWidget {
@@ -61,7 +62,7 @@ class OnboardPage1 extends StatelessWidget {
                   ontap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return const Onboardpage2();
+                        return const SignupPage();
                       },
                     ));
                   },

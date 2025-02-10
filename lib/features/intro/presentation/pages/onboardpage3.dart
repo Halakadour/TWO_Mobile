@@ -4,10 +4,10 @@ import 'package:two_mobile/config/paths/assets_path.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/mywidegt/myElevatedbutton.dart';
-import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
+import 'package:two_mobile/features/intro/presentation/pages/onboardpage2.dart';
 
-class Onboardpage2 extends StatelessWidget {
-  const Onboardpage2({super.key});
+class Onboardingpage3 extends StatelessWidget {
+  const Onboardingpage3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class Onboardpage2 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 50),
                 child: Image.asset(
-                  ImagesPath.onboardpage2,
+                  ImagesPath.onboardpage1,
                   height: 250,
                   width: 250,
                 ),
@@ -29,7 +29,7 @@ class Onboardpage2 extends StatelessWidget {
                 height: 25,
               ),
               Text(
-                'Always Connnect With &  \n Your Team Anywhere',
+                'Mange Your Time \n Tasks & Projects',
                 style: AppTextStyle.heading01(),
               ),
               const SizedBox(
@@ -60,7 +60,7 @@ class Onboardpage2 extends StatelessWidget {
                   ontap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return const SignupPage();
+                        return const Onboardpage2();
                       },
                     ));
                   },
