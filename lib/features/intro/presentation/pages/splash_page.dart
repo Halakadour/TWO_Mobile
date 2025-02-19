@@ -18,6 +18,7 @@ class _SplashPageState extends State<SplashPage> {
     Future.delayed(
       const Duration(seconds: 4),
       () {
+        // ignore: use_build_context_synchronously
         Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) {
             return const OnboardPage1();
@@ -27,6 +28,7 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: Image.asset(ImagesPath.splashimagepath),
