@@ -3,7 +3,7 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/paths/assets_path.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-//import 'package:two_mobile/config/theme/color.dart';
+
 import 'package:two_mobile/core/mywidegt/myElevatedbutton.dart';
 import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
 import 'package:two_mobile/features/intro/presentation/pages/onboardpage2.dart';
