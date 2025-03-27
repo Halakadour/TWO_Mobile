@@ -62,7 +62,7 @@ class Onboardingpage3 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Onboardpage2(),
+                          builder: (context) => const SignupPage(),
                         ));
                   },
                   colorbutton: AppColors.fieldfield,
