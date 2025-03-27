@@ -8,7 +8,7 @@ class IconsPath {
 
 class ImagesPath {
   static const _svgImagesPath = 'assets/images/svg/';
-  static const _pngImagesPath = 'assets/images/png/';
+  static const _pngImagesPath = 'assets/images/png';
 
   // SVGs //
 

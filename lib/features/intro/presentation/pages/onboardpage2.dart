@@ -5,6 +5,7 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/mywidegt/myElevatedbutton.dart';
 import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
+import 'package:two_mobile/features/intro/presentation/pages/onboardpage3.dart';
 
 class Onboardpage2 extends StatelessWidget {
   const Onboardpage2({super.key});
@@ -44,11 +45,11 @@ class Onboardpage2 extends StatelessWidget {
               ),
               MyElevatedButton(
                   ontap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return const Onboardpage2();
-                      },
-                    ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Onboardingpage3(),
+                        ));
                   },
                   colorbutton: AppColors.mainColor,
                   colortext: Colors.white,
@@ -58,11 +59,11 @@ class Onboardpage2 extends StatelessWidget {
               ),
               MyElevatedButton(
                   ontap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return const SignupPage();
-                      },
-                    ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignupPage(),
+                        ));
                   },
                   colorbutton: AppColors.fieldfield,
                   colortext: AppColors.mainColor,

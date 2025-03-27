@@ -4,6 +4,7 @@ import 'package:two_mobile/config/paths/assets_path.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/mywidegt/myElevatedbutton.dart';
+import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
 import 'package:two_mobile/features/intro/presentation/pages/onboardpage2.dart';
 
 class Onboardingpage3 extends StatelessWidget {
@@ -20,8 +21,8 @@ class Onboardingpage3 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 50),
                 child: Image.asset(
-                  ImagesPath.onboardpage1,
-                  height: 250,
+                  ImagesPath.onboardpage3,
+                  height: 350,
                   width: 250,
                 ),
               ),
@@ -44,11 +45,11 @@ class Onboardingpage3 extends StatelessWidget {
               ),
               MyElevatedButton(
                   ontap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return const Onboardpage2();
-                      },
-                    ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignupPage(),
+                        ));
                   },
                   colorbutton: AppColors.mainColor,
                   colortext: Colors.white,
@@ -58,11 +59,11 @@ class Onboardingpage3 extends StatelessWidget {
               ),
               MyElevatedButton(
                   ontap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return const Onboardpage2();
-                      },
-                    ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Onboardpage2(),
+                        ));
                   },
                   colorbutton: AppColors.fieldfield,
                   colortext: AppColors.mainColor,

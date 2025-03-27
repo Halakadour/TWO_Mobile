@@ -1,10 +1,9 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class MyElevatedButton extends StatelessWidget {
+class MyElevatedButton extends StatefulWidget {
   String title;
-  Function ontap;
+  final Function() ontap;
   Color colorbutton;
   Color colortext;
   MyElevatedButton(
@@ -15,16 +14,21 @@ class MyElevatedButton extends StatelessWidget {
       required this.title});
 
   @override
+  State<MyElevatedButton> createState() => _MyElevatedButtonState();
+}
+
+class _MyElevatedButtonState extends State<MyElevatedButton> {
+  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () => ontap,
+      onPressed: widget.ontap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: colorbutton,
+        backgroundColor: widget.colorbutton,
         fixedSize: const Size(1200, 50),
       ),
       child: Text(
-        title,
-        style: TextStyle(color: colortext),
+        widget.title,
+        style: TextStyle(color: widget.colortext),
       ),
     );
   }
