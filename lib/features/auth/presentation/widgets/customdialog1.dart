@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/gradientoutlinebutton.dart';
+import 'package:two_mobile/core/gradientoutlinebutton.dart';
 
 class CustomDialog extends StatelessWidget {
   const CustomDialog({super.key});
@@ -32,11 +32,11 @@ class CustomDialog extends StatelessWidget {
             SizedBox(
               width: 250,
               child: Gradientoutlinebutton(
-                  child: Text(
-                    'Get as Programmer',
-                    style: AppTextStyle.subtitle01(color: AppColors.whiteColor),
-                  ),
-                  onpressed: () {}),
+                onpressed: () {},
+                text: 'Get as Programmer',
+                TextColor: AppColors.cardColor,
+                ButtonColor: AppColors.buttonColor,
+              ),
             ),
             const SizedBox(
               height: 20,

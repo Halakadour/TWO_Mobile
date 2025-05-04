@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
+import 'package:two_mobile/core/gradientoutlinebutton.dart';
 import 'package:two_mobile/features/auth/presentation/pages/login_page.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custom_cofirmpassword.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/customdialod2.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custompassword.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/gradientoutlinebutton.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({super.key});
@@ -66,17 +66,17 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 height: 100,
               ),
               Gradientoutlinebutton(
-                  child: Text(
-                    'continue',
-                    style: AppTextStyle.heading04(color: AppColors.whiteColor),
-                  ),
-                  onpressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return const CustomDailog2();
-                        });
-                  })
+                onpressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const CustomDailog2();
+                      });
+                },
+                text: 'continue',
+                TextColor: AppColors.cardColor,
+                ButtonColor: AppColors.buttonColor,
+              )
             ],
           ),
         ),

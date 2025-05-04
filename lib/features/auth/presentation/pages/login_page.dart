@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
+import 'package:two_mobile/core/gradientoutlinebutton.dart';
 import 'package:two_mobile/features/auth/presentation/pages/forget_password.dart';
 import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custombutton.dart';
@@ -9,7 +10,6 @@ import 'package:two_mobile/features/auth/presentation/widgets/customdialod2.dart
 import 'package:two_mobile/features/auth/presentation/widgets/customemail.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custompassword.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/divider.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/gradientoutlinebutton.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -75,11 +75,6 @@ class _LoginPageState extends State<LoginPage> {
                         )),
                     const SizedBox(height: 10),
                     Gradientoutlinebutton(
-                      child: Text(
-                        'Sign In',
-                        style:
-                            AppTextStyle.heading04(color: AppColors.whiteColor),
-                      ),
                       onpressed: () {
                         showDialog(
                             context: context,
@@ -87,6 +82,9 @@ class _LoginPageState extends State<LoginPage> {
                               return const CustomDailog2();
                             });
                       },
+                      text: 'Sign In',
+                      TextColor: AppColors.cardColor,
+                      ButtonColor: AppColors.buttonColor,
                     ),
                     const SizedBox(
                       child: h20,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
+import 'package:two_mobile/core/gradientoutlinebutton.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custombutton.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custom_row.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/customdialog1.dart';
@@ -9,7 +10,6 @@ import 'package:two_mobile/features/auth/presentation/widgets/customemail.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/customfullname.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custompassword.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/divider.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/gradientoutlinebutton.dart';
 import 'package:two_mobile/features/intro/presentation/pages/onboardpage3.dart';
 
 class SignupPage extends StatefulWidget {
@@ -64,11 +64,6 @@ class _LoginPageState extends State<SignupPage> {
                     const CustomPassword(),
                     const SizedBox(height: 15),
                     Gradientoutlinebutton(
-                      child: Text(
-                        'Sign Up',
-                        style:
-                            AppTextStyle.heading04(color: AppColors.whiteColor),
-                      ),
                       onpressed: () {
                         showDialog(
                             context: context,
@@ -76,6 +71,9 @@ class _LoginPageState extends State<SignupPage> {
                               return const CustomDialog();
                             });
                       },
+                      text: 'Sign Up',
+                      TextColor: AppColors.cardColor,
+                      ButtonColor: AppColors.buttonColor,
                     ),
                     const SizedBox(
                       height: 20,

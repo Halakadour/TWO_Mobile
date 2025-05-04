@@ -9,10 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
+  dashed_rect : ^0.0.4
   flutter_launcher_icons: ^0.14.3
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
   go_router: ^14.7.1
+  syncfusion_flutter_calendar: ^29.1.38
 
 dev_dependencies:
   flutter_test:
@@ -27,4 +30,5 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
+    - assets/
     - assets/images/png/
