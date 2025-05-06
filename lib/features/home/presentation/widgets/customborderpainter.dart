@@ -13,7 +13,7 @@ class Customborderpainter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 330,
       height: 50,
       child: CustomPaint(
@@ -25,7 +25,7 @@ class Customborderpainter extends StatelessWidget {
           gapLength: 5,
         ),
         child: Padding(
-          padding: EdgeInsets.only(left: 110),
+          padding: const EdgeInsets.only(left: 110),
           child: GestureDetector(
             onTap: onTap,
             child: Row(
@@ -42,7 +42,7 @@ class Customborderpainter extends StatelessWidget {
                     color: AppColors.greenColor,
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   text,
                   style: AppTextStyle.subtitle01(color: AppColors.greenColor),

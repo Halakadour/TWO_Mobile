@@ -21,7 +21,7 @@ class CustomAlterDialog2 extends StatelessWidget {
             actionsPadding: EdgeInsets.zero,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            content: Container(
+            content: SizedBox(
               height: 0,
               width: 300,
             ),

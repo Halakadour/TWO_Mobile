@@ -5,10 +5,10 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 
 class Customiconback extends StatelessWidget {
-  final VoidCallback Onpressed;
+  final VoidCallback onpressed;
   final String text;
   const Customiconback({
-    required this.Onpressed,
+    required this.onpressed,
     required this.text,
     super.key,
   });
@@ -18,7 +18,7 @@ class Customiconback extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: Onpressed,
+          onPressed: onpressed,
           icon: Icon(
             Icons.arrow_back_rounded,
             size: 32,

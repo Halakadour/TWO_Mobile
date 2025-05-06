@@ -1,28 +1,28 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 
 class Customlist extends StatelessWidget {
-  final String Titletext;
-  final String Starttime;
-  final String Endtime;
-  final String Statusetext;
-  final String Proipritytext;
-  final String Timetext;
-  final Color Titlecolor;
-  final Color Proiperitycolor;
+  final String titletext;
+  final String starttime;
+  final String endtime;
+  final String statusetext;
+  final String proipritytext;
+  final String timetext;
+  final Color titlecolor;
+  final Color proiperitycolor;
   const Customlist(
       {super.key,
-      required this.Titletext,
-      required this.Statusetext,
-      required this.Proipritytext,
-      required this.Timetext,
-      required this.Titlecolor,
-      required this.Proiperitycolor,
-      required this.Starttime,
-      required this.Endtime});
+      required this.titletext,
+      required this.statusetext,
+      required this.proipritytext,
+      required this.timetext,
+      required this.titlecolor,
+      required this.proiperitycolor,
+      required this.starttime,
+      required this.endtime});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class Customlist extends StatelessWidget {
                           ),
                           SizedBox(width: 10),
                           Text(
-                            Starttime,
+                            starttime,
                             style: AppTextStyle.subtitle03(),
                           )
                         ],
@@ -61,7 +61,7 @@ class Customlist extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 25, top: 20),
                         child: Text(
-                          Endtime,
+                          endtime,
                           style: AppTextStyle.subtitle03(),
                         ),
                       )
@@ -70,7 +70,7 @@ class Customlist extends StatelessWidget {
                   VerticalDivider(
                     width: 20,
                     thickness: 2,
-                    color: Titlecolor,
+                    color: titlecolor,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,12 +79,12 @@ class Customlist extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            Titletext,
-                            style: AppTextStyle.subtitle01(color: Titlecolor),
+                            titletext,
+                            style: AppTextStyle.subtitle01(color: titlecolor),
                           ),
                           SizedBox(width: 10),
                           Text(
-                            Timetext,
+                            timetext,
                             style: AppTextStyle.subtitle03(
                                 color: AppColors.fontLightColor),
                           )
@@ -97,13 +97,13 @@ class Customlist extends StatelessWidget {
                               width: 90,
                               height: 22,
                               decoration: BoxDecoration(
-                                  color: Titlecolor.withOpacity(0.3),
+                                  color: titlecolor.withOpacity(0.3),
                                   borderRadius: BorderRadius.circular(4)),
                               child: Center(
                                 child: Text(
-                                  Statusetext,
+                                  statusetext,
                                   style: AppTextStyle.subtitle03(
-                                      color: Titlecolor),
+                                      color: titlecolor),
                                 ),
                               )),
                           SizedBox(width: 10),
@@ -111,7 +111,7 @@ class Customlist extends StatelessWidget {
                               width: 65,
                               height: 22,
                               decoration: BoxDecoration(
-                                  color: Proiperitycolor.withOpacity(0.3),
+                                  color: proiperitycolor.withOpacity(0.3),
                                   borderRadius: BorderRadius.circular(4)),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -119,13 +119,13 @@ class Customlist extends StatelessWidget {
                                   Icon(
                                     Icons.circle,
                                     size: 4,
-                                    color: Proiperitycolor,
+                                    color: proiperitycolor,
                                   ),
                                   SizedBox(width: 2),
                                   Text(
-                                    Proipritytext,
+                                    proipritytext,
                                     style: AppTextStyle.subtitle02(
-                                        color: Proiperitycolor),
+                                        color: proiperitycolor),
                                   ),
                                 ],
                               )),

@@ -10,22 +10,22 @@ class CustomIconChange extends StatefulWidget {
 
 class _CustomIconChangeState extends State<CustomIconChange> {
   bool isDialogOpen = false;
-  IconData CurrentIcon = Icons.add;
+  IconData currentIcon = Icons.add;
   void _handlecontainerTap() async {
     if (!isDialogOpen) {
       setState(() {
         isDialogOpen = true;
-        CurrentIcon = Icons.close;
+        currentIcon = Icons.close;
       });
       await showDialog(
         context: context,
         builder: (context) {
-          return CustomBubblePainter();
+          return const CustomBubblePainter();
         },
       );
       setState(() {
         isDialogOpen = false;
-        CurrentIcon = Icons.add;
+        currentIcon = Icons.add;
       });
     }
   }
@@ -35,7 +35,7 @@ class _CustomIconChangeState extends State<CustomIconChange> {
     return GestureDetector(
       onTap: _handlecontainerTap,
       child: Icon(
-        CurrentIcon,
+        currentIcon,
         size: 35,
         color: Colors.white,
       ),

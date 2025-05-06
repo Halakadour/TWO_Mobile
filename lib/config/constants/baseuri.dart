@@ -1,1 +1,1 @@
-String baseuri = "http://ruhajaghel-001-site1.qtempurl.com";
+String baseuri = "http://ruhaend-001-site1.jtempurl.com";

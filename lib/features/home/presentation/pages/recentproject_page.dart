@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/core/mywidegt/bottom_navigationbar_page.dart';
+import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customalterdialog2.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customcontainer.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customcountainercard.dart';
@@ -20,12 +20,11 @@ class RecentprojectPage extends StatelessWidget {
             child: ListView(
               children: [
                 Customiconback(
-                    Onpressed: () {
+                    onpressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const BottomNavigationbarPage()));
+                              builder: (context) => const MainPage()));
                     },
                     text: 'Recent Projects'),
                 Padding(

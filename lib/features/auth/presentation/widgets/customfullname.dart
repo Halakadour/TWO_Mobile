@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/core/mywidegt/main_text_field.dart';
+import 'package:two_mobile/core/widgets/main_text_field.dart';
 
 class CustomFullName extends StatelessWidget {
   const CustomFullName({super.key});

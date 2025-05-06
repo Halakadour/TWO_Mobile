@@ -12,7 +12,7 @@ class CustomCalendar extends StatelessWidget {
     return Expanded(
       child: ClipRect(
         child: Transform.translate(
-          offset: Offset(0, -20),
+          offset: const Offset(0, -20),
           child: SfCalendar(
               view: CalendarView.week,
               showDatePickerButton: false,
@@ -39,7 +39,7 @@ class CustomCalendar extends StatelessWidget {
               appointmentBuilder: (context, details) {
                 final Meeting meeting = details.appointments.first;
                 return Container(
-                  margin: EdgeInsets.all(1),
+                  margin: const EdgeInsets.all(1),
                   height: 10,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -77,8 +77,12 @@ class MeetingDataSource extends CalendarDataSource<Meeting> {
     appointments = meetings;
   }
 
+  @override
   DateTime getStartTime(int index) => appointments![index].startTime;
+  @override
   DateTime getEndTime(int index) => appointments![index].endTime;
+  @override
   String getSubject(int index) => appointments![index].title;
+  @override
   Color getColor(int index) => appointments![index].color;
 }

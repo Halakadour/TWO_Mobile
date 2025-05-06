@@ -26,7 +26,7 @@ List<Meeting> getAppointments() {
       description: 'Low',
       startTime: DateTime(2025, 2, 18, 9, 0),
       endTime: DateTime(2025, 2, 18, 10, 0),
-      color: Color.fromARGB(187, 178, 241, 200),
+      color: const Color.fromARGB(187, 178, 241, 200),
     ),
     Meeting(
       descriptioncolor: AppColors.mainyallow,
@@ -66,7 +66,7 @@ List<Meeting> getAppointments() {
       description: 'Low',
       startTime: DateTime(2025, 2, 19, 11, 0),
       endTime: DateTime(2025, 2, 19, 12, 0),
-      color: Color.fromARGB(187, 178, 241, 200),
+      color: const Color.fromARGB(187, 178, 241, 200),
     ),
     Meeting(
       descriptioncolor: AppColors.mainyallow,
@@ -82,7 +82,7 @@ List<Meeting> getAppointments() {
       description: 'Low',
       startTime: DateTime(2025, 2, 21, 9, 20),
       endTime: DateTime(2025, 2, 21, 11, 0),
-      color: Color.fromARGB(187, 178, 241, 200),
+      color: const Color.fromARGB(187, 178, 241, 200),
     ),
     Meeting(
       descriptioncolor: AppColors.blueColor,
@@ -90,7 +90,7 @@ List<Meeting> getAppointments() {
       description: 'Low',
       startTime: DateTime(2025, 2, 22, 9, 0),
       endTime: DateTime(2025, 2, 22, 10, 0),
-      color: Color.fromARGB(187, 178, 241, 200),
+      color: const Color.fromARGB(187, 178, 241, 200),
     ),
     Meeting(
       descriptioncolor: AppColors.mainyallow,

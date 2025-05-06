@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/core/gradientoutlinebutton.dart';
+import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
+import 'package:two_mobile/core/widgets/dialogs/auth_success_dialog.dart';
 import 'package:two_mobile/features/auth/presentation/pages/login_page.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custom_cofirmpassword.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/customdialod2.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custompassword.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({super.key});
+class ForgetPasswordPage extends StatefulWidget {
+  const ForgetPasswordPage({super.key});
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<ForgetPasswordPage> createState() => _ForgetPasswordPageState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,24 +58,22 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 ),
               ),
               const CustomPassword(),
-              const SizedBox(
-                child: h10,
-              ),
+              PaddingConfig.h8,
               const CustomConfirmPassword(),
               const SizedBox(
                 height: 100,
               ),
-              Gradientoutlinebutton(
+              GradientOutlineButton(
                 onpressed: () {
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
-                        return const CustomDailog2();
+                        return const AuthSuccessDialog();
                       });
                 },
                 text: 'continue',
-                TextColor: AppColors.cardColor,
-                ButtonColor: AppColors.buttonColor,
+                textColor: AppColors.cardColor,
+                buttonColor: AppColors.buttonColor,
               )
             ],
           ),

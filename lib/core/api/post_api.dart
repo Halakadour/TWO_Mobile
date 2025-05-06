@@ -13,15 +13,13 @@ class PostApi<T> with HandlingExceptionRequest {
   final FromJson fromJson;
   final bool isLogin;
   final Duration timeout;
- 
 
   const PostApi({
     required this.uri,
     required this.body,
     required this.fromJson,
-   
     this.isLogin = false,
-    this.timeout = const Duration(seconds: 20),
+    this.timeout = const Duration(seconds: 40),
   });
 
   Future<T> call() async {

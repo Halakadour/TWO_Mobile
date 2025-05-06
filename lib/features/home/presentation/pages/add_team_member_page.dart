@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/core/gradientoutlinebutton.dart';
+import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_project_manager_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customadd.dart';
@@ -22,7 +22,7 @@ class AddTeamMemberPage extends StatelessWidget {
           child: Column(
             children: [
               Customiconback(
-                  Onpressed: () {
+                  onpressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -47,23 +47,23 @@ class AddTeamMemberPage extends StatelessWidget {
               SizedBox(height: 30),
               CustomAdd(
                 image: 'assets/images/png/Frontend.png',
-                NameText: 'Frontend Team',
-                TitleText: '',
+                nameText: 'Frontend Team',
+                titleText: '',
               ),
               SizedBox(height: 30),
               CustomAdd(
                 image: 'assets/images/png/Mobile.png',
-                NameText: 'Mobile Team   ',
-                TitleText: '',
+                nameText: 'Mobile Team   ',
+                titleText: '',
               ),
               SizedBox(height: 30),
               CustomAdd(
                 image: 'assets/images/png/backend.png',
-                NameText: 'Backend Team',
-                TitleText: '',
+                nameText: 'Backend Team',
+                titleText: '',
               ),
               SizedBox(height: 220),
-              Gradientoutlinebutton(
+              GradientOutlineButton(
                 onpressed: () {
                   Navigator.push(
                       context,
@@ -71,11 +71,11 @@ class AddTeamMemberPage extends StatelessWidget {
                           builder: (context) => const AddTeamMemberPage()));
                 },
                 text: 'Next',
-                TextColor: AppColors.cardColor,
-                ButtonColor: AppColors.buttonColor,
+                textColor: AppColors.cardColor,
+                buttonColor: AppColors.buttonColor,
               ),
               SizedBox(height: 12),
-              Gradientoutlinebutton(
+              GradientOutlineButton(
                 onpressed: () {
                   Navigator.push(
                       context,
@@ -83,8 +83,8 @@ class AddTeamMemberPage extends StatelessWidget {
                           builder: (context) => const MakeTeamPage()));
                 },
                 text: 'Or Make A New Team',
-                TextColor: AppColors.greenColor,
-                ButtonColor: AppColors.buttonColor2,
+                textColor: AppColors.greenColor,
+                buttonColor: AppColors.buttonColor2,
               )
             ],
           ),

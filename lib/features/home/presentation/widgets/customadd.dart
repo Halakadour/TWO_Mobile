@@ -4,13 +4,13 @@ import 'package:two_mobile/config/theme/text_style.dart';
 
 class CustomAdd extends StatefulWidget {
   final String image;
-  final String NameText;
-  final String TitleText;
+  final String nameText;
+  final String titleText;
   const CustomAdd({
     super.key,
     required this.image,
-    required this.NameText,
-    required this.TitleText,
+    required this.nameText,
+    required this.titleText,
   });
 
   @override
@@ -28,24 +28,24 @@ class _CustomAddState extends State<CustomAdd> {
         child: Row(
           children: [
             Image.asset(widget.image),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.NameText,
+                  widget.nameText,
                   style: AppTextStyle.subtitle02(),
                 ),
                 Text(
-                  widget.TitleText,
+                  widget.titleText,
                   style:
                       AppTextStyle.subtitle03(color: AppColors.fontLightColor),
                 ),
               ],
             ),
-            SizedBox(width: 80),
+            const SizedBox(width: 80),
             GestureDetector(
                 onTap: () {
                   setState(() {

@@ -1,9 +1,11 @@
 class AppRouteConfig {
   // WELCOME //
   static const splash = 'splash';
+  static const onboard = 'onboard';
   // AUTH //
   static const login = 'login';
   static const signup = 'signup';
+  static const forget = 'forgetPassword';
   // MAIN //
   static const main = "main";
   // HOME //

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, must_be_immutable
+// ignore_for_file: prefer_const_constructors, must_be_immutable, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';

@@ -9,15 +9,14 @@ import 'package:two_mobile/features/profile/presentation/pages/client_profile_pa
 
 import 'package:two_mobile/features/projects/presentation/pages/projects_page.dart';
 
-class BottomNavigationbarPage extends StatefulWidget {
-  const BottomNavigationbarPage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<BottomNavigationbarPage> createState() =>
-      _BottomNavigationbarPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _BottomNavigationbarPageState extends State<BottomNavigationbarPage> {
+class _MainPageState extends State<MainPage> {
   bool isIconChange = false;
 
   void _toggleIcon() {

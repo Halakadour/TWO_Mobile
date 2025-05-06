@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/core/mywidegt/bottom_navigationbar_page.dart';
+import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customcontainer.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customdialog.dart';
@@ -20,12 +20,11 @@ class TodayTaskPage extends StatelessWidget {
         child: Column(
           children: [
             Customiconback(
-                Onpressed: () {
+                onpressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              const BottomNavigationbarPage()));
+                          builder: (context) => const MainPage()));
                 },
                 text: 'Today tasks'),
             Padding(

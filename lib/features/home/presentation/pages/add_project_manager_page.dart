@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/core/gradientoutlinebutton.dart';
-import 'package:two_mobile/core/mywidegt/bottom_navigationbar_page.dart';
+import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
+import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_team_member_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customadd.dart';
@@ -23,12 +23,11 @@ class AddProjectManagerPage extends StatelessWidget {
           child: Column(
             children: [
               Customiconback(
-                  Onpressed: () {
+                  onpressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                const BottomNavigationbarPage()));
+                            builder: (context) => const MainPage()));
                   },
                   text: 'Add Project Manger '),
               SizedBox(height: 25),
@@ -48,29 +47,29 @@ class AddProjectManagerPage extends StatelessWidget {
               SizedBox(height: 30),
               CustomAdd(
                 image: 'assets/images/png/image 1.png',
-                NameText: 'Hala Kadour',
-                TitleText: 'Project-Manager',
+                nameText: 'Hala Kadour',
+                titleText: 'Project-Manager',
               ),
               SizedBox(height: 30),
               CustomAdd(
                 image: 'assets/images/png/image 2.png',
-                NameText: 'Lilian Hourani',
-                TitleText: 'Project-Manager',
+                nameText: 'Lilian Hourani',
+                titleText: 'Project-Manager',
               ),
               SizedBox(height: 30),
               CustomAdd(
                 image: 'assets/images/png/image 3.png',
-                NameText: 'Laila Mohamd',
-                TitleText: 'Project-Manager',
+                nameText: 'Laila Mohamd',
+                titleText: 'Project-Manager',
               ),
               SizedBox(height: 30),
               CustomAdd(
                 image: 'assets/images/png/image 1.png',
-                NameText: 'Roha Jaghal',
-                TitleText: 'Project-Manager',
+                nameText: 'Roha Jaghal',
+                titleText: 'Project-Manager',
               ),
               SizedBox(height: 130),
-              Gradientoutlinebutton(
+              GradientOutlineButton(
                 onpressed: () {
                   Navigator.push(
                       context,
@@ -78,11 +77,11 @@ class AddProjectManagerPage extends StatelessWidget {
                           builder: (context) => const AddTeamMemberPage()));
                 },
                 text: 'Next',
-                TextColor: AppColors.cardColor,
-                ButtonColor: AppColors.buttonColor,
+                textColor: AppColors.cardColor,
+                buttonColor: AppColors.buttonColor,
               ),
               SizedBox(height: 12),
-              Gradientoutlinebutton(
+              GradientOutlineButton(
                 onpressed: () {
                   Navigator.push(
                       context,
@@ -90,8 +89,8 @@ class AddProjectManagerPage extends StatelessWidget {
                           builder: (context) => const MakeTeamPage()));
                 },
                 text: 'Or Make A New Team',
-                TextColor: AppColors.greenColor,
-                ButtonColor: AppColors.buttonColor2,
+                textColor: AppColors.greenColor,
+                buttonColor: AppColors.buttonColor2,
               )
             ],
           ),

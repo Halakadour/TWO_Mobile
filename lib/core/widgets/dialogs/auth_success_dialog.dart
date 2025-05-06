@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:two_mobile/config/paths/assets_path.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/core/gradientoutlinebutton.dart';
-import 'package:two_mobile/core/mywidegt/bottom_navigationbar_page.dart';
+import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 
-class CustomDailog2 extends StatelessWidget {
-  const CustomDailog2({super.key});
+class AuthSuccessDialog extends StatelessWidget {
+  const AuthSuccessDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class CustomDailog2 extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(15),
-              child: Image.asset('assets/images/png/Shield.png', height: 180),
+              child: Image.asset(ImagesPath.shield, height: 180),
             ),
             Text(
               'Operation Done !',
@@ -32,17 +34,13 @@ class CustomDailog2 extends StatelessWidget {
             ),
             SizedBox(
               width: 250,
-              child: Gradientoutlinebutton(
+              child: GradientOutlineButton(
                 onpressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const BottomNavigationbarPage()));
+                  context.pushReplacementNamed(AppRouteConfig.main);
                 },
                 text: 'Go to Homepage',
-                TextColor: AppColors.cardColor,
-                ButtonColor: AppColors.buttonColor,
+                textColor: AppColors.cardColor,
+                buttonColor: AppColors.buttonColor,
               ),
             ),
           ],

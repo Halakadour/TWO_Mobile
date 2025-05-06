@@ -1,34 +1,35 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class MainTextField extends StatefulWidget {
   const MainTextField({
-    Key? key,
+    super.key,
+    this.textInputAction = TextInputAction.done,
     this.borderColor,
-    this.onChanged,
+    this.width,
+    this.onSubmitted,
+    this.height,
+    this.maxlength,
+    required this.hint,
+    this.counterText,
+    this.hintColor,
     required this.prefixIcon,
     this.suffixIcon,
     this.validator,
+    required this.controller,
     this.keyboardType = TextInputType.text,
-    this.textInputAction = TextInputAction.done,
     this.isPassword = true,
     this.enabled = true,
     this.autoFocus = false,
-    this.error = false,
     this.smallSuffixIcon = false,
-    this.borderRadius,
+    this.error = false,
     this.maxLines = 1,
-    this.hintColor,
-    this.width,
-    this.height,
-    this.maxlength,
-    this.label,
+    this.borderRadius,
     this.fillColor = Colors.white,
-    required this.hint,
-    this.counterText,
-    this.onSubmitted,
-    required this.controller,
+    this.onChanged,
+    this.label,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
-  }) : super(key: key);
+  });
 
   final TextInputAction textInputAction;
   final Color? borderColor;
@@ -148,7 +149,7 @@ class _MainTextFieldState extends State<MainTextField>
               : null,
           contentPadding: widget.maxLines != 1
               ? null
-              : EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              : const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         ),
         obscureText: !widget.isPassword,
         enableSuggestions: widget.isPassword,

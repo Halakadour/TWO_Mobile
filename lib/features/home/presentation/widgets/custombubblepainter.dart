@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customnewproject.dart';
@@ -15,7 +17,7 @@ class CustomBubblePainter extends StatelessWidget {
           child: CustomPaint(
             painter: BubblePainter(),
             child: Container(
-              padding: EdgeInsets.only(left: 35, top: 2),
+              padding: const EdgeInsets.only(left: 35, top: 2),
               width: 180,
               height: 100,
               child: Column(
@@ -26,7 +28,7 @@ class CustomBubblePainter extends StatelessWidget {
                         showDialog(
                           context: context,
                           builder: (context) {
-                            return CustomNewProject();
+                            return const CustomNewProject();
                           },
                         );
                       },
@@ -38,7 +40,7 @@ class CustomBubblePainter extends StatelessWidget {
                                 fontSize: 18,
                                 color: AppColors.blackColor.withOpacity(0.8)),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Icon(
                             Icons.assignment_rounded,
                             color: AppColors.blackColor.withOpacity(0.8),
@@ -56,7 +58,7 @@ class CustomBubblePainter extends StatelessWidget {
                                 fontSize: 20,
                                 color: AppColors.blackColor.withOpacity(0.8)),
                           ),
-                          SizedBox(width: 16),
+                          const SizedBox(width: 16),
                           Icon(
                             Icons.group_outlined,
                             color: AppColors.blackColor.withOpacity(0.8),
@@ -85,7 +87,7 @@ class BubblePainter extends CustomPainter {
     // رسم الفقاعة
     path.addRRect(RRect.fromRectAndRadius(
       Rect.fromLTWH(0, 0, size.width, size.height),
-      Radius.circular(15),
+      const Radius.circular(15),
     ));
 
     // رسم الذيل
