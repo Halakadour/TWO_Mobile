@@ -4,27 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 
 class TextFieldPage extends StatelessWidget {
-  final String text;
+  final String? text;
   final double height;
   final double width;
   final Color? color;
   final Color textcolor;
   final Color Bordercolor;
   final Color textfield;
-  final Color iconcolor;
-  final Color bordercolor;
+  final Color? iconcolor;
+  final Color? bordercolor;
   final IconData? prefix;
   final IconData? suffix;
   const TextFieldPage(
-      {required this.prefix,
-      required this.suffix,
-      required this.color,
+      {this.prefix,
+      this.suffix,
+      this.color,
+      // ignore: non_constant_identifier_names
       required this.Bordercolor,
       required this.textcolor,
       required this.textfield,
-      required this.iconcolor,
-      required this.bordercolor,
-      required this.text,
+      this.iconcolor,
+      this.bordercolor,
+      this.text,
       super.key,
       required this.height,
       required this.width});

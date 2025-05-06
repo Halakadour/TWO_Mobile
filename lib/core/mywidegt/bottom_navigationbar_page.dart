@@ -5,7 +5,8 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconchange.dart';
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
-import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
+import 'package:two_mobile/features/profile/presentation/pages/client_profile_page.dart';
+
 import 'package:two_mobile/features/projects/presentation/pages/projects_page.dart';
 
 class BottomNavigationbarPage extends StatefulWidget {
@@ -31,7 +32,7 @@ class _BottomNavigationbarPageState extends State<BottomNavigationbarPage> {
     const ProjectsPage(),
     const HomePage(),
     const InBoxPage(),
-    ProfilePage(),
+    const ClientProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {

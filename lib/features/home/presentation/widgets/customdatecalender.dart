@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/config/theme/text_style.dart';
+//import 'package:two_mobile/config/theme/text_style.dart';
 
 class DateStripCalendar extends StatelessWidget {
   const DateStripCalendar({super.key});
