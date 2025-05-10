@@ -27,4 +27,24 @@ class AuthStateHandling {
       const SizedBox();
     }
   }
+
+  // Signup
+  Future<void> signup(AuthState state, BuildContext context) async {
+    if (state.signupModelstatus == CasualStatus.loading) {
+      showCustomLoadingDialog(context);
+    } else if (state.signupModelstatus == CasualStatus.success) {
+      await SharedPreferencesServices.setUserToken(state.userModel!.token);
+      context.pop();
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return const AuthSuccessDialog();
+          });
+    } else if (state.signupModelstatus == CasualStatus.failure) {
+      context.pop();
+      showErrorDialog(context, state.masseage);
+    } else {
+      const SizedBox();
+    }
+  }
 }
