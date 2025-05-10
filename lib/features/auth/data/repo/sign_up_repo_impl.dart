@@ -1,0 +1,21 @@
+import 'package:dartz/dartz.dart';
+import 'package:two_mobile/core/api/failures.dart';
+import 'package:two_mobile/features/auth/data/datasource/sign_remote_datasource.dart';
+import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';
+import 'package:two_mobile/features/auth/domain/repo/sign_up_repo.dart';
+
+class SignUpRepoImpl extends SignUpRepo {
+  final SignupremoteDatasource signupremoteDatasource;
+
+  SignUpRepoImpl({required this.signupremoteDatasource});
+  Future<Either<Failure, SignupResponseModel>> sign(
+      String name, String email, String password, String passwordConfirmation) {
+    return wrapHandling(
+      tryCall: () async {
+        final result = await signupremoteDatasource.signup(
+            name, email, password, passwordConfirmation);
+        return Right(result);
+      },
+    );
+  }
+}

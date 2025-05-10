@@ -14,6 +14,7 @@ Future<void> init() async {
   sl.registerFactory(
     () => AuthBloc(
       loginUsecase: sl(),
+      signUpUsecase: sl(),
     ),
   );
   // Usecases
