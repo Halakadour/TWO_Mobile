@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'login_response_model.dart';
+
 SignupResponseModel signupResponseModelFromJson(String str) =>
     SignupResponseModel.fromJson(json.decode(str));
 
@@ -9,7 +11,7 @@ String signupResponseModelToJson(SignupResponseModel data) =>
 class SignupResponseModel {
   final int status;
   final String msg;
-  final SignUpModel data;
+  final UserModel data;
 
   SignupResponseModel({
     required this.status,
@@ -21,28 +23,12 @@ class SignupResponseModel {
       SignupResponseModel(
         status: json["status"],
         msg: json["msg"],
-        data: SignUpModel.fromJson(json["data"]),
+        data: UserModel.fromJson(json["data"]),
       );
 
   Map<String, dynamic> toJson() => {
         "status": status,
         "msg": msg,
         "data": data.toJson(),
-      };
-}
-
-class SignUpModel {
-  final List<String> email;
-
-  SignUpModel({
-    required this.email,
-  });
-
-  factory SignUpModel.fromJson(Map<String, dynamic> json) => SignUpModel(
-        email: List<String>.from(json["email"].map((x) => x)),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "email": List<dynamic>.from(email.map((x) => x)),
       };
 }

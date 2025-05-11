@@ -30,9 +30,9 @@ class AuthStateHandling {
 
   // Signup
   Future<void> signup(AuthState state, BuildContext context) async {
-    if (state.signupModelstatus == CasualStatus.loading) {
+    if (state.userModelStatus == CasualStatus.loading) {
       showCustomLoadingDialog(context);
-    } else if (state.signupModelstatus == CasualStatus.success) {
+    } else if (state.userModelStatus == CasualStatus.success) {
       await SharedPreferencesServices.setUserToken(state.userModel!.token);
       context.pop();
       showDialog(
@@ -40,7 +40,7 @@ class AuthStateHandling {
           builder: (BuildContext context) {
             return const AuthSuccessDialog();
           });
-    } else if (state.signupModelstatus == CasualStatus.failure) {
+    } else if (state.userModelStatus == CasualStatus.failure) {
       context.pop();
       showErrorDialog(context, state.masseage);
     } else {

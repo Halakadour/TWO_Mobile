@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/features/auth/data/models/login_response_model.dart';
-import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';
 import 'package:two_mobile/features/auth/domain/usecase/login_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/sign_up_usecase.dart';
 
@@ -43,7 +42,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             authModelStatus: CasualStatus.failure, masseage: left.message));
       }, (right) {
         emit(state.copyWith(
-            signUpModel: right.data, authModelStatus: CasualStatus.success));
+            userModel: right.data, authModelStatus: CasualStatus.success));
       });
     });
   }

@@ -4,6 +4,7 @@ import 'package:two_mobile/features/auth/data/datasource/auth_remote_datasource.
 import 'package:two_mobile/features/auth/data/repo/auth_repo_impl.dart';
 import 'package:two_mobile/features/auth/domain/repo/auth_repo.dart';
 import 'package:two_mobile/features/auth/domain/usecase/login_usecase.dart';
+import 'package:two_mobile/features/auth/domain/usecase/sign_up_usecase.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
 
 final sl = GetIt.instance;
@@ -19,6 +20,8 @@ Future<void> init() async {
   );
   // Usecases
   sl.registerLazySingleton(() => LoginUsecase(authRepo: sl()));
+  sl.registerLazySingleton(() => SignUpUsecase(authRepo: sl()));
+
   // Repos
   sl.registerLazySingleton<AuthRepo>(
     () => AuthRepoImpl(authRemoteDatasource: sl()),
