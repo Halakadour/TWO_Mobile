@@ -14,6 +14,8 @@ class ImagesPath {
 
   // PNGs //
   static const google = '$_pngImagesPath/google-logo.png';
+
+  static const profile = '$_pngImagesPath/profile.png';
   static const githup = '$_pngImagesPath/Social Icons.png';
   static const splash = '$_pngImagesPath/logo.png';
   static const onboardpage1 = '$_pngImagesPath/calendar.png';

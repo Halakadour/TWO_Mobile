@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
-import 'package:two_mobile/config/paths/assets_path.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/core/widgets/buttons/my_elevation_button.dart';
+import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 
 class OnBoardPage extends StatefulWidget {
   const OnBoardPage({super.key});
@@ -20,19 +20,19 @@ class _OnBoardPageState extends State<OnBoardPage> {
 
   final List<Map<String, String>> onboardingItems = [
     {
-      'image': ImagesPath.onboardpage1,
+      'image': 'assets/animation/onboard 1.json',
       'title': 'Organize Your Tasks &\nProjects Easily.',
       'description':
           'Organize your projects with ease\nTrack tasks, deadlines, and progress in one place.'
     },
     {
-      'image': ImagesPath.onboardpage2,
+      'image': 'assets/animation/onboard 2.json',
       'title': 'Always Connnect With &\nYour Team Anywhere',
       'description':
           'Collaborate seamlessly with your team\nShare updates, assign roles, and stay aligned.'
     },
     {
-      'image': ImagesPath.onboardpage3,
+      'image': 'assets/animation/onboard 3.json',
       'title': 'Mange Your Time\nTasks & Projects',
       'description':
           'Turn plans into action, effortlessly\nYour productivity companion starts here.'
@@ -81,13 +81,10 @@ class _OnBoardPageState extends State<OnBoardPage> {
                       return Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 50),
-                            child: Image.asset(
-                              item['image']!,
-                              height: 250,
-                              width: 250,
-                            ),
+                          Lottie.asset(
+                            item['image']!,
+                            height: 300,
+                            width: 350,
                           ),
                           PaddingConfig.h24,
                           Text(
@@ -95,36 +92,36 @@ class _OnBoardPageState extends State<OnBoardPage> {
                             style: AppTextStyle.heading02(),
                             textAlign: TextAlign.center,
                           ),
-                          PaddingConfig.h8,
+                          PaddingConfig.h24,
                           Text(
                             item['description']!,
                             style: AppTextStyle.subtitle01(
                                 color: AppColors.fontLightColor),
                             textAlign: TextAlign.center,
                           ),
-                          PaddingConfig.h16,
                         ],
                       );
                     },
                   ),
                 ),
+                GradientOutlineButton(
+                  buttonColor: AppColors.buttonColor,
+                  text: 'Next',
+                  onpressed: () {
+                    _goToNextPage();
+                  },
+                  textColor: AppColors.cardColor,
+                ),
                 PaddingConfig.h16,
-                MyElevatedButton(
-                    ontap: () {
-                      _goToNextPage();
-                    },
-                    colorbutton: AppColors.mainColor,
-                    colortext: Colors.white,
-                    title: 'Next'),
-                PaddingConfig.h8,
-                MyElevatedButton(
-                    ontap: () {
-                      _skip();
-                    },
-                    colorbutton: AppColors.fieldfield,
-                    colortext: AppColors.mainColor,
-                    title: 'Skip'),
-                PaddingConfig.h64,
+                GradientOutlineButton(
+                  buttonColor: AppColors.buttonColor2,
+                  text: 'Skip',
+                  onpressed: () {
+                    _skip();
+                  },
+                  textColor: AppColors.greenColor,
+                ),
+                PaddingConfig.h40,
               ],
             ),
           );

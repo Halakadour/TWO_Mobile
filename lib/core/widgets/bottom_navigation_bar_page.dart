@@ -5,7 +5,7 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconchange.dart';
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
-import 'package:two_mobile/features/profile/presentation/pages/client_profile_page.dart';
+import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
 
 import 'package:two_mobile/features/projects/presentation/pages/projects_page.dart';
 
@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
     const ProjectsPage(),
     const HomePage(),
     const InBoxPage(),
-    const ClientProfilePage(),
+    const ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {

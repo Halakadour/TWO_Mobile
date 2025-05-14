@@ -34,10 +34,13 @@ class _LoginPageState extends State<LoginPage> {
                 PaddingConfig.h8,
                 Row(
                   children: [
-                    Text(
-                      'Login To Your\nAccount',
-                      style: AppTextStyle.heading01(
-                        color: AppColors.blackColor,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Login To Your\nAccount',
+                        style: AppTextStyle.heading01(
+                          color: AppColors.blackColor,
+                        ),
                       ),
                     ),
                   ],

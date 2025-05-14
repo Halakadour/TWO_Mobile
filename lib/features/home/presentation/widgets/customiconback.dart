@@ -21,7 +21,7 @@ class Customiconback extends StatelessWidget {
           onPressed: onpressed,
           icon: Icon(
             Icons.arrow_back_rounded,
-            size: 32,
+            size: 36,
             color: AppColors.blackColor,
           ),
         ),

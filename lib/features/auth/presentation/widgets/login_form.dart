@@ -4,10 +4,12 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/constants/sizes_config.dart';
 import 'package:two_mobile/config/paths/text_strings.dart';
 import 'package:two_mobile/config/theme/color.dart';
+import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/error/validation.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/core/widgets/main_text_field.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:two_mobile/features/auth/presentation/pages/forget_password_page.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custom_google_githup_buttons.dart';
 
 class LoginForm extends StatefulWidget {
@@ -87,16 +89,23 @@ class _LoginFormState extends State<LoginForm> {
             ),
             //Forget Password
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Forget Password
                 TextButton(
-                  onPressed: () {},
-                  child: const Text(TextStrings.forgetPassword),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ForgetPasswordPage()));
+                  },
+                  child: Text(
+                    TextStrings.forgetPassword,
+                    style: AppTextStyle.subtitle01(color: AppColors.greenColor),
+                  ),
                 ),
               ],
             ),
-            PaddingConfig.h16,
+            PaddingConfig.h8,
             const SizedBox(height: SizesConfig.spaceBtwItems),
             GradientOutlineButton(
               onpressed: () {

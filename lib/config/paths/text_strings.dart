@@ -24,7 +24,7 @@ class TextStrings {
   static const String confirmPassword = "Confirm Password";
   static const String confirmPasswordHint = "Re-write the password";
   static const String rememberMe = "Remember Me";
-  static const String forgetPassword = "Forget Password ?";
+  static const String forgetPassword = "Forget the Password ?";
   static const String signIn = "Sign In";
   static const String signup = "Sign Up";
   static const String craeteAccount = "Create Account";

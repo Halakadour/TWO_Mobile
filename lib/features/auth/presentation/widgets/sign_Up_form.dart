@@ -4,10 +4,12 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/constants/sizes_config.dart';
 import 'package:two_mobile/config/paths/text_strings.dart';
 import 'package:two_mobile/config/theme/color.dart';
+import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/error/validation.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/core/widgets/main_text_field.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:two_mobile/features/auth/presentation/pages/login_page.dart';
 import 'package:two_mobile/features/auth/presentation/widgets/custom_google_githup_buttons.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -153,6 +155,29 @@ class _SignUpFormState extends State<SignUpForm> {
             const SizedBox(height: SizesConfig.spaceBtwItems),
             // Google Githup Sign
             const CustomGoogleGitHupButtons(),
+            PaddingConfig.h16,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  TextStrings.alreadyHaveAccount,
+                  style:
+                      AppTextStyle.subtitle01(color: AppColors.fontLightColor),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
+                  },
+                  child: Text(
+                    TextStrings.signIn,
+                    style: AppTextStyle.subtitle01(color: AppColors.greenColor),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

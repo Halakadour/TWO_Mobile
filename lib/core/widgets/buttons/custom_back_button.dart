@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({super.key});
@@ -10,11 +10,12 @@ class CustomBackButton extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            context.pop();
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SignupPage()));
           },
           icon: const Icon(
             Icons.arrow_back_rounded,
-            size: 28,
+            size: 36,
           ),
         ),
       ],

@@ -31,15 +31,18 @@ class _LoginPageState extends State<SignupPage> {
               children: [
                 Row(
                   children: [
-                    Text(
-                      'Create your\nAccount',
-                      style: AppTextStyle.heading01(
-                        color: AppColors.blackColor,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Create your\nAccount',
+                        style: AppTextStyle.heading01(
+                          color: AppColors.blackColor,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                PaddingConfig.h24,
+                PaddingConfig.h8,
                 const SignUpForm()
               ],
             ),
