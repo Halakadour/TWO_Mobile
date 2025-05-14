@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
+import 'package:two_mobile/features/auth/presentation/pages/client_fill_profile_page.dart';
+import 'package:two_mobile/features/auth/presentation/pages/programmer_fill_profile_page.dart';
 
 class UserTypeDialog extends StatelessWidget {
   const UserTypeDialog({super.key});
@@ -32,7 +34,13 @@ class UserTypeDialog extends StatelessWidget {
             SizedBox(
               width: 250,
               child: GradientOutlineButton(
-                onpressed: () {},
+                onpressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const ProgrammerFillProfilePage()));
+                },
                 text: 'Get as Programmer',
                 textColor: AppColors.cardColor,
                 buttonColor: AppColors.buttonColor,
@@ -45,7 +53,10 @@ class UserTypeDialog extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.fieldfield,
                     fixedSize: const Size(250, 50)),
-                onPressed: () {},
+                onPressed: () {
+                  MaterialPageRoute(
+                      builder: (context) => const ClientFillProfilePage());
+                },
                 child: Text(
                   'Get as client',
                   style: AppTextStyle.subtitle01(color: AppColors.greenColor),

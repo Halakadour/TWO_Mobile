@@ -1,3 +1,5 @@
+import 'package:two_mobile/features/auth/presentation/pages/client_fill_profile_page.dart';
+
 class AppRouteConfig {
   // WELCOME //
   static const splash = 'splash';
@@ -16,4 +18,10 @@ class AppRouteConfig {
   static const inbox = 'inbox';
   // PROFILE //
   static const profile = 'profile';
+
+  //programmer fill profile
+  static const programmerFillProfile = 'programmerFillProfile';
+
+  // client fill profile
+  static const clientFillProfile = 'clientFillProfile';
 }

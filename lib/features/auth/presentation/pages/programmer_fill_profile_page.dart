@@ -17,10 +17,10 @@ class ProgrammerFillProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        body: Padding(
-          padding: PaddingConfig.pagePadding,
+    return Scaffold(
+      body: Padding(
+        padding: PaddingConfig.pagePadding,
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Customiconback(

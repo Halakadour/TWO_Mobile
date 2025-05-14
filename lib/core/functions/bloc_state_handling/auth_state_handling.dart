@@ -5,6 +5,7 @@ import 'package:two_mobile/core/services/shared_preferences_services.dart';
 import 'package:two_mobile/core/widgets/dialogs/auth_success_dialog.dart';
 import 'package:two_mobile/core/widgets/dialogs/custom_error_dialog.dart';
 import 'package:two_mobile/core/widgets/dialogs/custom_loading_dialog.dart';
+import 'package:two_mobile/core/widgets/dialogs/user_type_dialog.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AuthStateHandling {
@@ -38,7 +39,7 @@ class AuthStateHandling {
       showDialog(
           context: context,
           builder: (BuildContext context) {
-            return const AuthSuccessDialog();
+            return const UserTypeDialog();
           });
     } else if (state.userModelStatus == CasualStatus.failure) {
       context.pop();

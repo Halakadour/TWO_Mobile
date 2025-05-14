@@ -17,10 +17,10 @@ class ClientFillProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+    return Scaffold(
+      body: Padding(
+        padding: PaddingConfig.pagePadding,
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Customiconback(
