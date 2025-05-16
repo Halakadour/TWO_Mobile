@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/features/home/presentation/pages/todattask_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customcalendar.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customdatecalender.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customlist.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customtab.dart';
@@ -22,8 +22,7 @@ class CalenderPage extends StatelessWidget {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 30, left: 10, right: 20, bottom: 10),
+              padding: PaddingConfig.pagePadding,
               child: Customiconback(
                   onpressed: () {
                     Navigator.push(
@@ -33,15 +32,13 @@ class CalenderPage extends StatelessWidget {
                   },
                   text: 'Today tasks'),
             ),
-            DateStripCalendar(),
             Customtab(),
+            SizedBox(height: 10),
             Expanded(
                 child: TabBarView(children: [
               CustomCalendar(),
               Padding(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                ),
+                padding: const EdgeInsets.only(top: 40),
                 child: Column(
                   children: [
                     Customlist(
@@ -88,6 +85,16 @@ class CalenderPage extends StatelessWidget {
                         timetext: 'Now',
                         titlecolor: AppColors.blueColor,
                         proiperitycolor: AppColors.mainyallow),
+                    SizedBox(height: 10),
+                    Customlist(
+                        starttime: '09:10 AM',
+                        endtime: '10:00 AM',
+                        titletext: 'create leading page',
+                        statusetext: 'complete',
+                        proipritytext: 'Low',
+                        timetext: 'Now',
+                        titlecolor: AppColors.greenColor,
+                        proiperitycolor: AppColors.mainblue),
                   ],
                 ),
               )

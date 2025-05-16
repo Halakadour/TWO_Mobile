@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/widgets/main_text_field.dart';
 
@@ -26,7 +27,7 @@ class _CustomPasswordState extends State<CustomPassword> {
       },
       fillColor: AppColors.fieldfield,
       prefixIcon: const Icon(
-        Icons.lock_sharp,
+        Iconsax.lock,
         color: AppColors.fontLightColor,
       ),
       suffixIcon: Padding(
@@ -50,11 +51,11 @@ class _CustomPasswordState extends State<CustomPassword> {
         },
         child: _isSecurePassword
             ? const Icon(
-                Icons.remove_red_eye_rounded,
+                Iconsax.eye,
                 color: AppColors.fontLightColor,
               )
-            : Image.asset(
-                'assets/images/png/Hide.png',
+            : const Icon(
+                Iconsax.eye_slash,
                 color: AppColors.fontLightColor,
               ));
   }

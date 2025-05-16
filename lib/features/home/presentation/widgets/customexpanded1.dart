@@ -1,6 +1,8 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/features/home/presentation/pages/recentproject_page.dart';
@@ -16,7 +18,7 @@ class CustomExpanded1 extends StatelessWidget {
         flex: 1,
         child: Container(
           child: Padding(
-            padding: const EdgeInsets.only(top: 35, left: 28, right: 20),
+            padding: PaddingConfig.pagePadding,
             child: Column(
               children: [
                 Row(
@@ -46,7 +48,7 @@ class CustomExpanded1 extends StatelessWidget {
                         width: 50,
                         height: 50,
                         child: Icon(
-                          Icons.notifications_on_outlined,
+                          Iconsax.notification_bing4,
                           color: AppColors.cardColor,
                           size: 28,
                         ),
@@ -67,8 +69,8 @@ class CustomExpanded1 extends StatelessWidget {
                   textfield: AppColors.cardColor,
                   text: 'Search your task',
                   color: AppColors.navyColor,
-                  prefix: Icons.search,
-                  suffix: Icons.dehaze_rounded,
+                  prefix: Iconsax.search_normal_1,
+                  suffix: Iconsax.menu,
                   textcolor: AppColors.iconColor,
                   iconcolor: AppColors.iconColor,
                   bordercolor: AppColors.iconColor,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
@@ -33,7 +34,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                               builder: (context) => const LoginPage()));
                     },
                     icon: const Icon(
-                      Icons.arrow_back_rounded,
+                      Iconsax.arrow_left,
                       size: 28,
                     ),
                   ),

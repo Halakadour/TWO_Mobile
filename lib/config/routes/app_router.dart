@@ -3,14 +3,21 @@ import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/client_fill_profile_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/forget_password_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/programmer_fill_profile_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/recentproject_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/todattask_page.dart';
+import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
 import 'package:two_mobile/features/intro/pages/on_board_page.dart';
+import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
+import 'package:two_mobile/features/projects/presentation/pages/projects_page.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/signup_page.dart';
 import '../../features/intro/pages/splash_page.dart';
 import 'app_route_config.dart';
 
 class AppRouter {
-  GoRouter router = GoRouter(initialLocation: '', routes: [
+  GoRouter router = GoRouter(initialLocation: '/todaytask', routes: [
     GoRoute(
       name: AppRouteConfig.splash,
       path: '/',
@@ -47,9 +54,44 @@ class AppRouter {
       builder: (context, state) => const ClientFillProfilePage(),
     ),
     GoRoute(
+      name: AppRouteConfig.home,
+      path: '/home',
+      builder: (context, state) => const HomePage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.project,
+      path: '/project',
+      builder: (context, state) => const ProjectsPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.inbox,
+      path: '/inbox',
+      builder: (context, state) => const InBoxPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.profile,
+      path: '/profile',
+      builder: (context, state) => const ProfilePage(),
+    ),
+    GoRoute(
       name: AppRouteConfig.main,
       path: '/main',
       builder: (context, state) => const MainPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.recentproject,
+      path: '/recentproject',
+      builder: (context, state) => const RecentprojectPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.todaytask,
+      path: '/todaytask',
+      builder: (context, state) => const TodayTaskPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.calendar,
+      path: '/calendar',
+      builder: (context, state) => const CalenderPage(),
     ),
   ]);
 }

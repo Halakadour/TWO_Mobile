@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_element
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconchange.dart';
@@ -50,9 +51,9 @@ class _MainPageState extends State<MainPage> {
             });
           },
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+            BottomNavigationBarItem(icon: Icon(Iconsax.home_25), label: 'home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.assignment_rounded), label: 'projects'),
+                icon: Icon(Iconsax.document_text5), label: 'projects'),
             BottomNavigationBarItem(
                 icon: Container(
                   width: 50,
@@ -65,8 +66,9 @@ class _MainPageState extends State<MainPage> {
                 ),
                 label: ''),
             BottomNavigationBarItem(
-                icon: Icon(Icons.message_outlined), label: 'inbox'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
+                icon: Icon(Iconsax.messages_15), label: 'inbox'),
+            BottomNavigationBarItem(
+                icon: Icon(Iconsax.profile_circle5), label: 'profile'),
           ]),
     );
   }

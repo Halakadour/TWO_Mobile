@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/constants/sizes_config.dart';
 import 'package:two_mobile/config/paths/text_strings.dart';
@@ -58,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
                 hint: "Email",
                 hintColor: AppColors.fontLightColor,
                 prefixIcon: const Icon(
-                  Icons.email_rounded,
+                  Iconsax.sms,
                   color: AppColors.fontLightColor,
                 )),
             PaddingConfig.h8,
@@ -74,7 +75,7 @@ class _LoginFormState extends State<LoginForm> {
               },
               fillColor: AppColors.fieldfield,
               prefixIcon: const Icon(
-                Icons.lock_sharp,
+                Iconsax.lock,
                 color: AppColors.fontLightColor,
               ),
               suffixIcon: Padding(
@@ -140,11 +141,11 @@ class _LoginFormState extends State<LoginForm> {
         },
         child: _isSecurePassword
             ? const Icon(
-                Icons.remove_red_eye_rounded,
+                Iconsax.eye,
                 color: AppColors.fontLightColor,
               )
-            : Image.asset(
-                'assets/images/png/Hide.png',
+            : const Icon(
+                Iconsax.eye_slash,
                 color: AppColors.fontLightColor,
               ));
   }

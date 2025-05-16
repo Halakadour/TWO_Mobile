@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/features/auth/presentation/pages/signup_page.dart';
 
 class CustomBackButton extends StatelessWidget {
@@ -14,7 +15,7 @@ class CustomBackButton extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const SignupPage()));
           },
           icon: const Icon(
-            Icons.arrow_back_rounded,
+            Iconsax.arrow_left,
             size: 36,
           ),
         ),

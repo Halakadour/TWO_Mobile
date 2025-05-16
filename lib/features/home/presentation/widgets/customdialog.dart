@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customchangecontainer.dart';
@@ -144,7 +145,7 @@ class CustomAlterDialog extends StatelessWidget {
           textcolor: AppColors.iconColor,
           text: 'Filter',
           iconcolor: AppColors.iconColor,
-          icon: Icons.filter_alt_outlined),
+          icon: Iconsax.filter_edit),
     );
   }
 }

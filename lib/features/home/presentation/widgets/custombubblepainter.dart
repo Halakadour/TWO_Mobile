@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customnewproject.dart';
 
@@ -42,7 +43,7 @@ class CustomBubblePainter extends StatelessWidget {
                           ),
                           const SizedBox(width: 15),
                           Icon(
-                            Icons.assignment_rounded,
+                            Iconsax.document_text,
                             color: AppColors.blackColor.withOpacity(0.8),
                             size: 22,
                           )
@@ -60,7 +61,7 @@ class CustomBubblePainter extends StatelessWidget {
                           ),
                           const SizedBox(width: 16),
                           Icon(
-                            Icons.group_outlined,
+                            Iconsax.people,
                             color: AppColors.blackColor.withOpacity(0.8),
                             size: 22,
                           )

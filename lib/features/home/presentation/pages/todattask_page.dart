@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
@@ -16,7 +18,7 @@ class TodayTaskPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top: 30, left: 30, right: 20),
+        padding: PaddingConfig.pagePadding,
         child: Column(
           children: [
             Customiconback(
@@ -51,7 +53,7 @@ class TodayTaskPage extends StatelessWidget {
                         textcolor: AppColors.cardColor,
                         text: 'View on Calendar',
                         iconcolor: AppColors.cardColor,
-                        icon: Icons.date_range_rounded),
+                        icon: Iconsax.calendar_edit),
                   )
                 ],
               ),

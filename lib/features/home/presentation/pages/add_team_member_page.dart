@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_project_manager_page.dart';
@@ -17,7 +19,7 @@ class AddTeamMemberPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.cardColor,
       body: Padding(
-        padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
+        padding: PaddingConfig.pagePadding,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -37,7 +39,7 @@ class AddTeamMemberPage extends StatelessWidget {
                 Bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
-                prefix: Icons.search,
+                prefix: Iconsax.search_normal_1,
                 suffix: null,
                 text: 'Search',
                 textcolor: AppColors.fontLightColor,

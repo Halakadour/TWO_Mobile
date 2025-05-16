@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 
@@ -10,7 +11,7 @@ class Customtab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      dividerHeight: 0.9,
+      dividerHeight: 0.3,
       tabs: [
         SizedBox(
           height: 40,
@@ -19,13 +20,14 @@ class Customtab extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                Icons.view_kanban_rounded,
+                Iconsax.kanban,
                 color: AppColors.blackColor.withOpacity(0.9),
               ),
               const SizedBox(width: 8),
               Text(
                 'Kanban',
-                style: AppTextStyle.heading04(),
+                style: AppTextStyle.heading04(
+                    color: AppColors.blackColor.withOpacity(0.9)),
               ),
             ],
           ),
@@ -36,14 +38,15 @@ class Customtab extends StatelessWidget {
           child: Row(
             children: [
               Icon(
-                Icons.list_rounded,
-                size: 30,
+                Iconsax.firstline,
+                size: 25,
                 color: AppColors.blackColor.withOpacity(0.9),
               ),
               const SizedBox(width: 8),
               Text(
                 'List',
-                style: AppTextStyle.heading04(),
+                style: AppTextStyle.heading04(
+                    color: AppColors.blackColor.withOpacity(0.9)),
               ),
             ],
           ),

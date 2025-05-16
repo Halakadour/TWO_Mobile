@@ -16,7 +16,10 @@ class RecentprojectPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.cardColor,
         body: Padding(
-            padding: const EdgeInsets.only(left: 30, right: 20),
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 10,
+            ),
             child: ListView(
               children: [
                 Customiconback(
@@ -53,16 +56,14 @@ class RecentprojectPage extends StatelessWidget {
                 CustomContainerCard(
                   Datetext: 'Dec 22-2024',
                   Nametext: 'Hala Kadour',
-                  Titletext:
-                      'Building flutter app for math and physics kids\nlearning',
+                  Titletext: 'Building flutter app for math and physics kids',
                   containertext: '3 days left',
                   image: 'assets/images/png/Rectangle 1.png',
                 ),
                 CustomContainerCard(
                   Datetext: 'Dec 24-2024',
                   Nametext: 'Hala Kadour',
-                  Titletext:
-                      'Building flutter app for math and physics kids\nlearning',
+                  Titletext: 'Building flutter app for math and physics kids',
                   containertext: '5 days left',
                   image: 'assets/images/png/Rectangle 2.png',
                 )

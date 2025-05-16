@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 
@@ -20,7 +21,7 @@ class Customiconback extends StatelessWidget {
         IconButton(
           onPressed: onpressed,
           icon: Icon(
-            Icons.arrow_back_rounded,
+            Iconsax.arrow_left,
             size: 36,
             color: AppColors.blackColor,
           ),

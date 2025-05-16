@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, sized_box_for_whitespace, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 
@@ -64,9 +65,12 @@ class CustomContainerCard extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20, left: 20),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.person,
-                    color: AppColors.iconColor,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: Icon(
+                      Iconsax.user_square,
+                      color: AppColors.fontLightColor,
+                    ),
                   ),
                   SizedBox(width: 6),
                   Text(
