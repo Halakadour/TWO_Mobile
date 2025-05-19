@@ -3,6 +3,7 @@ import 'package:two_mobile/core/api/failures.dart';
 import 'package:two_mobile/features/auth/data/datasource/auth_remote_datasource.dart';
 import 'package:two_mobile/features/auth/data/models/login_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';
+import 'package:two_mobile/features/auth/data/models/update_client_prfile_response_model.dart';
 import 'package:two_mobile/features/auth/domain/repo/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
@@ -26,6 +27,16 @@ class AuthRepoImpl extends AuthRepo {
     return wrapHandling(tryCall: () async {
       final result = await authRemoteDatasource.signup(
           name, email, password, passwordConfirmation);
+      return Right(result);
+    });
+  }
+
+  @override
+  Future<Either<Failure, UpdateClientProfileResponseModel>> cleintupdateprofile(
+      String roleid, String image, String subject, String phone, String token) {
+    return wrapHandling(tryCall: () async {
+      final result = await authRemoteDatasource.cleintupdateprofile(
+          roleid, image, subject, phone, token);
       return Right(result);
     });
   }
