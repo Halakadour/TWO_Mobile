@@ -24,3 +24,16 @@ class SignUpEvent extends AuthEvent {
       required this.password,
       required this.passwordConfirmation});
 }
+
+class UpdateClientProfileEvent extends AuthEvent {
+  String roleid;
+  String image;
+  String subject;
+  String phone;
+
+  UpdateClientProfileEvent(
+      {required this.roleid,
+      required this.image,
+      required this.subject,
+      required this.phone});
+}
