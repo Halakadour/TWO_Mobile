@@ -27,7 +27,14 @@ class _CustomAddState extends State<CustomAdd> {
         padding: const EdgeInsets.only(left: 10),
         child: Row(
           children: [
-            Image.asset(widget.image),
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: AssetImage(widget.image))),
+            ),
             const SizedBox(
               width: 15,
             ),

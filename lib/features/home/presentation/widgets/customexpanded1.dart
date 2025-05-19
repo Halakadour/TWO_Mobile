@@ -43,18 +43,11 @@ class CustomExpanded1 extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 90),
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        child: Icon(
-                          Iconsax.notification_bing4,
-                          color: AppColors.cardColor,
-                          size: 28,
-                        ),
-                        decoration: BoxDecoration(
-                            color: AppColors.navColor,
-                            borderRadius: BorderRadius.circular(24)),
+                      padding: const EdgeInsets.only(left: 110),
+                      child: Icon(
+                        Iconsax.notification_bing4,
+                        color: AppColors.cardColor,
+                        size: 25,
                       ),
                     )
                   ],
@@ -68,7 +61,7 @@ class CustomExpanded1 extends StatelessWidget {
                   Bordercolor: AppColors.iconColor,
                   textfield: AppColors.cardColor,
                   text: 'Search your task',
-                  color: AppColors.navyColor,
+                  color: AppColors.navColor,
                   prefix: Iconsax.search_normal_1,
                   suffix: Iconsax.menu,
                   textcolor: AppColors.iconColor,
@@ -93,7 +86,7 @@ class CustomExpanded1 extends StatelessWidget {
               ],
             ),
           ),
-          color: AppColors.navyColor,
+          color: AppColors.navColor,
         ));
   }
 }

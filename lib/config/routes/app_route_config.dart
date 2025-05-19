@@ -31,4 +31,13 @@ class AppRouteConfig {
 
   // calendar
   static const calendar = 'calendar';
+
+  // projects detailes
+  static const projectdetailes = 'projectdetailes';
+
+  // Add Sprint
+  static const addsprint = 'addsprint';
+
+  // sprint detailes
+  static const sprintdetailes = 'sprintdetailes';
 }

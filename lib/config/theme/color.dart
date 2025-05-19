@@ -36,6 +36,9 @@ class AppColors {
   static const Color Lightpink = Color(0xFFF6B0EB);
   static const Color Lightblue = Color(0xFFA9CBE7);
   static const Color LightOrange = Color(0xFFF7DFBE);
+  static const Color Darkgreen = Color(0xFF31813D);
+  static const Color Darkblue = Color(0xFF4263B1);
+  static const Color Lightgreencolor = Color(0xB889F5AF);
 
   // theme colors
   static const Color mainColor = greenColor;

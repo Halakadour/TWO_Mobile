@@ -10,14 +10,17 @@ import 'package:two_mobile/features/home/presentation/pages/todattask_page.dart'
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
 import 'package:two_mobile/features/intro/pages/on_board_page.dart';
 import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
+import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
+import 'package:two_mobile/features/projects/presentation/pages/project_detailes_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/projects_page.dart';
+import 'package:two_mobile/features/projects/presentation/pages/sprint_detailes_page.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/signup_page.dart';
 import '../../features/intro/pages/splash_page.dart';
 import 'app_route_config.dart';
 
 class AppRouter {
-  GoRouter router = GoRouter(initialLocation: '/todaytask', routes: [
+  GoRouter router = GoRouter(initialLocation: '/sprintdetailes', routes: [
     GoRoute(
       name: AppRouteConfig.splash,
       path: '/',
@@ -92,6 +95,21 @@ class AppRouter {
       name: AppRouteConfig.calendar,
       path: '/calendar',
       builder: (context, state) => const CalenderPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.projectdetailes,
+      path: '/projectdetailes',
+      builder: (context, state) => const ProjectDetailesPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.addsprint,
+      path: '/addsprint',
+      builder: (context, state) => const AddSprintPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.sprintdetailes,
+      path: '/sprintdetailes',
+      builder: (context, state) => SprintDetailesPage(),
     ),
   ]);
 }
