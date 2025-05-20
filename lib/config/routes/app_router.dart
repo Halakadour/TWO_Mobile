@@ -3,6 +3,7 @@ import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/client_fill_profile_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/forget_password_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/programmer_fill_profile_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/add_new_task_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/recentproject_page.dart';
@@ -110,6 +111,11 @@ class AppRouter {
       name: AppRouteConfig.sprintdetailes,
       path: '/sprintdetailes',
       builder: (context, state) => SprintDetailesPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.addnewtask,
+      path: '/addnewtask',
+      builder: (context, state) => AddNewTaskPage(),
     ),
   ]);
 }

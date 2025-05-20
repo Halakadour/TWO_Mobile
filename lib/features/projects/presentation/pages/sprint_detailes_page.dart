@@ -10,6 +10,7 @@ import 'package:two_mobile/features/projects/presentation/widgets/customGestured
 import 'package:two_mobile/features/projects/presentation/widgets/customcolumn3.dart';
 import 'package:two_mobile/features/projects/presentation/widgets/customcolumn4.dart';
 import 'package:two_mobile/features/projects/presentation/widgets/customicon&text.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/customtabbar.dart';
 
 class SprintDetailesPage extends StatelessWidget {
   double _ProgressValue = 0.63;
@@ -93,7 +94,7 @@ class SprintDetailesPage extends StatelessWidget {
               'designing the data base system by using\nrelational tables sql.',
               style: AppTextStyle.subtitle01(color: AppColors.fontLightColor),
             ),
-            PaddingConfig.h32,
+            PaddingConfig.h24,
             Row(
               children: [
                 CustomcolumnPage3(),
@@ -117,7 +118,7 @@ class SprintDetailesPage extends StatelessWidget {
                     color: AppColors.Darkgreen),
               ],
             ),
-            PaddingConfig.h16,
+            PaddingConfig.h8,
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -152,7 +153,9 @@ class SprintDetailesPage extends StatelessWidget {
                 ),
                 Icon(Iconsax.add_square)
               ],
-            )
+            ),
+            PaddingConfig.h8,
+            CustomTabBarPage(),
           ],
         ),
       ),

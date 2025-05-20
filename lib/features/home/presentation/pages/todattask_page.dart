@@ -5,6 +5,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/add_new_task_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customcontainer.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customdialog.dart';
@@ -35,12 +36,20 @@ class TodayTaskPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomAlterDialog(),
-                  customContainer(
-                      containercolor: AppColors.navyColor,
-                      textcolor: AppColors.cardColor,
-                      text: 'New Task',
-                      iconcolor: AppColors.cardColor,
-                      icon: Icons.add),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AddNewTaskPage()));
+                    },
+                    child: customContainer(
+                        containercolor: AppColors.navyColor,
+                        textcolor: AppColors.cardColor,
+                        text: 'New Task',
+                        iconcolor: AppColors.cardColor,
+                        icon: Icons.add),
+                  ),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(

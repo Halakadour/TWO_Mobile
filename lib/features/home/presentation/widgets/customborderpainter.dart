@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 
@@ -14,7 +15,7 @@ class Customborderpainter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 330,
+      width: 315,
       height: 50,
       child: CustomPaint(
         painter: DashedRoundedPainter(
@@ -24,23 +25,16 @@ class Customborderpainter extends StatelessWidget {
           dashLength: 4,
           gapLength: 5,
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 110),
-          child: GestureDetector(
-            onTap: onTap,
+        child: GestureDetector(
+          onTap: onTap,
+          child: Center(
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border:
-                          Border.all(color: AppColors.greenColor, width: 2)),
-                  child: const Icon(
-                    Icons.add,
-                    size: 18,
-                    color: AppColors.greenColor,
-                  ),
+                const Icon(
+                  Iconsax.add_square,
+                  size: 23,
+                  color: AppColors.greenColor,
                 ),
                 const SizedBox(width: 10),
                 Text(

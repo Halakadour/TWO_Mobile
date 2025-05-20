@@ -40,4 +40,7 @@ class AppRouteConfig {
 
   // sprint detailes
   static const sprintdetailes = 'sprintdetailes';
+
+  // Add New Task
+  static const addnewtask = 'addnewtask';
 }
