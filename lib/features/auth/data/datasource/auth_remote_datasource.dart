@@ -4,17 +4,35 @@ import 'package:two_mobile/core/api/post_api_with_token.dart';
 import 'package:two_mobile/features/auth/data/models/login_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/update_client_prfile_response_model.dart';
+import 'package:two_mobile/features/auth/data/models/update_programmer_profile_response_model.dart';
 
 abstract class AuthRemoteDatasource {
-  Future<LoginResponseModel> login(String email, String password);
+  // login
+  Future<LoginResponseModel> login(
+    String email,
+    String password,
+  );
+  // sign up
   Future<SignupResponseModel> signup(
     String name,
     String email,
     String password,
     String passwordConfirmation,
   );
+  // update client profile
   Future<UpdateClientProfileResponseModel> cleintupdateprofile(
-      String token, String roleid, String image, String subject, String phone);
+    String token,
+    String roleid,
+    String image,
+    String subject,
+    String phone,
+  );
+  Future<UpdateEmployeeProfileResponseModel> programmerupdateprofile(
+    String token,
+    String image,
+    String cv,
+    String roleId,
+  );
 }
 
 class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
@@ -44,7 +62,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
     return await result.call();
   }
 
-// update profile client
+// update  client profile
   @override
   Future<UpdateClientProfileResponseModel> cleintupdateprofile(String token,
       String roleid, String image, String subject, String phone) async {
@@ -58,6 +76,27 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
         }),
         fromJson: updateClientProfileResponseModelFromJson,
         token: token);
+    return await result.call();
+  }
+
+  // update programmer profile
+  @override
+  Future<UpdateEmployeeProfileResponseModel> programmerupdateprofile(
+    String token,
+    String image,
+    String cv,
+    String roleId,
+  ) async {
+    final result = PostApiWithToken(
+      uri: Uri.parse("$baseuri/api/update/employee/profile"),
+      token: token,
+      body: ({
+        "image": image,
+        "cv": cv,
+        "role_id": roleId,
+      }),
+      fromJson: updateEmployeeProfileResponseModelFromJson,
+    );
     return await result.call();
   }
 }

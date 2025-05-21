@@ -4,39 +4,86 @@ import 'package:two_mobile/features/auth/data/datasource/auth_remote_datasource.
 import 'package:two_mobile/features/auth/data/models/login_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/update_client_prfile_response_model.dart';
+import 'package:two_mobile/features/auth/data/models/update_programmer_profile_response_model.dart';
 import 'package:two_mobile/features/auth/domain/repo/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final AuthRemoteDatasource authRemoteDatasource;
 
   AuthRepoImpl({required this.authRemoteDatasource});
+  // login
   @override
   Future<Either<Failure, LoginResponseModel>> login(
-      String email, String password) {
+    String email,
+    String password,
+  ) {
     return wrapHandling(
       tryCall: () async {
-        final result = await authRemoteDatasource.login(email, password);
+        final result = await authRemoteDatasource.login(
+          email,
+          password,
+        );
         return Right(result);
       },
     );
   }
+  // sign up
 
   @override
   Future<Either<Failure, SignupResponseModel>> signup(
-      String name, String email, String password, String passwordConfirmation) {
+    String name,
+    String email,
+    String password,
+    String passwordConfirmation,
+  ) {
     return wrapHandling(tryCall: () async {
       final result = await authRemoteDatasource.signup(
-          name, email, password, passwordConfirmation);
+        name,
+        email,
+        password,
+        passwordConfirmation,
+      );
       return Right(result);
     });
   }
 
+// update client profile
   @override
   Future<Either<Failure, UpdateClientProfileResponseModel>> cleintupdateprofile(
-      String roleid, String image, String subject, String phone, String token) {
+    String roleid,
+    String image,
+    String subject,
+    String phone,
+    String token,
+  ) {
     return wrapHandling(tryCall: () async {
       final result = await authRemoteDatasource.cleintupdateprofile(
-          roleid, image, subject, phone, token);
+        roleid,
+        image,
+        subject,
+        phone,
+        token,
+      );
+      return Right(result);
+    });
+  }
+
+  // update programmer profile
+  @override
+  Future<Either<Failure, UpdateEmployeeProfileResponseModel>>
+      programmerupdateprofile(
+    String token,
+    String image,
+    String cv,
+    String roleId,
+  ) {
+    return wrapHandling(tryCall: () async {
+      final result = await authRemoteDatasource.programmerupdateprofile(
+        token,
+        image,
+        cv,
+        roleId,
+      );
       return Right(result);
     });
   }

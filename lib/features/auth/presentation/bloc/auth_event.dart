@@ -2,6 +2,7 @@ part of 'auth_bloc.dart';
 
 abstract class AuthEvent {}
 
+// login
 class LoginEvent extends AuthEvent {
   final String email;
   final String password;
@@ -12,28 +13,44 @@ class LoginEvent extends AuthEvent {
   });
 }
 
+// sign up
 class SignUpEvent extends AuthEvent {
   final String name;
   final String email;
   final String password;
   final String passwordConfirmation;
 
-  SignUpEvent(
-      {required this.name,
-      required this.email,
-      required this.password,
-      required this.passwordConfirmation});
+  SignUpEvent({
+    required this.name,
+    required this.email,
+    required this.password,
+    required this.passwordConfirmation,
+  });
 }
 
+// update client profile
 class UpdateClientProfileEvent extends AuthEvent {
   String roleid;
   String image;
   String subject;
   String phone;
 
-  UpdateClientProfileEvent(
-      {required this.roleid,
-      required this.image,
-      required this.subject,
-      required this.phone});
+  UpdateClientProfileEvent({
+    required this.roleid,
+    required this.image,
+    required this.subject,
+    required this.phone,
+  });
+}
+
+// update programmer profile
+class UpdateProgrammerProfileEvent extends AuthEvent {
+  final String image;
+  final String cv;
+  final String roleId;
+  UpdateProgrammerProfileEvent({
+    required this.image,
+    required this.cv,
+    required this.roleId,
+  });
 }

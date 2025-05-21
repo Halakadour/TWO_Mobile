@@ -7,13 +7,18 @@ class AuthState {
   UserModel? userModel;
   CasualStatus clientprofileStatus;
   UpdateClientProfileResponseModel? updateClientProfileResponseModel;
+  UpdateEmployeeProfileResponseModel? updateEmployeeProfileResponseModel;
+  CasualStatus programmerprofileStatus;
 
-  AuthState(
-      {this.masseage = "",
-      this.userModel,
-      this.userModelStatus = CasualStatus.initial,
-      this.clientprofileStatus = CasualStatus.initial,
-      this.updateClientProfileResponseModel});
+  AuthState({
+    this.masseage = "",
+    this.userModel,
+    this.userModelStatus = CasualStatus.initial,
+    this.clientprofileStatus = CasualStatus.initial,
+    this.updateClientProfileResponseModel,
+    this.programmerprofileStatus = CasualStatus.initial,
+    this.updateEmployeeProfileResponseModel,
+  });
 
   AuthState copyWith({
     String? masseage,
@@ -21,6 +26,8 @@ class AuthState {
     UserModel? userModel,
     CasualStatus? clientprofileStatus,
     UpdateClientProfileResponseModel? updateClientProfileResponseModel,
+    CasualStatus? programmerprofileStatus,
+    UpdateEmployeeProfileResponseModel? updateEmployeeProfileResponseModel,
   }) {
     return AuthState(
       masseage: masseage ?? this.masseage,
@@ -29,6 +36,9 @@ class AuthState {
       clientprofileStatus: authModelStatus ?? this.clientprofileStatus,
       updateClientProfileResponseModel: updateClientProfileResponseModel ??
           this.updateClientProfileResponseModel,
+      programmerprofileStatus: authModelStatus ?? this.programmerprofileStatus,
+      updateEmployeeProfileResponseModel: updateEmployeeProfileResponseModel ??
+          this.updateEmployeeProfileResponseModel,
     );
   }
 }
