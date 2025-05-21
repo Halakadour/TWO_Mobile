@@ -83,6 +83,11 @@ class AppRouter {
       builder: (context, state) => const MainPage(),
     ),
     GoRoute(
+      name: AppRouteConfig.projectdetailes,
+      path: '/projectdetailes',
+      builder: (context, state) => const ProjectDetailesPage(),
+    ),
+    GoRoute(
       name: AppRouteConfig.recentproject,
       path: '/recentproject',
       builder: (context, state) => const RecentprojectPage(),
@@ -96,11 +101,6 @@ class AppRouter {
       name: AppRouteConfig.calendar,
       path: '/calendar',
       builder: (context, state) => const CalenderPage(),
-    ),
-    GoRoute(
-      name: AppRouteConfig.projectdetailes,
-      path: '/projectdetailes',
-      builder: (context, state) => const ProjectDetailesPage(),
     ),
     GoRoute(
       name: AppRouteConfig.addsprint,

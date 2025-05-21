@@ -7,7 +7,7 @@ import 'package:two_mobile/features/home/presentation/widgets/customalterdialog2
 import 'package:two_mobile/features/home/presentation/widgets/customcontainer.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customcountainercard.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
-import 'package:two_mobile/features/projects/presentation/pages/project_detailes_page.dart';
+import 'package:two_mobile/features/home/presentation/widgets/customnewproject.dart';
 
 class RecentprojectPage extends StatelessWidget {
   const RecentprojectPage({super.key});
@@ -40,11 +40,9 @@ class RecentprojectPage extends StatelessWidget {
                       SizedBox(width: 10),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ProjectDetailesPage()));
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) => CustomNewProject());
                         },
                         child: customContainer(
                             containercolor: AppColors.navyColor,

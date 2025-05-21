@@ -4,8 +4,6 @@ import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
-import 'package:two_mobile/features/auth/presentation/pages/client_fill_profile_page.dart';
-import 'package:two_mobile/features/auth/presentation/pages/programmer_fill_profile_page.dart';
 
 class UserTypeDialog extends StatelessWidget {
   const UserTypeDialog({super.key});
