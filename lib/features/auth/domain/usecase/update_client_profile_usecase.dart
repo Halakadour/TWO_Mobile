@@ -13,21 +13,14 @@ class UpdateClientProfileUsecase extends Usecase<
   @override
   Future<Either<Failure, UpdateClientProfileResponseModel>> call(
       UpdateClientProfileParams param) {
-    return authRepo.cleintupdateprofile(
-        param.roleid, param.image, param.subject, param.phone, param.token);
+    return authRepo.cleintUpdateProfile(param.roleid, param.image, param.token);
   }
 }
 
 class UpdateClientProfileParams {
   String roleid;
   String image;
-  String subject;
-  String phone;
   String token;
   UpdateClientProfileParams(
-      {required this.roleid,
-      required this.image,
-      required this.subject,
-      required this.phone,
-      required this.token});
+      {required this.roleid, required this.image, required this.token});
 }

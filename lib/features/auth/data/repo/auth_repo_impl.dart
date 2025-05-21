@@ -49,19 +49,15 @@ class AuthRepoImpl extends AuthRepo {
 
 // update client profile
   @override
-  Future<Either<Failure, UpdateClientProfileResponseModel>> cleintupdateprofile(
+  Future<Either<Failure, UpdateClientProfileResponseModel>> cleintUpdateProfile(
     String roleid,
     String image,
-    String subject,
-    String phone,
     String token,
   ) {
     return wrapHandling(tryCall: () async {
-      final result = await authRemoteDatasource.cleintupdateprofile(
+      final result = await authRemoteDatasource.cleintUpdateProfile(
         roleid,
         image,
-        subject,
-        phone,
         token,
       );
       return Right(result);
@@ -71,14 +67,14 @@ class AuthRepoImpl extends AuthRepo {
   // update programmer profile
   @override
   Future<Either<Failure, UpdateEmployeeProfileResponseModel>>
-      programmerupdateprofile(
+      programmerUpdateProfile(
     String token,
     String image,
     String cv,
     String roleId,
   ) {
     return wrapHandling(tryCall: () async {
-      final result = await authRemoteDatasource.programmerupdateprofile(
+      final result = await authRemoteDatasource.programmerUpdateProfile(
         token,
         image,
         cv,

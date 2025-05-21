@@ -20,14 +20,12 @@ abstract class AuthRemoteDatasource {
     String passwordConfirmation,
   );
   // update client profile
-  Future<UpdateClientProfileResponseModel> cleintupdateprofile(
+  Future<UpdateClientProfileResponseModel> cleintUpdateProfile(
     String token,
-    String roleid,
+    String roleId,
     String image,
-    String subject,
-    String phone,
   );
-  Future<UpdateEmployeeProfileResponseModel> programmerupdateprofile(
+  Future<UpdateEmployeeProfileResponseModel> programmerUpdateProfile(
     String token,
     String image,
     String cv,
@@ -64,15 +62,13 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
 
 // update  client profile
   @override
-  Future<UpdateClientProfileResponseModel> cleintupdateprofile(String token,
-      String roleid, String image, String subject, String phone) async {
+  Future<UpdateClientProfileResponseModel> cleintUpdateProfile(
+      String token, String roleId, String image) async {
     final result = PostApiWithToken(
-        uri: Uri.parse("$baseuri/api/update/client/profile"),
+        uri: Uri.parse("$baseuri/api/update/freelancer/profile"),
         body: ({
-          "role_id": roleid,
+          "role_id": roleId,
           "image": image,
-          "subject": subject,
-          "phone": phone
         }),
         fromJson: updateClientProfileResponseModelFromJson,
         token: token);
@@ -81,7 +77,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
 
   // update programmer profile
   @override
-  Future<UpdateEmployeeProfileResponseModel> programmerupdateprofile(
+  Future<UpdateEmployeeProfileResponseModel> programmerUpdateProfile(
     String token,
     String image,
     String cv,
