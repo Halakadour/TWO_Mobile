@@ -8,6 +8,8 @@ import 'package:two_mobile/features/auth/domain/usecase/login_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/sign_up_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/update_client_profile_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/update_programmer_profile_usecase.dart';
+import 'package:two_mobile/features/auth/role/data/models/role_model.dart';
+import 'package:two_mobile/features/auth/role/domain/usecases/get_client_role_usecase.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -21,12 +23,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UpdateClientProfileUsecase updateClientProfileUsecase;
   // Update programmer profile
   final UpdateProgrammerProfileUsecase updateProgrammerProfileUsecase;
+  // show client role
+  final GetClientRoleUsecase getClientRoleUsecase;
 
   AuthBloc(
       {required this.signUpUsecase,
       required this.loginUsecase,
       required this.updateClientProfileUsecase,
-      required this.updateProgrammerProfileUsecase})
+      required this.updateProgrammerProfileUsecase,
+      required this.getClientRoleUsecase})
       : super(AuthState()) {
     // login
     on<LoginEvent>((event, emit) async {
@@ -112,6 +117,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       } else {
         emit(state.copyWith(programmerprofileStatus: CasualStatus.noToken));
       }
+    });
+    // Get Client Role
+    on<UpdateProgrammerProfileEvent>((event, emit) async {
+      emit(state.copyWith(roleClientListStatus: CasualStatus.loading));
+      final result = await getClientRoleUsecase.call();
+      result.fold(
+        (left) {
+          emit(state.copyWith(
+              roleClientListStatus: CasualStatus.failure,
+              masseage: left.message));
+        },
+        (right) {
+          emit(
+            state.copyWith(
+                roleClientListStatus: CasualStatus.success,
+                roleClientList: right),
+          );
+        },
+      );
     });
   }
 }

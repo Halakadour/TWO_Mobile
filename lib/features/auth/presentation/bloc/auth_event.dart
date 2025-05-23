@@ -54,3 +54,6 @@ class UpdateProgrammerProfileEvent extends AuthEvent {
     required this.roleId,
   });
 }
+
+// get client role
+class GetClientRoleEvent extends AuthEvent {}
