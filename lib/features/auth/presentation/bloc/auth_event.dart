@@ -32,14 +32,10 @@ class SignUpEvent extends AuthEvent {
 class UpdateClientProfileEvent extends AuthEvent {
   String roleid;
   String image;
-  String subject;
-  String phone;
 
   UpdateClientProfileEvent({
     required this.roleid,
     required this.image,
-    required this.subject,
-    required this.phone,
   });
 }
 

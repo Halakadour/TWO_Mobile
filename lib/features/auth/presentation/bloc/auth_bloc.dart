@@ -70,11 +70,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       if (token != null) {
         final result = await updateClientProfileUsecase.call(
             UpdateClientProfileParams(
-                roleid: event.roleid,
-                image: event.image,
-                subject: event.subject,
-                phone: event.phone,
-                token: token));
+                roleid: event.roleid, image: event.image, token: token));
         result.fold(
           (left) {
             emit(state.copyWith(

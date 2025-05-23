@@ -13,7 +13,7 @@ class UpdateProgrammerProfileUsecase extends Usecase<
   @override
   Future<Either<Failure, UpdateEmployeeProfileResponseModel>> call(
       UpdateProgrammerParams param) {
-    return authRepo.programmerupdateprofile(
+    return authRepo.programmerUpdateProfile(
         param.token, param.image, param.cv, param.roleId);
   }
 }

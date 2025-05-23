@@ -20,16 +20,14 @@ abstract class AuthRepo with HandlingExceptionManager {
     String passwordConfirmation,
   );
   // update client profile
-  Future<Either<Failure, UpdateClientProfileResponseModel>> cleintupdateprofile(
+  Future<Either<Failure, UpdateClientProfileResponseModel>> cleintUpdateProfile(
     String token,
     String roleid,
     String image,
-    String subject,
-    String phone,
   );
   // update programmer profile
   Future<Either<Failure, UpdateEmployeeProfileResponseModel>>
-      programmerupdateprofile(
+      programmerUpdateProfile(
     String token,
     String image,
     String cv,
