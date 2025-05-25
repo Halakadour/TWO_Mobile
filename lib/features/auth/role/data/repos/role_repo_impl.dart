@@ -9,7 +9,7 @@ import 'package:two_mobile/features/auth/role/domain/repos/role_repo.dart';
 class RoleRepoImpl extends RoleRepo {
   final RoleLocalDatasource roleLocalDatasource;
   final RoleRemoteDatasource roleRemoteDatasource;
-  final NetworkInfo networkInfo;
+  final NetworkInfoImpl networkInfo;
 
   RoleRepoImpl(
       {required this.roleLocalDatasource,

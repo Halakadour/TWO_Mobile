@@ -115,7 +115,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     });
     // Get Client Role
-    on<UpdateProgrammerProfileEvent>((event, emit) async {
+    on<GetClientRoleEvent>((event, emit) async {
       emit(state.copyWith(roleClientListStatus: CasualStatus.loading));
       final result = await getClientRoleUsecase.call();
       result.fold(
