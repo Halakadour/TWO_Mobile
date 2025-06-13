@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:two_mobile/core/api/exceptions.dart';
+import 'package:two_mobile/core/error/exceptions.dart';
 
 import 'package:two_mobile/features/auth/role/data/models/role_model.dart';
 

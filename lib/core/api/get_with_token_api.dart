@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import 'handling_exception_request.dart';
+import '../error/handling_exception_request.dart';
 
 typedef FromJson<T> = T Function(String body);
 

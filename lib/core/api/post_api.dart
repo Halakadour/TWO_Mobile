@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 import 'get_api.dart';
-import 'handling_exception_request.dart';
+import '../error/handling_exception_request.dart';
 
 class PostApi<T> with HandlingExceptionRequest {
   final Uri uri;

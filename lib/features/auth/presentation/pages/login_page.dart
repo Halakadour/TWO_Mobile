@@ -6,7 +6,7 @@ import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/functions/bloc_state_handling/auth_state_handling.dart';
 import 'package:two_mobile/core/widgets/buttons/custom_back_button.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/login_form.dart';
+import 'package:two_mobile/features/auth/presentation/widgets/forms/login_form.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

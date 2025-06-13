@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:two_mobile/core/api/failures.dart';
+import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/core/network/network_connection_checker.dart';
 import 'package:two_mobile/features/auth/role/data/datasource/role_local_datasource.dart';
 import 'package:two_mobile/features/auth/role/data/datasource/role_remote_datasource.dart';
@@ -19,14 +19,16 @@ class RoleRepoImpl extends RoleRepo {
   Future<Either<Failure, List<RoleModel>>> getCleintRole() {
     return wrapHandling(
       tryCall: () async {
-        if (await networkInfo.isConnected) {
-          final roleRemoteList = await roleRemoteDatasource.showClientRole();
-          roleLocalDatasource.cacheRoles(roleRemoteList.data);
-          return Right(roleRemoteList.data);
-        } else {
-          final roleLocaleList = await roleLocalDatasource.getCachedRoles();
-          return Right(roleLocaleList);
-        }
+        final roleRemoteList = await roleRemoteDatasource.showClientRole();
+        return Right(roleRemoteList.data);
+        // if (await networkInfo.isConnected) {
+        //   final roleRemoteList = await roleRemoteDatasource.showClientRole();
+        //   roleLocalDatasource.cacheRoles(roleRemoteList.data);
+        //   return Right(roleRemoteList.data);
+        // } else {
+        //   final roleLocaleList = await roleLocalDatasource.getCachedRoles();
+        //   return Right(roleLocaleList);
+        // }
       },
     );
   }

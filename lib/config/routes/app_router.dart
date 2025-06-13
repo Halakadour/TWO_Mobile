@@ -21,7 +21,7 @@ import '../../features/intro/pages/splash_page.dart';
 import 'app_route_config.dart';
 
 class AppRouter {
-  GoRouter router = GoRouter(initialLocation: '', routes: [
+  GoRouter router = GoRouter(initialLocation: '/clientFillProfile', routes: [
     GoRoute(
       name: AppRouteConfig.splash,
       path: '/',
@@ -115,7 +115,7 @@ class AppRouter {
     GoRoute(
       name: AppRouteConfig.addnewtask,
       path: '/addnewtask',
-      builder: (context, state) => AddNewTaskPage(),
+      builder: (context, state) => const AddNewTaskPage(),
     ),
   ]);
 }

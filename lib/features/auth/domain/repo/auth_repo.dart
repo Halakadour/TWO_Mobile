@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:two_mobile/core/api/failures.dart';
-import 'package:two_mobile/core/api/handling_exception_manager.dart';
+import 'package:two_mobile/core/error/failures.dart';
+import 'package:two_mobile/core/error/handling_exception_manager.dart';
 import 'package:two_mobile/features/auth/data/models/login_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/update_client_prfile_response_model.dart';

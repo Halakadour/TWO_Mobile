@@ -1,14 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'auth_bloc.dart';
 
 class AuthState {
-  // login & sign up & update profile
+  // login & sign up
   String masseage;
   CasualStatus userModelStatus;
   UserModel? userModel;
-  CasualStatus clientprofileStatus;
-  UpdateClientProfileResponseModel? updateClientProfileResponseModel;
-  UpdateEmployeeProfileResponseModel? updateEmployeeProfileResponseModel;
-  CasualStatus programmerprofileStatus;
+  // update profile
+  CasualStatus clientProfileStatus;
+  CasualStatus programmerProfileStatus;
 
   // Role state
   CasualStatus roleClientListStatus;
@@ -18,37 +18,29 @@ class AuthState {
       {this.masseage = "",
       this.userModel,
       this.userModelStatus = CasualStatus.initial,
-      this.clientprofileStatus = CasualStatus.initial,
-      this.updateClientProfileResponseModel,
-      this.programmerprofileStatus = CasualStatus.initial,
-      this.updateEmployeeProfileResponseModel,
+      this.clientProfileStatus = CasualStatus.initial,
+      this.programmerProfileStatus = CasualStatus.initial,
       this.roleClientListStatus = CasualStatus.initial,
       this.roleClientList = const []});
 
   AuthState copyWith({
     String? masseage,
-    CasualStatus? authModelStatus,
+    CasualStatus? userModelStatus,
     UserModel? userModel,
-    CasualStatus? clientprofileStatus,
-    UpdateClientProfileResponseModel? updateClientProfileResponseModel,
-    CasualStatus? programmerprofileStatus,
-    UpdateEmployeeProfileResponseModel? updateEmployeeProfileResponseModel,
+    CasualStatus? clientProfileStatus,
+    CasualStatus? programmerProfileStatus,
     CasualStatus? roleClientListStatus,
     List<RoleModel>? roleClientList,
   }) {
     return AuthState(
-        masseage: masseage ?? this.masseage,
-        userModelStatus: authModelStatus ?? this.userModelStatus,
-        userModel: userModel ?? this.userModel,
-        clientprofileStatus: authModelStatus ?? this.clientprofileStatus,
-        updateClientProfileResponseModel: updateClientProfileResponseModel ??
-            this.updateClientProfileResponseModel,
-        programmerprofileStatus:
-            authModelStatus ?? this.programmerprofileStatus,
-        updateEmployeeProfileResponseModel:
-            updateEmployeeProfileResponseModel ??
-                this.updateEmployeeProfileResponseModel,
-        roleClientListStatus: roleClientListStatus ?? this.roleClientListStatus,
-        roleClientList: roleClientList ?? this.roleClientList);
+      masseage: masseage ?? this.masseage,
+      userModelStatus: userModelStatus ?? this.userModelStatus,
+      userModel: userModel ?? this.userModel,
+      clientProfileStatus: clientProfileStatus ?? this.clientProfileStatus,
+      programmerProfileStatus:
+          programmerProfileStatus ?? this.programmerProfileStatus,
+      roleClientListStatus: roleClientListStatus ?? this.roleClientListStatus,
+      roleClientList: roleClientList ?? this.roleClientList,
+    );
   }
 }

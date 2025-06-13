@@ -16,7 +16,7 @@ mixin HandlingExceptionManager {
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
     } catch (e) {
-      return Left(ServerFailure(message: ".message"));
+      return Left(ServerFailure(message: e.toString()));
     }
   }
 }

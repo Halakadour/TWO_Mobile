@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:two_mobile/core/api/failures.dart';
+import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/features/auth/data/datasource/auth_remote_datasource.dart';
 import 'package:two_mobile/features/auth/data/models/login_response_model.dart';
 import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';

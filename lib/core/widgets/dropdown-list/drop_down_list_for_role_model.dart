@@ -7,12 +7,10 @@ import 'package:two_mobile/features/auth/role/data/models/role_model.dart';
 class CustomDropdownListForRoleModel extends StatelessWidget {
   const CustomDropdownListForRoleModel({
     super.key,
-    required this.selectYour,
     required this.value,
     required this.items,
     required this.onChanged,
   });
-  final String selectYour;
   final RoleModel? value;
   final List<DropdownMenuItem<RoleModel>>? items;
   final void Function(RoleModel?)? onChanged;
@@ -38,10 +36,10 @@ class CustomDropdownListForRoleModel extends StatelessWidget {
         icon: const Icon(Icons.keyboard_arrow_down_sharp),
         elevation: 0,
         hint: Text(
-          "select your $selectYour",
-          style: AppTextStyle.subtitle03(color: AppColors.fontLightColor),
+          "select your role",
+          style: AppTextStyle.subtitle03(color: AppColors.fontDarkColor),
         ),
-        style: AppTextStyle.subtitle03(color: AppColors.fontLightColor),
+        style: AppTextStyle.subtitle03(color: AppColors.fontDarkColor),
         dropdownColor: AppColors.fieldfield,
         items: items,
         onChanged: onChanged,

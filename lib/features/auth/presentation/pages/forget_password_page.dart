@@ -66,11 +66,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               ),
               GradientOutlineButton(
                 onpressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return const AuthSuccessDialog();
-                      });
+                  showAuthSuccessDialog(context);
                 },
                 text: 'continue',
                 textColor: AppColors.cardColor,

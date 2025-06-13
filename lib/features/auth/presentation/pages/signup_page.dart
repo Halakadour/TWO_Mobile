@@ -5,7 +5,7 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/functions/bloc_state_handling/auth_state_handling.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/sign_Up_form.dart';
+import 'package:two_mobile/features/auth/presentation/widgets/forms/sign_up_form.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});

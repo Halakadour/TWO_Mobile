@@ -39,7 +39,10 @@ void showErrorDialog(BuildContext context, String errorMessage) {
                 onPressed: () {
                   context.pop();
                 },
-                child: const Text('OK'),
+                child: Text(
+                  'OK',
+                  style: AppTextStyle.buttonStyle(color: AppColors.redColor),
+                ),
               ),
             ],
           ),

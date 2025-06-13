@@ -24,6 +24,12 @@ class SizesConfig {
   static const double buttonWidth = 130.0;
   static const double buttonElevation = 4.0;
 
+  // Dialogs height & width
+  static const double dialogWidthSm = 150.0;
+  static const double dialogWidthMd = 250.0;
+  static const double dialogWidthLg = 350.0;
+  static const double dialogWidthXl = 450.0;
+
   // AppBar height
   static const double appbarHeight = 56.0;
 
