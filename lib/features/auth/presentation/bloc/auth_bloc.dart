@@ -6,8 +6,9 @@ import 'package:two_mobile/features/auth/domain/usecase/login_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/sign_up_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/update_client_profile_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/update_programmer_profile_usecase.dart';
-import 'package:two_mobile/features/auth/role/data/models/role_model.dart';
-import 'package:two_mobile/features/auth/role/domain/usecases/get_client_role_usecase.dart';
+import 'package:two_mobile/features/role/data/models/role_response_model.dart';
+import 'package:two_mobile/features/role/domain/usecases/show_role_client_usecase.dart';
+import 'package:two_mobile/features/role/domain/usecases/show_roles_without_client_usecase.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -22,14 +23,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   // Update programmer profile
   final UpdateProgrammerProfileUsecase updateProgrammerProfileUsecase;
   // show client role
-  final GetClientRoleUsecase getClientRoleUsecase;
+  final ShowClientRoleUsecase showClientRoleUsecase;
+  final ShowProgrammerRoleUsecase showProgrammerRoleUsecase;
 
   AuthBloc(
       {required this.signUpUsecase,
       required this.loginUsecase,
       required this.updateClientProfileUsecase,
       required this.updateProgrammerProfileUsecase,
-      required this.getClientRoleUsecase})
+      required this.showClientRoleUsecase,
+      required this.showProgrammerRoleUsecase})
       : super(AuthState()) {
     // login
     on<LoginEvent>((event, emit) async {
@@ -116,7 +119,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     // Get Client Role
     on<GetClientRoleEvent>((event, emit) async {
       emit(state.copyWith(roleClientListStatus: CasualStatus.loading));
-      final result = await getClientRoleUsecase.call();
+      final result = await showClientRoleUsecase.call();
       result.fold(
         (left) {
           emit(state.copyWith(
@@ -127,7 +130,26 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(
             state.copyWith(
                 roleClientListStatus: CasualStatus.success,
-                roleClientList: right),
+                roleClientList: right.data),
+          );
+        },
+      );
+    });
+    // Get Programmer Role
+    on<GetProgrammerRoleEvent>((event, emit) async {
+      emit(state.copyWith(roleProgrammerListStatus: CasualStatus.loading));
+      final result = await showProgrammerRoleUsecase.call();
+      result.fold(
+        (left) {
+          emit(state.copyWith(
+              roleProgrammerListStatus: CasualStatus.failure,
+              masseage: left.message));
+        },
+        (right) {
+          emit(
+            state.copyWith(
+                roleProgrammerListStatus: CasualStatus.success,
+                roleProgrammerList: right.data),
           );
         },
       );

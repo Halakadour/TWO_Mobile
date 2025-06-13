@@ -66,4 +66,27 @@ class AuthStateHandling {
       const SizedBox();
     }
   }
+
+  // fill progremmer profile
+  void fillProgrammerProfile(AuthState state, BuildContext context) {
+    if (state.programmerProfileStatus == CasualStatus.loading) {
+      showCustomLoadingDialog(context);
+    } else if (state.programmerProfileStatus == CasualStatus.success) {
+      context.pop();
+      showSuccessDialog(
+        context,
+        () {
+          context.pushReplacementNamed(AppRouteConfig.main);
+        },
+      );
+    } else if (state.programmerProfileStatus == CasualStatus.failure) {
+      context.pop();
+      showErrorDialog(context, state.masseage);
+    } else if (state.programmerProfileStatus == CasualStatus.noToken) {
+      context.pop();
+      doNotHaveAccountDialog(context);
+    } else {
+      const SizedBox();
+    }
+  }
 }

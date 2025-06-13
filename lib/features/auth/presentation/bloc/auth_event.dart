@@ -53,3 +53,6 @@ class UpdateProgrammerProfileEvent extends AuthEvent {
 
 // get client role
 class GetClientRoleEvent extends AuthEvent {}
+
+// get programmer role
+class GetProgrammerRoleEvent extends AuthEvent {}

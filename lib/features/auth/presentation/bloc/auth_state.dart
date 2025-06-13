@@ -13,6 +13,8 @@ class AuthState {
   // Role state
   CasualStatus roleClientListStatus;
   List<RoleModel> roleClientList;
+  CasualStatus roleProgrammerListStatus;
+  List<RoleModel> roleProgrammerList;
 
   AuthState(
       {this.masseage = "",
@@ -21,7 +23,9 @@ class AuthState {
       this.clientProfileStatus = CasualStatus.initial,
       this.programmerProfileStatus = CasualStatus.initial,
       this.roleClientListStatus = CasualStatus.initial,
-      this.roleClientList = const []});
+      this.roleClientList = const [],
+      this.roleProgrammerListStatus = CasualStatus.initial,
+      this.roleProgrammerList = const []});
 
   AuthState copyWith({
     String? masseage,
@@ -31,6 +35,8 @@ class AuthState {
     CasualStatus? programmerProfileStatus,
     CasualStatus? roleClientListStatus,
     List<RoleModel>? roleClientList,
+    CasualStatus? roleProgrammerListStatus,
+    List<RoleModel>? roleProgrammerList,
   }) {
     return AuthState(
       masseage: masseage ?? this.masseage,
@@ -41,6 +47,9 @@ class AuthState {
           programmerProfileStatus ?? this.programmerProfileStatus,
       roleClientListStatus: roleClientListStatus ?? this.roleClientListStatus,
       roleClientList: roleClientList ?? this.roleClientList,
+      roleProgrammerListStatus:
+          roleProgrammerListStatus ?? this.roleProgrammerListStatus,
+      roleProgrammerList: roleProgrammerList ?? this.roleProgrammerList,
     );
   }
 }

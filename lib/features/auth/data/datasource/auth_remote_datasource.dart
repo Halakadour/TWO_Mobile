@@ -38,7 +38,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
   @override
   Future<LoginResponseModel> login(String email, String password) async {
     final result = PostApi(
-        uri: Uri.parse("$baseuri/api/login"),
+        uri: Uri.parse("$baseUri/api/login"),
         body: ({"email": email, "password": password}),
         fromJson: loginResponseModelFromJson);
     return await result.call();
@@ -49,7 +49,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
   Future<SignupResponseModel> signup(String name, String email, String password,
       String passwordConfirmation) async {
     final result = PostApi(
-        uri: Uri.parse("$baseuri/api/register"),
+        uri: Uri.parse("$baseUri/api/register"),
         body: ({
           "name": name,
           "email": email,
@@ -65,7 +65,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
   Future<UpdateClientProfileResponseModel> cleintUpdateProfile(
       String token, String roleId, String image) async {
     final result = PostApiWithToken(
-        uri: Uri.parse("$baseuri/api/update/freelancer/profile"),
+        uri: Uri.parse("$baseUri/api/update/freelancer/profile"),
         body: ({
           "role_id": roleId,
           "image": image,
@@ -84,7 +84,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
     String roleId,
   ) async {
     final result = PostApiWithToken(
-      uri: Uri.parse("$baseuri/api/update/employee/profile"),
+      uri: Uri.parse("$baseUri/api/update/employee/profile"),
       token: token,
       body: ({
         "image": image,

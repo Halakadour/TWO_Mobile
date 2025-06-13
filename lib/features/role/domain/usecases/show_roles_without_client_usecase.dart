@@ -1,0 +1,17 @@
+import 'package:dartz/dartz.dart';
+import 'package:two_mobile/core/error/failures.dart';
+import 'package:two_mobile/core/usecase/no_param_usecase.dart';
+import 'package:two_mobile/features/role/data/models/role_response_model.dart';
+import 'package:two_mobile/features/role/domain/repos/role_repo.dart';
+
+class ShowProgrammerRoleUsecase
+    extends NoParamUsecase<Future<Either<Failure, RoleResponesModel>>> {
+  final RoleRepo roleRepo;
+
+  ShowProgrammerRoleUsecase(this.roleRepo);
+
+  @override
+  Future<Either<Failure, RoleResponesModel>> call() {
+    return roleRepo.showProgrammerRole();
+  }
+}
