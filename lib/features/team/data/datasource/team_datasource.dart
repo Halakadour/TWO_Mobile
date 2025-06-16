@@ -1,8 +1,9 @@
 import 'package:two_mobile/config/constants/baseuri.dart';
 
 import 'package:two_mobile/core/api/post_api_with_token.dart';
+import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
 
-import 'package:two_mobile/features/team/data/model/team_response_model.dart';
+import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
 
 abstract class TeamDatasource {
 // create team
@@ -12,13 +13,24 @@ abstract class TeamDatasource {
     String treamMember,
     String token,
   );
+
+// add members
+  Future<AddMembersResponseModel> addMember(
+    String teamId,
+    List<int> teamMembers,
+    String token,
+  );
 }
 
 class TeamDatasourceImpl extends TeamDatasource {
   // create team
   @override
   Future<TeamResponseModel> createTeam(
-      String name, String teamManager, String treamMember, String token) async {
+    String name,
+    String teamManager,
+    String treamMember,
+    String token,
+  ) async {
     final result = PostApiWithToken(
         token: token,
         uri: Uri.parse("{{$baseUri}}/api/create/team"),
@@ -28,6 +40,24 @@ class TeamDatasourceImpl extends TeamDatasource {
           "team_member": treamMember
         }),
         fromJson: TeamResponseModelFromJson);
+    return await result.call();
+  }
+
+  // add members
+  @override
+  Future<AddMembersResponseModel> addMember(
+    String teamId,
+    List<int> teamMembers,
+    String token,
+  ) async {
+    final result = PostApiWithToken(
+        uri: Uri.parse("{{$baseUri}}/api/add/members"),
+        token: token,
+        body: ({
+          "team_id": teamId,
+          "team_members": teamMembers,
+        }),
+        fromJson: addMembersResponseModelFromJson);
     return await result.call();
   }
 }

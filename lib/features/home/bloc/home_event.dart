@@ -13,3 +13,14 @@ class CreateTeamEvent extends HomeEvent {
     required this.teamMember,
   });
 }
+
+// add members
+class AddMemberEvent extends HomeEvent {
+  final String teamId;
+  final List<int> teamMembers;
+
+  AddMemberEvent({
+    required this.teamId,
+    required this.teamMembers,
+  });
+}
