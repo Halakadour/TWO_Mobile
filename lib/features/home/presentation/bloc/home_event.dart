@@ -6,7 +6,7 @@ abstract class HomeEvent {}
 class CreateTeamEvent extends HomeEvent {
   final String name;
   final String teamManager;
-  final String teamMember;
+  final List<int> teamMember;
   CreateTeamEvent({
     required this.name,
     required this.teamManager,

@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final addMembersResponseModel = addMembersResponseModelFromJson(jsonString);
-
 import 'dart:convert';
 
 AddMembersResponseModel addMembersResponseModelFromJson(String str) =>

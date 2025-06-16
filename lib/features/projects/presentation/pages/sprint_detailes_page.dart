@@ -13,8 +13,8 @@ import 'package:two_mobile/features/projects/presentation/widgets/customicon&tex
 import 'package:two_mobile/features/projects/presentation/widgets/customtabbar.dart';
 
 class SprintDetailesPage extends StatelessWidget {
-  double _ProgressValue = 0.63;
-  SprintDetailesPage({super.key});
+  const SprintDetailesPage({super.key});
+  final double _ProgressValue = 0.63;
 
   @override
   Widget build(BuildContext context) {

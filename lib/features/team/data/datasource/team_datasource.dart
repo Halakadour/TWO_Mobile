@@ -8,17 +8,18 @@ import 'package:two_mobile/features/team/data/model/create_team_response_model.d
 abstract class TeamDatasource {
 // create team
   Future<TeamResponseModel> createTeam(
+    String token,
     String name,
     String teamManager,
-    String treamMember,
-    String token,
+    // Change from String to List<int>
+    List<int> treamMember,
   );
 
 // add members
   Future<AddMembersResponseModel> addMember(
+    String token,
     String teamId,
     List<int> teamMembers,
-    String token,
   );
 }
 
@@ -26,10 +27,10 @@ class TeamDatasourceImpl extends TeamDatasource {
   // create team
   @override
   Future<TeamResponseModel> createTeam(
+    String token,
     String name,
     String teamManager,
-    String treamMember,
-    String token,
+    List<int> treamMember,
   ) async {
     final result = PostApiWithToken(
         token: token,
@@ -39,16 +40,16 @@ class TeamDatasourceImpl extends TeamDatasource {
           "team_manager": teamManager,
           "team_member": treamMember
         }),
-        fromJson: TeamResponseModelFromJson);
+        fromJson: teamResponseModelFromJson);
     return await result.call();
   }
 
   // add members
   @override
   Future<AddMembersResponseModel> addMember(
+    String token,
     String teamId,
     List<int> teamMembers,
-    String token,
   ) async {
     final result = PostApiWithToken(
         uri: Uri.parse("{{$baseUri}}/api/add/members"),

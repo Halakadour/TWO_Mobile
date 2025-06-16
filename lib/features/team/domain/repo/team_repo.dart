@@ -1,20 +1,19 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/core/error/handling_exception_manager.dart';
-import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
-import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
 
 abstract class TeamRepo with HandlingExceptionManager {
+  // change the return type to Unit whiche mean void cause we need data
   // create team
-  Future<Either<Failure, TeamResponseModel>> createTeam(
+  Future<Either<Failure, Unit>> createTeam(
     String name,
     String teamManager,
-    String treamMember,
+    List<int> treamMember,
     String token,
   );
 
   // add members
-  Future<Either<Failure, AddMembersResponseModel>> addMember(
+  Future<Either<Failure, Unit>> addMember(
     String teamId,
     List<int> teamMembers,
     String token,

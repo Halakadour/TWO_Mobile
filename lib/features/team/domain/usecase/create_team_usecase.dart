@@ -1,16 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/core/usecase/usecase.dart';
-import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
 import 'package:two_mobile/features/team/domain/repo/team_repo.dart';
 
-class CreateTeamUsecase extends Usecase<
-    Future<Either<Failure, TeamResponseModel>>, CreateTeamParams> {
+class CreateTeamUsecase
+    extends Usecase<Future<Either<Failure, Unit>>, CreateTeamParams> {
   final TeamRepo teamRepo;
   CreateTeamUsecase({required this.teamRepo});
 
   @override
-  Future<Either<Failure, TeamResponseModel>> call(CreateTeamParams param) {
+  Future<Either<Failure, Unit>> call(CreateTeamParams param) {
     return teamRepo.createTeam(
       param.name,
       param.teamManager,
@@ -23,7 +22,7 @@ class CreateTeamUsecase extends Usecase<
 class CreateTeamParams {
   String name;
   String teamManager;
-  String treamMember;
+  List<int> treamMember;
   String token;
   CreateTeamParams(
       {required this.name,
