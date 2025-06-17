@@ -3,8 +3,10 @@ import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
 import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
 import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
+import 'package:two_mobile/features/team/domain/entity/team_entity.dart';
 import 'package:two_mobile/features/team/domain/usecase/add_members_usecase.dart';
 import 'package:two_mobile/features/team/domain/usecase/create_team_usecase.dart';
+import 'package:two_mobile/features/team/domain/usecase/show_team_usecase.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
@@ -12,7 +14,9 @@ part 'home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final CreateTeamUsecase createTeamUsecase;
   final AddMembersUsecase addMembersUsecase;
-  HomeBloc({required this.createTeamUsecase, required this.addMembersUsecase})
+  final ShowTeamUsecase showTeamUsecase;
+  HomeBloc(this.showTeamUsecase,
+      {required this.createTeamUsecase, required this.addMembersUsecase})
       : super(HomeState()) {
     // create team
     on<CreateTeamEvent>((event, emit) async {
@@ -62,6 +66,25 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       } else {
         emit(state.copyWith(addMemberStatus: CasualStatus.noToken));
       }
+    });
+
+    // show team
+    on<ShowTeamEvent>((event, emit) async {
+      emit(state.copyWith(showTeamStatus: CasualStatus.loading));
+      final result = await showTeamUsecase.call();
+      result.fold(
+          (l) => emit(
+                state.copyWith(
+                  showTeamStatus: CasualStatus.failure,
+                  messageShowTeam: l.message,
+                ),
+              ),
+          (r) => emit(
+                state.copyWith(
+                  showTeamStatus: CasualStatus.success,
+                  listTeam: r,
+                ),
+              ));
     });
   }
 }

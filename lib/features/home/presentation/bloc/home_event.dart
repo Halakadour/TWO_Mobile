@@ -24,3 +24,6 @@ class AddMemberEvent extends HomeEvent {
     required this.teamMembers,
   });
 }
+
+// show team
+class ShowTeamEvent extends HomeEvent {}
