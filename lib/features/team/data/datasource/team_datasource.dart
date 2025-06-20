@@ -1,4 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
 import 'package:two_mobile/config/constants/baseuri.dart';
 import 'package:two_mobile/core/api/get_api.dart';
 import 'package:two_mobile/core/api/post_api_with_token.dart';

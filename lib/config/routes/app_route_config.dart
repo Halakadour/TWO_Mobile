@@ -26,6 +26,12 @@ class AppRouteConfig {
   // RecentProjects
   static const recentproject = 'recentproject';
 
+  // Add Team Member Page
+  static const addteammember = 'addteammember';
+
+  // Make Team Page
+  static const maketeam = 'maketeam';
+
   // TodayTasks
   static const todaytask = 'todaytask';
 

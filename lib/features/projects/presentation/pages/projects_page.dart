@@ -44,7 +44,7 @@ class ProjectsPage extends StatelessWidget {
                           ),
                         ),
                         TextFieldPage(
-                          height: 60,
+                          height: 55,
                           width: 340,
                           Bordercolor: AppColors.iconColor,
                           textfield: AppColors.cardColor,

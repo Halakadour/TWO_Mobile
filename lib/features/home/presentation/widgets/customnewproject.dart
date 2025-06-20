@@ -1,13 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:two_mobile/config/constants/padding_config.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
-import 'package:two_mobile/features/home/presentation/pages/add_project_manager_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/add_team_member_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customborderpainter.dart';
+import 'package:two_mobile/features/home/presentation/widgets/customvisibility.dart';
 import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
 
 class CustomNewProject extends StatelessWidget {
@@ -48,7 +50,7 @@ class CustomNewProject extends StatelessWidget {
                 height: 35,
               ),
               TextFieldPage(
-                height: 60,
+                height: 55,
                 width: 340,
                 Bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
@@ -60,14 +62,29 @@ class CustomNewProject extends StatelessWidget {
                 iconcolor: AppColors.fontLightColor,
                 bordercolor: AppColors.fieldfield,
               ),
+              PaddingConfig.h8,
+              TextFieldPage(
+                height: 120,
+                width: 340,
+                Bordercolor: AppColors.fieldfield,
+                textfield: AppColors.blackColor,
+                color: AppColors.fieldfield,
+                prefix: null,
+                suffix: null,
+                text: 'Project Description',
+                textcolor: AppColors.fontLightColor,
+                iconcolor: AppColors.fontLightColor,
+                bordercolor: AppColors.fieldfield,
+              ),
+              PaddingConfig.h8,
               Padding(
-                padding: const EdgeInsets.only(top: 18, right: 18, left: 18),
+                padding: const EdgeInsets.only(right: 20, left: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextFieldPage(
-                      height: 80,
-                      width: 170,
+                      height: 65,
+                      width: 160,
                       Bordercolor: AppColors.fieldfield,
                       textfield: AppColors.blackColor,
                       color: AppColors.fieldfield,
@@ -79,8 +96,8 @@ class CustomNewProject extends StatelessWidget {
                       bordercolor: AppColors.fieldfield,
                     ),
                     TextFieldPage(
-                      height: 80,
-                      width: 170,
+                      height: 65,
+                      width: 160,
                       Bordercolor: AppColors.fieldfield,
                       textfield: AppColors.blackColor,
                       color: AppColors.fieldfield,
@@ -94,37 +111,30 @@ class CustomNewProject extends StatelessWidget {
                   ],
                 ),
               ),
+              PaddingConfig.h8,
+              Customvisibility(),
+              PaddingConfig.h24,
               Customborderpainter(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddProjectManagerPage()));
-                },
-                text: 'Add Manager',
-              ),
-              SizedBox(height: 20),
-              Customborderpainter(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddTeamMemberPage()));
+                  context.pushReplacementNamed(AppRouteConfig.addteammember);
                 },
                 text: 'Add Team',
               ),
               SizedBox(height: 20),
               Customborderpainter(
-                onTap: () {},
+                onTap: () {
+                  context.pushReplacementNamed(AppRouteConfig.maketeam);
+                },
                 text: 'Add Contract',
               ),
-              SizedBox(height: 30),
+              PaddingConfig.h24,
               GradientOutlineButton(
                 buttonColor: AppColors.buttonColor,
                 textColor: AppColors.cardColor,
                 onpressed: () {},
                 text: 'create project',
-              )
+              ),
+              PaddingConfig.h16,
             ],
           ),
         ),

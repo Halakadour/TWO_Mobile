@@ -36,17 +36,19 @@ class TextFieldPage extends StatelessWidget {
       height: height,
       width: width,
       child: TextField(
+          maxLines: null,
+          expands: true,
+          textAlignVertical: TextAlignVertical.top,
           style: AppTextStyle.subtitle02(color: textfield),
           decoration: InputDecoration(
               filled: true,
               fillColor: color,
               hintText: text,
               hintStyle: AppTextStyle.subtitle02(color: textcolor),
-              prefixIcon: Icon(prefix, color: iconcolor),
-              suffixIcon: Icon(
-                suffix,
-                color: iconcolor,
-              ),
+              prefixIcon:
+                  prefix != null ? Icon(prefix, color: iconcolor) : null,
+              suffixIcon:
+                  suffix != null ? Icon(suffix, color: iconcolor) : null,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
                 borderSide: BorderSide(
