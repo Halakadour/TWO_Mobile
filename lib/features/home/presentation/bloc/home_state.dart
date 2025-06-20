@@ -12,7 +12,7 @@ class HomeState {
   // show team
   CasualStatus showTeamStatus;
   String messageShowTeam;
-  List<TeamEntity> listTeam;
+  List<TeamModel> listTeam;
 
   HomeState({
     // create team
@@ -42,7 +42,7 @@ class HomeState {
     // show team
     String? messageShowTeam,
     CasualStatus? showTeamStatus,
-    List<TeamEntity>? listTeam,
+    List<TeamModel>? listTeam,
   }) {
     return HomeState(
       // create team

@@ -13,7 +13,7 @@ String showTeamResponseModelToJson(ShowTeamResponseModel data) =>
 class ShowTeamResponseModel {
   final int status;
   final String msg;
-  final List<Datum> data;
+  final List<TeamModel> data;
 
   ShowTeamResponseModel({
     required this.status,
@@ -25,7 +25,8 @@ class ShowTeamResponseModel {
       ShowTeamResponseModel(
         status: json["status"],
         msg: json["msg"],
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        data: List<TeamModel>.from(
+            json["data"].map((x) => TeamModel.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -35,18 +36,18 @@ class ShowTeamResponseModel {
       };
 }
 
-class Datum {
+class TeamModel {
   final int id;
   final String name;
   final List<Member> members;
 
-  Datum({
+  TeamModel({
     required this.id,
     required this.name,
     required this.members,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory TeamModel.fromJson(Map<String, dynamic> json) => TeamModel(
         id: json["id"],
         name: json["name"],
         members:

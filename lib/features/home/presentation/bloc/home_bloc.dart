@@ -3,7 +3,7 @@ import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
 import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
 import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
-import 'package:two_mobile/features/team/domain/entity/team_entity.dart';
+import 'package:two_mobile/features/team/data/model/show_team_response_model.dart';
 import 'package:two_mobile/features/team/domain/usecase/add_members_usecase.dart';
 import 'package:two_mobile/features/team/domain/usecase/create_team_usecase.dart';
 import 'package:two_mobile/features/team/domain/usecase/show_team_usecase.dart';
@@ -15,9 +15,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final CreateTeamUsecase createTeamUsecase;
   final AddMembersUsecase addMembersUsecase;
   final ShowTeamUsecase showTeamUsecase;
-  HomeBloc(this.showTeamUsecase,
-      {required this.createTeamUsecase, required this.addMembersUsecase})
-      : super(HomeState()) {
+  HomeBloc({
+    required this.createTeamUsecase,
+    required this.addMembersUsecase,
+    required this.showTeamUsecase,
+  }) : super(HomeState()) {
     // create team
     on<CreateTeamEvent>((event, emit) async {
       emit(state.copyWith(createTeamStatus: CasualStatus.loading));

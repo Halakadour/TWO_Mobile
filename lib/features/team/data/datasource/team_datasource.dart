@@ -1,4 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
 import 'package:two_mobile/config/constants/baseuri.dart';
 import 'package:two_mobile/core/api/get_api.dart';
 import 'package:two_mobile/core/api/post_api_with_token.dart';
@@ -37,7 +36,7 @@ class TeamDatasourceImpl extends TeamDatasource {
   ) async {
     final result = PostApiWithToken(
         token: token,
-        uri: Uri.parse("{{$baseUri}}/api/create/team"),
+        uri: Uri.parse("$baseUri/api/create/team"),
         body: ({
           "name": name,
           "team_manager": teamManager,
@@ -55,7 +54,7 @@ class TeamDatasourceImpl extends TeamDatasource {
     List<int> teamMembers,
   ) async {
     final result = PostApiWithToken(
-        uri: Uri.parse("{{$baseUri}}/api/add/members"),
+        uri: Uri.parse("$baseUri/api/add/members"),
         token: token,
         body: ({
           "team_id": teamId,
@@ -69,7 +68,7 @@ class TeamDatasourceImpl extends TeamDatasource {
   @override
   Future<ShowTeamResponseModel> showTeam() async {
     final result = GetApi(
-        uri: Uri.parse("{{$baseUri}}/api/show/teams"),
+        uri: Uri.parse("$baseUri/api/show/teams"),
         fromJson: showTeamResponseModelFromJson);
     return await result.callRequest();
   }

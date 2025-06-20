@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/features/team/data/datasource/team_datasource.dart';
-import 'package:two_mobile/features/team/domain/entity/team_entity.dart';
+import 'package:two_mobile/features/team/data/model/show_team_response_model.dart';
 import 'package:two_mobile/features/team/domain/repo/team_repo.dart';
 
 class TeamRepoImpl extends TeamRepo {
@@ -39,11 +39,11 @@ class TeamRepoImpl extends TeamRepo {
 
   // show team
   @override
-  Future<Either<Failure, List<TeamEntity>>> showTeam() {
+  Future<Either<Failure, List<TeamModel>>> showTeam() {
     return wrapHandling(tryCall: () async {
       await teamDatasource.showTeam();
       final result = await teamDatasource.showTeam();
-      return Right(result.data.cast<TeamEntity>());
+      return Right(result.data);
     });
   }
 }

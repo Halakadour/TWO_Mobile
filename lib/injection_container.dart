@@ -22,6 +22,7 @@ import 'package:two_mobile/features/team/data/repo/team_impl.dart';
 import 'package:two_mobile/features/team/domain/repo/team_repo.dart';
 import 'package:two_mobile/features/team/domain/usecase/add_members_usecase.dart';
 import 'package:two_mobile/features/team/domain/usecase/create_team_usecase.dart';
+import 'package:two_mobile/features/team/domain/usecase/show_team_usecase.dart';
 
 final sl = GetIt.instance;
 
@@ -53,10 +54,10 @@ Future<void> init() async {
     () => AuthRemoteDatasourceImpl(),
   );
 
-  /**----------------- HONE FEATURE -----------------------**/
+  /**----------------- HOME FEATURE -----------------------**/
   // Bloc
-  sl.registerFactory(
-      () => HomeBloc(createTeamUsecase: sl(), addMembersUsecase: sl()));
+  sl.registerFactory(() => HomeBloc(
+      showTeamUsecase: sl(), addMembersUsecase: sl(), createTeamUsecase: sl()));
 
   /**----------------- ROLE FEATURE -----------------------**/
   // Usecase
@@ -79,6 +80,7 @@ Future<void> init() async {
   // Usecase
   sl.registerLazySingleton(() => CreateTeamUsecase(teamRepo: sl()));
   sl.registerLazySingleton(() => AddMembersUsecase(teamRepo: sl()));
+  sl.registerLazySingleton(() => ShowTeamUsecase(teamRepo: sl()));
 
   // Repos
   sl.registerLazySingleton<TeamRepo>(() => TeamRepoImpl(teamDatasource: sl()));
