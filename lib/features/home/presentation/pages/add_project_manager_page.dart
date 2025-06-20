@@ -34,7 +34,7 @@ class AddProjectManagerPage extends StatelessWidget {
                   text: 'Add Project Manger '),
               SizedBox(height: 25),
               TextFieldPage(
-                height: 60,
+                height: 55,
                 width: 340,
                 Bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,

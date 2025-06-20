@@ -99,8 +99,8 @@ class AddNewTaskPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextFieldPage(
-                    height: 80,
-                    width: 170,
+                    height: 60,
+                    width: 160,
                     Bordercolor: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,
@@ -112,8 +112,8 @@ class AddNewTaskPage extends StatelessWidget {
                     bordercolor: AppColors.fieldfield,
                   ),
                   TextFieldPage(
-                    height: 80,
-                    width: 170,
+                    height: 60,
+                    width: 160,
                     Bordercolor: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,

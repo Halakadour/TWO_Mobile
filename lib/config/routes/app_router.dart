@@ -4,8 +4,10 @@ import 'package:two_mobile/features/auth/presentation/pages/client_fill_profile_
 import 'package:two_mobile/features/auth/presentation/pages/forget_password_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/programmer_fill_profile_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_new_task_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/add_team_member_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/recentproject_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/todattask_page.dart';
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
@@ -91,6 +93,16 @@ class AppRouter {
       name: AppRouteConfig.recentproject,
       path: '/recentproject',
       builder: (context, state) => const RecentprojectPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.addteammember,
+      path: '/addteammember',
+      builder: (context, state) => const AddTeamMemberPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.maketeam,
+      path: '/maketeam',
+      builder: (context, state) => const MakeTeamPage(),
     ),
     GoRoute(
       name: AppRouteConfig.todaytask,

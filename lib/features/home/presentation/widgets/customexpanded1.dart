@@ -56,7 +56,7 @@ class CustomExpanded1 extends StatelessWidget {
                   height: 15,
                 ),
                 TextFieldPage(
-                  height: 60,
+                  height: 55,
                   width: 340,
                   Bordercolor: AppColors.iconColor,
                   textfield: AppColors.cardColor,

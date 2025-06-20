@@ -41,7 +41,7 @@ class MakeTeamPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               TextFieldPage(
-                height: 70,
+                height: 55,
                 width: 340,
                 Bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
