@@ -23,7 +23,7 @@ import '../../features/intro/pages/splash_page.dart';
 import 'app_route_config.dart';
 
 class AppRouter {
-  GoRouter router = GoRouter(initialLocation: '/addnewtask', routes: [
+  GoRouter router = GoRouter(initialLocation: '/', routes: [
     GoRoute(
       name: AppRouteConfig.splash,
       path: '/',
