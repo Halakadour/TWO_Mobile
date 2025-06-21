@@ -10,6 +10,7 @@ import 'package:two_mobile/features/auth/domain/usecase/sign_up_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/update_client_profile_usecase.dart';
 import 'package:two_mobile/features/auth/domain/usecase/update_programmer_profile_usecase.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
 import 'package:two_mobile/features/role/data/datasources/role_local_datasource.dart';
 import 'package:two_mobile/features/role/data/datasources/role_remote_datasource.dart';
 import 'package:two_mobile/features/role/data/repos/role_repo_impl.dart';
@@ -55,11 +56,9 @@ Future<void> init() async {
 
   /**----------------- HOME FEATURE -----------------------**/
   // Bloc
-<<<<<<< HEAD
+
   sl.registerFactory(() => HomeBloc(
       showTeamUsecase: sl(), addMembersUsecase: sl(), createTeamUsecase: sl()));
-=======
->>>>>>> 3fe323bd44e64d3bf778b170e28cf0a721572eca
 
   /**----------------- ROLE FEATURE -----------------------**/
   // Usecase
