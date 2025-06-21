@@ -1,3 +1,5 @@
+import 'package:two_mobile/features/home/presentation/pages/task_detatials_page.dart';
+
 class AppRouteConfig {
   // WELCOME //
   static const splash = 'splash';
@@ -34,6 +36,9 @@ class AppRouteConfig {
 
   // TodayTasks
   static const todaytask = 'todaytask';
+
+  // Task Details Page
+  static const taskdetatialspage = 'taskdetatialspage';
 
   // calendar
   static const calendar = 'calendar';

@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_new_task_page.dart';
@@ -68,15 +70,20 @@ class TodayTaskPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            TodayTask(
-              textcolor: AppColors.mainblue,
-              title: 'create leading page',
-              priority: 'Low',
-              time: '10: 00 am - 10: 30 am',
-              status: 'completed',
-              priopritycolor: AppColors.mainblue,
-              statuscolor: AppColors.mainColor,
-              iconcolor: AppColors.mainblue,
+            GestureDetector(
+              onTap: () {
+                context.pushReplacementNamed(AppRouteConfig.taskdetatialspage);
+              },
+              child: TodayTask(
+                textcolor: AppColors.mainblue,
+                title: 'create leading page',
+                priority: 'Low',
+                time: '10: 00 am - 10: 30 am',
+                status: 'completed',
+                priopritycolor: AppColors.mainblue,
+                statuscolor: AppColors.mainColor,
+                iconcolor: AppColors.mainblue,
+              ),
             ),
             TodayTask(
               textcolor: AppColors.mainyallow,

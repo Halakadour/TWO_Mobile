@@ -6,14 +6,23 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customborderpainter.dart';
+import 'package:two_mobile/features/home/presentation/widgets/customuser_selector_widget.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
 import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
 import 'package:two_mobile/features/projects/presentation/pages/project_detailes_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/sprint_detailes_page.dart';
 
-class AddNewTaskPage extends StatelessWidget {
+class AddNewTaskPage extends StatefulWidget {
   const AddNewTaskPage({super.key});
+
+  @override
+  State<AddNewTaskPage> createState() => _AddNewTaskPageState();
+}
+
+class _AddNewTaskPageState extends State<AddNewTaskPage> {
+  List<User> selectedUsers = [];
+  final GlobalKey<UserSelectorWidgetState> _userSelectorKey =
+      GlobalKey<UserSelectorWidgetState>();
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +34,17 @@ class AddNewTaskPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Customiconback(
-                  onpressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProjectDetailesPage()));
-                  },
-                  text: 'Add New Task'),
-              PaddingConfig.h8,
-              Text(
-                'Title',
-                style: AppTextStyle.subtitle01(),
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProjectDetailesPage()),
+                  );
+                },
+                text: 'Add New Task',
               ),
+              PaddingConfig.h8,
+              Text('Title', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
               TextFieldPage(
                 height: 60,
@@ -52,10 +60,7 @@ class AddNewTaskPage extends StatelessWidget {
                 bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
-              Text(
-                'Description',
-                style: AppTextStyle.subtitle01(),
-              ),
+              Text('Description', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
               TextFieldPage(
                 height: 60,
@@ -71,10 +76,7 @@ class AddNewTaskPage extends StatelessWidget {
                 bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
-              Text(
-                'Status',
-                style: AppTextStyle.subtitle01(),
-              ),
+              Text('Status', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
               TextFieldPage(
                 height: 60,
@@ -90,10 +92,7 @@ class AddNewTaskPage extends StatelessWidget {
                 bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
-              Text(
-                'Due Date',
-                style: AppTextStyle.subtitle01(),
-              ),
+              Text('Due Date', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -126,10 +125,8 @@ class AddNewTaskPage extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
-                'Priority',
-                style: AppTextStyle.subtitle01(),
-              ),
+              PaddingConfig.h16,
+              Text('Priority', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
               TextFieldPage(
                 height: 60,
@@ -145,25 +142,41 @@ class AddNewTaskPage extends StatelessWidget {
                 bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h8,
-              Text(
-                'Assign user',
-                style: AppTextStyle.heading04(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Assign user', style: AppTextStyle.heading04()),
+                  if (selectedUsers.isNotEmpty)
+                    GestureDetector(
+                      onTap: () {
+                        _userSelectorKey.currentState?.openBottomSheet();
+                      },
+                      child: Text(
+                        'Change User',
+                        style:
+                            AppTextStyle.subtitle01(color: AppColors.maingreen),
+                      ),
+                    ),
+                ],
               ),
               PaddingConfig.h24,
-              Center(
-                child: Customborderpainter(
-                  onTap: () {},
-                  text: 'Add Team',
-                ),
-              ),
+              UserSelectorWidget(
+                  key: _userSelectorKey,
+                  selectedUsers: selectedUsers,
+                  onUsersSelected: (User) {
+                    setState(() {
+                      selectedUsers = User;
+                    });
+                  }),
               PaddingConfig.h16,
               Center(
                 child: GradientOutlineButton(
                   onpressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SprintDetailesPage()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SprintDetailesPage()),
+                    );
                   },
                   text: 'Create Sprint',
                   textColor: AppColors.cardColor,

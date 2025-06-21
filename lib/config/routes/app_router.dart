@@ -9,6 +9,7 @@ import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/recentproject_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/task_detatials_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/todattask_page.dart';
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
 import 'package:two_mobile/features/intro/pages/on_board_page.dart';
@@ -108,6 +109,11 @@ class AppRouter {
       name: AppRouteConfig.todaytask,
       path: '/todaytask',
       builder: (context, state) => const TodayTaskPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.taskdetatialspage,
+      path: '/taskdetatialspage',
+      builder: (context, state) => const TaskDetatialsPage(),
     ),
     GoRoute(
       name: AppRouteConfig.calendar,
