@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
+import 'package:two_mobile/features/projects/domain/usecase/update_project_usecase.dart';
 import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
 import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
 import 'package:two_mobile/features/team/data/model/team_model.dart';
@@ -11,15 +12,23 @@ import 'package:two_mobile/features/team/domain/usecase/show_team_usecase.dart';
 part 'home_event.dart';
 part 'home_state.dart';
 
+// team & project bloc
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
+  // team object from usecase
   final CreateTeamUsecase createTeamUsecase;
   final AddMembersUsecase addMembersUsecase;
   final ShowTeamUsecase showTeamUsecase;
+
+  // porject object from usecase
+  final UpdateProjectUsecase updateProjectUsecase;
   HomeBloc({
+    required this.updateProjectUsecase,
     required this.createTeamUsecase,
     required this.addMembersUsecase,
     required this.showTeamUsecase,
   }) : super(HomeState()) {
+//------------------team bloc ---------------------//
+
     // create team
     on<CreateTeamEvent>((event, emit) async {
       emit(state.copyWith(createTeamStatus: CasualStatus.loading));
@@ -85,6 +94,41 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                 state.copyWith(
                   showTeamStatus: CasualStatus.success,
                   listTeam: r,
+                ),
+              ));
+    });
+
+    // --------------- project bloc ----------------//
+
+    // update project
+    on<UpdateProjectEvent>((event, emit) async {
+      emit(state.copyWith(updateProjectStatus: CasualStatus.loading));
+      final result = await updateProjectUsecase.call(UpdateParameters(
+          flullName: event.flullName,
+          companyName: event.companyName,
+          email: event.email,
+          phone: event.phone,
+          projectType: event.projectType,
+          projectDescraption: event.projectDescraption,
+          cost: event.cost,
+          duration: event.duration,
+          document: event.document,
+          requirements: event.requirements,
+          cooperationType: event.cooperationType,
+          contactTime: event.contactTime,
+          private: event.private,
+          projectId: event.projectId,
+          token: event.token));
+      result.fold(
+          (l) => emit(
+                state.copyWith(
+                  updateProjectStatus: CasualStatus.failure,
+                  messageUpdateProject: l.message,
+                ),
+              ),
+          (r) => emit(
+                state.copyWith(
+                  updateProjectStatus: CasualStatus.success,
                 ),
               ));
     });

@@ -27,3 +27,39 @@ class AddMemberEvent extends HomeEvent {
 
 // show team
 class ShowTeamEvent extends HomeEvent {}
+
+// update project
+class UpdateProjectEvent extends HomeEvent {
+  String flullName;
+  String companyName;
+  String email;
+  String phone;
+  String projectType;
+  String projectDescraption;
+  String cost;
+  String duration;
+  String requirements;
+  String document;
+  String cooperationType;
+  String contactTime;
+  String private;
+  String projectId;
+  String token;
+  UpdateProjectEvent({
+    required this.flullName,
+    required this.companyName,
+    required this.email,
+    required this.phone,
+    required this.projectType,
+    required this.projectDescraption,
+    required this.cost,
+    required this.duration,
+    required this.document,
+    required this.requirements,
+    required this.cooperationType,
+    required this.contactTime,
+    required this.private,
+    required this.projectId,
+    required this.token,
+  });
+}

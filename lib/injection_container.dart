@@ -60,7 +60,10 @@ Future<void> init() async {
   // Bloc
 
   sl.registerFactory(() => HomeBloc(
-      showTeamUsecase: sl(), addMembersUsecase: sl(), createTeamUsecase: sl()));
+      showTeamUsecase: sl(),
+      addMembersUsecase: sl(),
+      createTeamUsecase: sl(),
+      updateProjectUsecase: sl()));
 
   /**----------------- ROLE FEATURE -----------------------**/
   // Usecase
