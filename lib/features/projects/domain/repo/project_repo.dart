@@ -21,4 +21,11 @@ abstract class ProjectRepo with HandlingExceptionManager {
     String projectId,
     String token,
   );
+
+  // Specify Project Team
+  Future<Either<Failure, Unit>> specifyProjectTeam(
+    String projectId,
+    String teamId,
+    String token,
+  );
 }

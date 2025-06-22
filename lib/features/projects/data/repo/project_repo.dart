@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/features/projects/data/database/project_datasource.dart';
+
 import 'package:two_mobile/features/projects/domain/repo/project_repo.dart';
 
 class ProjectRepoImpl extends ProjectRepo {
@@ -10,21 +11,22 @@ class ProjectRepoImpl extends ProjectRepo {
   ProjectRepoImpl({required this.projectDatasource});
   @override
   Future<Either<Failure, Unit>> updateProject(
-      String flullName,
-      String companyName,
-      String email,
-      String phone,
-      String projectType,
-      String projectDescraption,
-      String cost,
-      String duration,
-      String requirements,
-      String document,
-      String cooperationType,
-      String contactTime,
-      String private,
-      String projectId,
-      String token) {
+    String flullName,
+    String companyName,
+    String email,
+    String phone,
+    String projectType,
+    String projectDescraption,
+    String cost,
+    String duration,
+    String requirements,
+    String document,
+    String cooperationType,
+    String contactTime,
+    String private,
+    String projectId,
+    String token,
+  ) {
     return wrapHandling(tryCall: () async {
       await projectDatasource.updateProject(
         flullName,
@@ -41,6 +43,23 @@ class ProjectRepoImpl extends ProjectRepo {
         contactTime,
         private,
         projectId,
+        token,
+      );
+      return const Right(unit);
+    });
+  }
+
+// Specify Project Team
+  @override
+  Future<Either<Failure, Unit>> specifyProjectTeam(
+    String projectId,
+    String teamId,
+    String token,
+  ) {
+    return wrapHandling(tryCall: () async {
+      await projectDatasource.specifyProjectTeam(
+        projectId,
+        teamId,
         token,
       );
       return const Right(unit);

@@ -63,3 +63,15 @@ class UpdateProjectEvent extends HomeEvent {
     required this.token,
   });
 }
+
+// Specify Project Team
+class SpecifyProjectTeamEvent extends HomeEvent {
+  String projectId;
+  String teamId;
+  String token;
+  SpecifyProjectTeamEvent({
+    required this.projectId,
+    required this.teamId,
+    required this.token,
+  });
+}

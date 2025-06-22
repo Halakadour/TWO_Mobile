@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
+import 'package:two_mobile/features/projects/domain/usecase/specify_project_team_usecase.dart';
 import 'package:two_mobile/features/projects/domain/usecase/update_project_usecase.dart';
 import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
 import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
@@ -21,7 +22,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   // porject object from usecase
   final UpdateProjectUsecase updateProjectUsecase;
+  final SpecifyProjectTeamUsecase specifyProjectTeamUsecase;
   HomeBloc({
+    required this.specifyProjectTeamUsecase,
     required this.updateProjectUsecase,
     required this.createTeamUsecase,
     required this.addMembersUsecase,
@@ -129,6 +132,28 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           (r) => emit(
                 state.copyWith(
                   updateProjectStatus: CasualStatus.success,
+                ),
+              ));
+    });
+
+    // Specify Project Team
+    on<SpecifyProjectTeamEvent>((event, emit) async {
+      emit(state.copyWith(specifyProjectTeamStatus: CasualStatus.loading));
+      final result = await specifyProjectTeamUsecase.call(
+          SpecifyProjectTeamParameters(
+              projectId: event.projectId,
+              teamId: event.teamId,
+              token: event.token));
+      result.fold(
+          (l) => emit(
+                state.copyWith(
+                  specifyProjectTeamStatus: CasualStatus.failure,
+                  messageSpecifyProjectTeam: l.message,
+                ),
+              ),
+          (r) => emit(
+                state.copyWith(
+                  specifyProjectTeamStatus: CasualStatus.success,
                 ),
               ));
     });

@@ -18,6 +18,10 @@ class HomeState {
   CasualStatus updateProjectStatus;
   String messageUpdateProject;
 
+  // Specify Project Team
+  CasualStatus specifyProjectTeamStatus;
+  String messageSpecifyProjectTeam;
+
   HomeState({
     // create team
     this.message = "",
@@ -35,6 +39,10 @@ class HomeState {
     //update project
     this.updateProjectStatus = CasualStatus.initial,
     this.messageUpdateProject = "",
+
+    // Specify Project Team
+    this.specifyProjectTeamStatus = CasualStatus.initial,
+    this.messageSpecifyProjectTeam = "",
   });
   HomeState copyWith({
     // create team
@@ -55,6 +63,10 @@ class HomeState {
     // update project
     String? messageUpdateProject,
     CasualStatus? updateProjectStatus,
+
+    // Specify Project Team
+    CasualStatus? specifyProjectTeamStatus,
+    String? messageSpecifyProjectTeam,
   }) {
     return HomeState(
       // create team
@@ -73,6 +85,12 @@ class HomeState {
       // update project
       messageUpdateProject: messageUpdateProject ?? this.messageUpdateProject,
       updateProjectStatus: updateProjectStatus ?? this.updateProjectStatus,
+
+      // Specify Project Team
+      messageSpecifyProjectTeam:
+          messageSpecifyProjectTeam ?? this.messageSpecifyProjectTeam,
+      specifyProjectTeamStatus:
+          specifyProjectTeamStatus ?? this.specifyProjectTeamStatus,
     );
   }
 }
