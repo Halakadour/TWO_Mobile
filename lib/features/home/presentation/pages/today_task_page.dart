@@ -72,7 +72,7 @@ class TodayTaskPage extends StatelessWidget {
             SizedBox(height: 30),
             GestureDetector(
               onTap: () {
-                context.pushReplacementNamed(AppRouteConfig.taskdetatialspage);
+                context.pushReplacementNamed(AppRouteConfig.taskDetatialsPage);
               },
               child: TodayTask(
                 textcolor: AppColors.mainblue,

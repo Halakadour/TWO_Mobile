@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/core/error/handling_exception_manager.dart';
-import 'package:two_mobile/features/team/data/model/show_team_response_model.dart';
+import 'package:two_mobile/features/team/data/model/team_model.dart';
 
 abstract class TeamRepo with HandlingExceptionManager {
   // change the return type to Unit whiche mean void cause we need data 👀✨

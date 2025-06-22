@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/features/team/data/datasource/team_datasource.dart';
-import 'package:two_mobile/features/team/data/model/show_team_response_model.dart';
+import 'package:two_mobile/features/team/data/model/team_model.dart';
 import 'package:two_mobile/features/team/domain/repo/team_repo.dart';
 
 class TeamRepoImpl extends TeamRepo {

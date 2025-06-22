@@ -1,18 +1,31 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
+import 'package:two_mobile/core/functions/bloc_state_handling/team_state_handling.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
-import 'package:two_mobile/features/home/presentation/pages/add_project_manager_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customadd.dart';
+import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
 import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
 
-class AddTeamMemberPage extends StatelessWidget {
-  const AddTeamMemberPage({super.key});
+class AddTeamPage extends StatefulWidget {
+  const AddTeamPage({super.key});
+
+  @override
+  State<AddTeamPage> createState() => _AddTeamPageState();
+}
+
+class _AddTeamPageState extends State<AddTeamPage> {
+  @override
+  void didChangeDependencies() {
+    context.read<HomeBloc>().add(ShowTeamEvent());
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +38,14 @@ class AddTeamMemberPage extends StatelessWidget {
             children: [
               Customiconback(
                   onpressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const AddProjectManagerPage()));
+                    context.pop();
                   },
                   text: 'Add Team'),
               SizedBox(height: 25),
               TextFieldPage(
                 height: 55,
                 width: 340,
-                Bordercolor: AppColors.fieldfield,
+                bordercolor2: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.search_normal_1,
@@ -47,30 +56,22 @@ class AddTeamMemberPage extends StatelessWidget {
                 bordercolor: AppColors.fieldfield,
               ),
               SizedBox(height: 30),
-              CustomAdd(
-                image: 'assets/images/png/Frontend.png',
-                nameText: 'Frontend Team',
-                titleText: '',
+              SizedBox(
+                height: 400,
+                child: BlocBuilder<HomeBloc, HomeState>(
+                  buildWhen: (previous, current) =>
+                      previous.teamListStatus != current.teamListStatus,
+                  builder: (context, state) =>
+                      TeamStateHandling().showTeamList(state),
+                ),
               ),
-              SizedBox(height: 30),
-              CustomAdd(
-                image: 'assets/images/png/Mobile.png',
-                nameText: 'Mobile Team   ',
-                titleText: '',
-              ),
-              SizedBox(height: 30),
-              CustomAdd(
-                image: 'assets/images/png/backend.png',
-                nameText: 'Backend Team',
-                titleText: '',
-              ),
-              SizedBox(height: 220),
+              SizedBox(height: 20),
               GradientOutlineButton(
                 onpressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AddTeamMemberPage()));
+                          builder: (context) => const AddTeamPage()));
                 },
                 text: 'Next',
                 textColor: AppColors.cardColor,
@@ -79,10 +80,7 @@ class AddTeamMemberPage extends StatelessWidget {
               SizedBox(height: 12),
               GradientOutlineButton(
                 onpressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MakeTeamPage()));
+                  context.pushNamed(AppRouteConfig.makeTeam);
                 },
                 text: 'Or Make A New Team',
                 textColor: AppColors.greenColor,

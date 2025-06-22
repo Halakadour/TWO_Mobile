@@ -3,7 +3,7 @@ import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
 import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
 import 'package:two_mobile/features/team/data/model/create_team_response_model.dart';
-import 'package:two_mobile/features/team/data/model/show_team_response_model.dart';
+import 'package:two_mobile/features/team/data/model/team_model.dart';
 import 'package:two_mobile/features/team/domain/usecase/add_members_usecase.dart';
 import 'package:two_mobile/features/team/domain/usecase/create_team_usecase.dart';
 import 'package:two_mobile/features/team/domain/usecase/show_team_usecase.dart';

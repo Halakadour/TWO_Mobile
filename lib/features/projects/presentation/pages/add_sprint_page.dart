@@ -40,7 +40,7 @@ class AddSprintPage extends StatelessWidget {
               TextFieldPage(
                 height: 60,
                 width: 340,
-                Bordercolor: AppColors.fieldfield,
+                bordercolor2: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.document_text,
@@ -59,7 +59,7 @@ class AddSprintPage extends StatelessWidget {
               TextFieldPage(
                 height: 60,
                 width: 340,
-                Bordercolor: AppColors.fieldfield,
+                bordercolor2: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.element_3,
@@ -78,7 +78,7 @@ class AddSprintPage extends StatelessWidget {
               TextFieldPage(
                 height: 60,
                 width: 340,
-                Bordercolor: AppColors.fieldfield,
+                bordercolor2: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.tick_square,
@@ -100,7 +100,7 @@ class AddSprintPage extends StatelessWidget {
                   TextFieldPage(
                     height: 65,
                     width: 160,
-                    Bordercolor: AppColors.fieldfield,
+                    bordercolor2: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,
                     prefix: Iconsax.calendar_1,
@@ -113,7 +113,7 @@ class AddSprintPage extends StatelessWidget {
                   TextFieldPage(
                     height: 65,
                     width: 160,
-                    Bordercolor: AppColors.fieldfield,
+                    bordercolor2: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,
                     prefix: Iconsax.calendar_1,
@@ -133,7 +133,7 @@ class AddSprintPage extends StatelessWidget {
               TextFieldPage(
                 height: 60,
                 width: 340,
-                Bordercolor: AppColors.fieldfield,
+                bordercolor2: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.tick_square,

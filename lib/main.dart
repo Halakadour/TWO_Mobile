@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:two_mobile/config/routes/app_router.dart';
 import 'package:two_mobile/config/theme/theme.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
@@ -19,6 +20,7 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => di.sl<AuthBloc>()),
+        BlocProvider(create: (context) => di.sl<HomeBloc>()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

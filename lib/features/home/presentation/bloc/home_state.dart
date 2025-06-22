@@ -10,9 +10,9 @@ class HomeState {
   CasualStatus addMemberStatus;
 
   // show team
-  CasualStatus showTeamStatus;
+  CasualStatus teamListStatus;
   String messageShowTeam;
-  List<TeamModel> listTeam;
+  List<TeamModel> teamList;
 
   HomeState({
     // create team
@@ -25,8 +25,8 @@ class HomeState {
 
     // show team
     this.messageShowTeam = "",
-    this.showTeamStatus = CasualStatus.initial,
-    this.listTeam = const [],
+    this.teamListStatus = CasualStatus.initial,
+    this.teamList = const [],
   });
   HomeState copyWith({
     // create team
@@ -55,8 +55,8 @@ class HomeState {
 
       // show team
       messageShowTeam: messageShowTeam ?? this.messageShowTeam,
-      showTeamStatus: showTeamStatus ?? this.showTeamStatus,
-      listTeam: listTeam ?? this.listTeam,
+      teamListStatus: showTeamStatus ?? this.teamListStatus,
+      teamList: listTeam ?? this.teamList,
     );
   }
 }

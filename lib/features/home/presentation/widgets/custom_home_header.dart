@@ -1,16 +1,17 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/home/presentation/pages/recentproject_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/textbutton.dart';
 import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
 
-class CustomExpanded1 extends StatelessWidget {
-  const CustomExpanded1({super.key});
+class CustomHomeHeader extends StatelessWidget {
+  const CustomHomeHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +23,30 @@ class CustomExpanded1 extends StatelessWidget {
             child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset('assets/images/png/steve.png'),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Hi, Steve',
-                            style: AppTextStyle.subtitle01(
-                                color: AppColors.whiteColor),
+                    Row(
+                      children: [
+                        Image.asset('assets/images/png/steve.png'),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Hi, Steve',
+                                style: AppTextStyle.subtitle01(
+                                    color: AppColors.whiteColor),
+                              ),
+                              Text(
+                                'Let’s work casually',
+                                style: AppTextStyle.subtitle02(
+                                    color: AppColors.fontLightColor),
+                              ),
+                            ],
                           ),
-                          Text(
-                            'Let’s work casually',
-                            style: AppTextStyle.subtitle01(
-                                color: AppColors.fontLightColor),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 110),
@@ -58,7 +64,7 @@ class CustomExpanded1 extends StatelessWidget {
                 TextFieldPage(
                   height: 55,
                   width: 340,
-                  Bordercolor: AppColors.iconColor,
+                  bordercolor2: AppColors.iconColor,
                   textfield: AppColors.cardColor,
                   text: 'Search your task',
                   color: AppColors.navColor,
@@ -76,10 +82,7 @@ class CustomExpanded1 extends StatelessWidget {
                       style: AppTextStyle.heading04(color: AppColors.cardColor),
                     ),
                     TextButtonPage(onpressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RecentprojectPage()));
+                      context.pushNamed(AppRouteConfig.recentproject);
                     })
                   ],
                 )

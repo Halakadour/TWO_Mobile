@@ -1,5 +1,3 @@
-import 'package:two_mobile/features/home/presentation/pages/task_detatials_page.dart';
-
 class AppRouteConfig {
   // WELCOME //
   static const splash = 'splash';
@@ -29,29 +27,30 @@ class AppRouteConfig {
   static const recentproject = 'recentproject';
 
   // Add Team Member Page
-  static const addteammember = 'addteammember';
+  static const addTeam = 'addTeamMember';
 
   // Make Team Page
-  static const maketeam = 'maketeam';
+  static const makeTeam = 'makeTeam';
+  static const addProjectManagerPage = 'addProjectManagerPage';
 
   // TodayTasks
-  static const todaytask = 'todaytask';
+  static const toDayTask = 'toDayTask';
 
   // Task Details Page
-  static const taskdetatialspage = 'taskdetatialspage';
+  static const taskDetatialsPage = 'taskDetatialsPage';
 
   // calendar
   static const calendar = 'calendar';
 
   // projects detailes
-  static const projectdetailes = 'projectdetailes';
+  static const projectDetailes = 'projectDetailes';
 
   // Add Sprint
-  static const addsprint = 'addsprint';
+  static const addSprint = 'addSprint';
 
   // sprint detailes
-  static const sprintdetailes = 'sprintdetailes';
+  static const sprintDetailes = 'sprintDetailes';
 
   // Add New Task
-  static const addnewtask = 'addnewtask';
+  static const addNewTask = 'addNewTask';
 }

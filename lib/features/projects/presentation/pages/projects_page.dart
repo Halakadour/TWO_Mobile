@@ -46,7 +46,7 @@ class ProjectsPage extends StatelessWidget {
                         TextFieldPage(
                           height: 55,
                           width: 340,
-                          Bordercolor: AppColors.iconColor,
+                          bordercolor2: AppColors.iconColor,
                           textfield: AppColors.cardColor,
                           text: 'Search your task',
                           color: AppColors.navColor,

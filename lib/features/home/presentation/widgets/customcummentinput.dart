@@ -35,7 +35,7 @@ class CustomCummentInput extends StatelessWidget {
             child: TextFieldPage(
               height: 50,
               width: 50,
-              Bordercolor: AppColors.fieldfield,
+              bordercolor2: AppColors.fieldfield,
               textfield: AppColors.blackColor,
               color: AppColors.fieldfield,
               prefix: null,

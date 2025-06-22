@@ -9,18 +9,21 @@ class TextFieldPage extends StatelessWidget {
   final double width;
   final Color? color;
   final Color textcolor;
-  final Color Bordercolor;
+  final Color bordercolor2;
   final Color textfield;
   final Color? iconcolor;
   final Color? bordercolor;
   final IconData? prefix;
   final IconData? suffix;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
   const TextFieldPage(
       {this.prefix,
       this.suffix,
       this.color,
-      // ignore: non_constant_identifier_names
-      required this.Bordercolor,
+      this.controller,
+      this.validator,
+      required this.bordercolor2,
       required this.textcolor,
       required this.textfield,
       this.iconcolor,
@@ -35,7 +38,9 @@ class TextFieldPage extends StatelessWidget {
     return SizedBox(
       height: height,
       width: width,
-      child: TextField(
+      child: TextFormField(
+          controller: controller,
+          validator: validator,
           maxLines: null,
           expands: true,
           textAlignVertical: TextAlignVertical.top,
@@ -52,7 +57,7 @@ class TextFieldPage extends StatelessWidget {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
                 borderSide: BorderSide(
-                  color: Bordercolor,
+                  color: bordercolor2,
                 ),
               ),
               border:

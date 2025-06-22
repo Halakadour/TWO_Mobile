@@ -16,6 +16,10 @@ class AuthState {
   CasualStatus roleProgrammerListStatus;
   List<RoleModel> roleProgrammerList;
 
+  // Employee State
+  CasualStatus employeeListStatus;
+  List<EmployeeModel> employeeList;
+
   AuthState(
       {this.masseage = "",
       this.userModel,
@@ -25,7 +29,9 @@ class AuthState {
       this.roleClientListStatus = CasualStatus.initial,
       this.roleClientList = const [],
       this.roleProgrammerListStatus = CasualStatus.initial,
-      this.roleProgrammerList = const []});
+      this.roleProgrammerList = const [],
+      this.employeeListStatus = CasualStatus.initial,
+      this.employeeList = const []});
 
   AuthState copyWith({
     String? masseage,
@@ -37,19 +43,22 @@ class AuthState {
     List<RoleModel>? roleClientList,
     CasualStatus? roleProgrammerListStatus,
     List<RoleModel>? roleProgrammerList,
+    CasualStatus? employeeListStatus,
+    List<EmployeeModel>? employeeList,
   }) {
     return AuthState(
-      masseage: masseage ?? this.masseage,
-      userModelStatus: userModelStatus ?? this.userModelStatus,
-      userModel: userModel ?? this.userModel,
-      clientProfileStatus: clientProfileStatus ?? this.clientProfileStatus,
-      programmerProfileStatus:
-          programmerProfileStatus ?? this.programmerProfileStatus,
-      roleClientListStatus: roleClientListStatus ?? this.roleClientListStatus,
-      roleClientList: roleClientList ?? this.roleClientList,
-      roleProgrammerListStatus:
-          roleProgrammerListStatus ?? this.roleProgrammerListStatus,
-      roleProgrammerList: roleProgrammerList ?? this.roleProgrammerList,
-    );
+        masseage: masseage ?? this.masseage,
+        userModelStatus: userModelStatus ?? this.userModelStatus,
+        userModel: userModel ?? this.userModel,
+        clientProfileStatus: clientProfileStatus ?? this.clientProfileStatus,
+        programmerProfileStatus:
+            programmerProfileStatus ?? this.programmerProfileStatus,
+        roleClientListStatus: roleClientListStatus ?? this.roleClientListStatus,
+        roleClientList: roleClientList ?? this.roleClientList,
+        roleProgrammerListStatus:
+            roleProgrammerListStatus ?? this.roleProgrammerListStatus,
+        roleProgrammerList: roleProgrammerList ?? this.roleProgrammerList,
+        employeeListStatus: employeeListStatus ?? this.employeeListStatus,
+        employeeList: employeeList ?? this.employeeList);
   }
 }

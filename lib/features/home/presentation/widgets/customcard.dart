@@ -20,7 +20,7 @@ class _CustomcardState extends State<Customcard> {
           const EdgeInsets.only(top: 202, left: 20, right: 20, bottom: 280),
       child: GestureDetector(
         onTap: () {
-          context.pushReplacementNamed(AppRouteConfig.projectdetailes);
+          context.pushReplacementNamed(AppRouteConfig.projectDetailes);
         },
         child: PageView(
           children: [

@@ -52,7 +52,7 @@ class CustomNewProject extends StatelessWidget {
               TextFieldPage(
                 height: 55,
                 width: 340,
-                Bordercolor: AppColors.fieldfield,
+                bordercolor2: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: null,
@@ -66,7 +66,7 @@ class CustomNewProject extends StatelessWidget {
               TextFieldPage(
                 height: 120,
                 width: 340,
-                Bordercolor: AppColors.fieldfield,
+                bordercolor2: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: null,
@@ -85,7 +85,7 @@ class CustomNewProject extends StatelessWidget {
                     TextFieldPage(
                       height: 65,
                       width: 160,
-                      Bordercolor: AppColors.fieldfield,
+                      bordercolor2: AppColors.fieldfield,
                       textfield: AppColors.blackColor,
                       color: AppColors.fieldfield,
                       prefix: null,
@@ -98,7 +98,7 @@ class CustomNewProject extends StatelessWidget {
                     TextFieldPage(
                       height: 65,
                       width: 160,
-                      Bordercolor: AppColors.fieldfield,
+                      bordercolor2: AppColors.fieldfield,
                       textfield: AppColors.blackColor,
                       color: AppColors.fieldfield,
                       prefix: null,
@@ -116,15 +116,13 @@ class CustomNewProject extends StatelessWidget {
               PaddingConfig.h24,
               Customborderpainter(
                 onTap: () {
-                  context.pushReplacementNamed(AppRouteConfig.addteammember);
+                  context.pushNamed(AppRouteConfig.addTeam);
                 },
                 text: 'Add Team',
               ),
               SizedBox(height: 20),
               Customborderpainter(
-                onTap: () {
-                  context.pushReplacementNamed(AppRouteConfig.maketeam);
-                },
+                onTap: () {},
                 text: 'Add Contract',
               ),
               PaddingConfig.h24,

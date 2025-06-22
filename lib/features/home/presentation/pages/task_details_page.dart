@@ -13,8 +13,8 @@ import 'package:two_mobile/features/projects/presentation/widgets/customcolumn5.
 import 'package:two_mobile/features/projects/presentation/widgets/customculomn6.dart';
 import 'package:two_mobile/features/projects/presentation/widgets/customicon&text.dart';
 
-class TaskDetatialsPage extends StatelessWidget {
-  const TaskDetatialsPage({super.key});
+class TaskDetailsPage extends StatelessWidget {
+  const TaskDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TaskDetatialsPage extends StatelessWidget {
           padding: const EdgeInsets.only(left: 10, bottom: 20),
           child: IconButton(
               onPressed: () {
-                context.pushReplacementNamed(AppRouteConfig.todaytask);
+                context.pushReplacementNamed(AppRouteConfig.toDayTask);
               },
               icon: Icon(
                 Iconsax.arrow_left,

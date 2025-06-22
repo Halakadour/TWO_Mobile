@@ -1,10 +1,9 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
-
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/features/home/presentation/pages/todattask_page.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customcard.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customexpanded1.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_home_header.dart';
 import 'package:two_mobile/features/home/presentation/widgets/textbutton.dart';
 import 'package:two_mobile/features/home/presentation/widgets/taskitem.dart';
 
@@ -24,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Column(
               children: [
-                CustomExpanded1(),
+                const CustomHomeHeader(),
                 Expanded(
                     flex: 1,
                     child: Container(
@@ -39,18 +38,14 @@ class _HomePageState extends State<HomePage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Today task',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20),
                                   ),
                                   TextButtonPage(onpressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const TodayTaskPage()));
+                                    context.pushNamed(AppRouteConfig.toDayTask);
                                   })
                                 ],
                               ),
@@ -91,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                     ))
               ],
             ),
-            Customcard(),
+            const Customcard(),
           ],
         ));
   }

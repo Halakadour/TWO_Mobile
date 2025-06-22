@@ -4,13 +4,14 @@ import 'package:two_mobile/features/auth/presentation/pages/client_fill_profile_
 import 'package:two_mobile/features/auth/presentation/pages/forget_password_page.dart';
 import 'package:two_mobile/features/auth/presentation/pages/programmer_fill_profile_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_new_task_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/add_team_member_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/add_project_manager_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/add_team_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/recentproject_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/task_detatials_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/todattask_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/recent_project_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/task_details_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/today_task_page.dart';
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
 import 'package:two_mobile/features/intro/pages/on_board_page.dart';
 import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
@@ -86,34 +87,39 @@ class AppRouter {
       builder: (context, state) => const MainPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.projectdetailes,
-      path: '/projectdetailes',
+      name: AppRouteConfig.projectDetailes,
+      path: '/projectDetailes',
       builder: (context, state) => const ProjectDetailesPage(),
     ),
     GoRoute(
       name: AppRouteConfig.recentproject,
-      path: '/recentproject',
+      path: '/recentProject',
       builder: (context, state) => const RecentprojectPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.addteammember,
-      path: '/addteammember',
-      builder: (context, state) => const AddTeamMemberPage(),
+      name: AppRouteConfig.addTeam,
+      path: '/addTeamPage',
+      builder: (context, state) => const AddTeamPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.maketeam,
-      path: '/maketeam',
+      name: AppRouteConfig.makeTeam,
+      path: '/makeTeam',
       builder: (context, state) => const MakeTeamPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.todaytask,
-      path: '/todaytask',
+      name: AppRouteConfig.addProjectManagerPage,
+      path: '/addProjectManagerPage',
+      builder: (context, state) => const AddProjectManagerPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.toDayTask,
+      path: '/toDayTask',
       builder: (context, state) => const TodayTaskPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.taskdetatialspage,
-      path: '/taskdetatialspage',
-      builder: (context, state) => const TaskDetatialsPage(),
+      name: AppRouteConfig.taskDetatialsPage,
+      path: '/taskDetailsPage',
+      builder: (context, state) => const TaskDetailsPage(),
     ),
     GoRoute(
       name: AppRouteConfig.calendar,
@@ -121,18 +127,18 @@ class AppRouter {
       builder: (context, state) => const CalenderPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.addsprint,
-      path: '/addsprint',
+      name: AppRouteConfig.addSprint,
+      path: '/addSprint',
       builder: (context, state) => const AddSprintPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.sprintdetailes,
-      path: '/sprintdetailes',
-      builder: (context, state) => SprintDetailesPage(),
+      name: AppRouteConfig.sprintDetailes,
+      path: '/sprintDetailes',
+      builder: (context, state) => const SprintDetailesPage(),
     ),
     GoRoute(
-      name: AppRouteConfig.addnewtask,
-      path: '/addnewtask',
+      name: AppRouteConfig.addNewTask,
+      path: '/addNewTask',
       builder: (context, state) => const AddNewTaskPage(),
     ),
   ]);

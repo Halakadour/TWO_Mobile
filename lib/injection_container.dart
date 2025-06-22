@@ -17,6 +17,7 @@ import 'package:two_mobile/features/role/data/repos/role_repo_impl.dart';
 import 'package:two_mobile/features/role/domain/repos/role_repo.dart';
 import 'package:two_mobile/features/role/domain/usecases/show_role_client_usecase.dart';
 import 'package:two_mobile/features/role/domain/usecases/show_roles_without_client_usecase.dart';
+import 'package:two_mobile/features/role/domain/usecases/show_users_usecase.dart';
 import 'package:two_mobile/features/team/data/datasource/team_datasource.dart';
 import 'package:two_mobile/features/team/data/repo/team_impl.dart';
 import 'package:two_mobile/features/team/domain/repo/team_repo.dart';
@@ -36,7 +37,8 @@ Future<void> init() async {
         updateClientProfileUsecase: sl(),
         updateProgrammerProfileUsecase: sl(),
         showClientRoleUsecase: sl(),
-        showProgrammerRoleUsecase: sl()),
+        showProgrammerRoleUsecase: sl(),
+        showUsersUsecase: sl()),
   );
   // Usecases
   sl.registerLazySingleton(() => LoginUsecase(authRepo: sl()));
@@ -64,6 +66,7 @@ Future<void> init() async {
   // Usecase
   sl.registerLazySingleton(() => ShowClientRoleUsecase(sl()));
   sl.registerLazySingleton(() => ShowProgrammerRoleUsecase(sl()));
+  sl.registerLazySingleton(() => ShowUsersUsecase(sl()));
 
   // Repos
   sl.registerLazySingleton<RoleRepo>(

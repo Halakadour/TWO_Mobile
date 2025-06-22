@@ -3,6 +3,7 @@ import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/core/network/network_connection_checker.dart';
 import 'package:two_mobile/features/role/data/datasources/role_local_datasource.dart';
 import 'package:two_mobile/features/role/data/datasources/role_remote_datasource.dart';
+import 'package:two_mobile/features/role/data/models/employee_model.dart';
 import 'package:two_mobile/features/role/data/models/role_response_model.dart';
 import 'package:two_mobile/features/role/domain/repos/role_repo.dart';
 
@@ -42,6 +43,22 @@ class RoleRepoImpl extends RoleRepo {
         //     RoleResponesModel(status: 200, msg: "Local", data: localRoles),
         //   );
         // }
+      },
+    );
+  }
+
+  @override
+  Future<Either<Failure, List<EmployeeModel>>> showUsersWithFilter(
+    int? roleFilter,
+    String token,
+  ) {
+    return wrapHandling(
+      tryCall: () async {
+        final result = await roleRemoteDatasource.showUserWithFilter(
+          roleFilter,
+          token,
+        );
+        return Right(result.data);
       },
     );
   }

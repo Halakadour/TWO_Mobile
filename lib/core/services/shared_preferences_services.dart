@@ -1,13 +1,13 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesServices {
-  static Future<bool> checkIsVisitor() async {
+  static Future<bool> checkIfAuthraized() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? token = prefs.getString('token');
     if (token == null) {
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 
   static Future<void> setUserToken(String token) async {
