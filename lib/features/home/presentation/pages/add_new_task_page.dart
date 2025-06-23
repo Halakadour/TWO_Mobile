@@ -1,15 +1,16 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customuser_selector_widget.dart';
 import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
 import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
-import 'package:two_mobile/features/projects/presentation/pages/project_detailes_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/sprint_detailes_page.dart';
 
 class AddNewTaskPage extends StatefulWidget {
@@ -35,11 +36,7 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
             children: [
               Customiconback(
                 onpressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProjectDetailesPage()),
-                  );
+                  context.pushNamed(AppRouteConfig.toDayTask);
                 },
                 text: 'Add New Task',
               ),

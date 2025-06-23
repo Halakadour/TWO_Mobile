@@ -15,7 +15,10 @@ import 'package:two_mobile/features/home/presentation/pages/today_task_page.dart
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
 import 'package:two_mobile/features/intro/pages/on_board_page.dart';
 import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
+import 'package:two_mobile/features/projects/presentation/pages/add_meeting_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
+import 'package:two_mobile/features/projects/presentation/pages/meeting_page.dart';
+import 'package:two_mobile/features/projects/presentation/pages/payment_history_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/project_detailes_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/projects_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/sprint_detailes_page.dart';
@@ -25,7 +28,7 @@ import '../../features/intro/pages/splash_page.dart';
 import 'app_route_config.dart';
 
 class AppRouter {
-  GoRouter router = GoRouter(initialLocation: '/', routes: [
+  GoRouter router = GoRouter(initialLocation: '/onboard', routes: [
     GoRoute(
       name: AppRouteConfig.splash,
       path: '/',
@@ -135,6 +138,21 @@ class AppRouter {
       name: AppRouteConfig.sprintDetailes,
       path: '/sprintDetailes',
       builder: (context, state) => const SprintDetailesPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.payementHistory,
+      path: '/payementHistory',
+      builder: (context, state) => PaymentHistoryPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.meeting,
+      path: '/meeting',
+      builder: (context, state) => const MeetingPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.addMeeting,
+      path: '/addMeeting',
+      builder: (context, state) => const AddMeetingPage(),
     ),
     GoRoute(
       name: AppRouteConfig.addNewTask,

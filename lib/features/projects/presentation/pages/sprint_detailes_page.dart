@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
+import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
@@ -106,16 +108,26 @@ class SprintDetailesPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                CustomGestureDetectorPage(
-                    icon: Iconsax.video,
-                    text: 'Meetings',
-                    containercolor: AppColors.Lightblue,
-                    color: AppColors.Darkblue),
-                CustomGestureDetectorPage(
-                    icon: Iconsax.wallet_2,
-                    text: 'Payments',
-                    containercolor: AppColors.Lightgreencolor,
-                    color: AppColors.Darkgreen),
+                GestureDetector(
+                  onTap: () {
+                    context.pushNamed(AppRouteConfig.meeting);
+                  },
+                  child: CustomGestureDetectorPage(
+                      icon: Iconsax.video,
+                      text: 'Meetings',
+                      containercolor: AppColors.Lightblue,
+                      color: AppColors.Darkblue),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    context.pushNamed(AppRouteConfig.payementHistory);
+                  },
+                  child: CustomGestureDetectorPage(
+                      icon: Iconsax.wallet_2,
+                      text: 'Payments',
+                      containercolor: AppColors.Lightgreencolor,
+                      color: AppColors.Darkgreen),
+                ),
               ],
             ),
             PaddingConfig.h8,

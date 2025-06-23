@@ -17,6 +17,11 @@ class AppColors {
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
       colors: [Color(0xFFE3E2E2), Color(0xFFDDE1DD), Color(0xFFC6C5C5)]);
+
+  static const LinearGradient buttonColor3 = LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [Color(0xFFB3AEAE), Color(0xFF999E99), Color(0xFFC6C5C5)]);
 //basic colors
   static const Color blackColor = Color(0xFF151515);
   static const Color grayColor = Color(0xFFE4E4E4);

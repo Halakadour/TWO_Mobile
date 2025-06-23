@@ -51,6 +51,15 @@ class AppRouteConfig {
   // sprint detailes
   static const sprintDetailes = 'sprintDetailes';
 
+  // Payment History
+  static const payementHistory = 'payementHistory';
+
+  // Meeting
+  static const meeting = 'meeting';
+
+  // Add Meeting
+  static const addMeeting = 'addMeeting';
+
   // Add New Task
   static const addNewTask = 'addNewTask';
 }
