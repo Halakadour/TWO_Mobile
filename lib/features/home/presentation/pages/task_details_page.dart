@@ -106,9 +106,14 @@ class TaskDetailsPage extends StatelessWidget {
                   'Comments (3)',
                   style: AppTextStyle.heading04(),
                 ),
-                Text(
-                  'See All',
-                  style: AppTextStyle.subtitle01(color: AppColors.mainColor),
+                GestureDetector(
+                  onTap: () {
+                    context.pushNamed(AppRouteConfig.allCommentsPage);
+                  },
+                  child: Text(
+                    'See All',
+                    style: AppTextStyle.subtitle01(color: AppColors.mainColor),
+                  ),
                 ),
               ],
             ),
@@ -127,7 +132,7 @@ class TaskDetailsPage extends StatelessWidget {
                 name: 'Sam Holmes',
                 role: 'backend-develope',
                 comment:
-                    'Wow 💥🤩 Nice work han, The design is full of interesting user\nexpenses actions.',
+                    'Wow 💥🤩 Nice work han, The design is full of interesting user expenses actions.',
                 image: 'assets/images/png/image 1.png')
           ],
         ),

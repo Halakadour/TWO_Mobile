@@ -129,7 +129,9 @@ class CustomNewProject extends StatelessWidget {
               GradientOutlineButton(
                 buttonColor: AppColors.buttonColor,
                 textColor: AppColors.cardColor,
-                onpressed: () {},
+                onpressed: () {
+                  context.pushNamed(AppRouteConfig.makeTeam);
+                },
                 text: 'create project',
               ),
               PaddingConfig.h16,

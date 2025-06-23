@@ -39,6 +39,9 @@ class AppRouteConfig {
   // Task Details Page
   static const taskDetatialsPage = 'taskDetatialsPage';
 
+  // All Comments Page
+  static const allCommentsPage = 'allCommentsPage';
+
   // calendar
   static const calendar = 'calendar';
 

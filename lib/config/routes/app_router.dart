@@ -6,6 +6,7 @@ import 'package:two_mobile/features/auth/presentation/pages/programmer_fill_prof
 import 'package:two_mobile/features/home/presentation/pages/add_new_task_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_project_manager_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/add_team_page.dart';
+import 'package:two_mobile/features/home/presentation/pages/all_comments_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
@@ -123,6 +124,11 @@ class AppRouter {
       name: AppRouteConfig.taskDetatialsPage,
       path: '/taskDetailsPage',
       builder: (context, state) => const TaskDetailsPage(),
+    ),
+    GoRoute(
+      name: AppRouteConfig.allCommentsPage,
+      path: '/allCommentsPage',
+      builder: (context, state) => const AllCommentsPage(),
     ),
     GoRoute(
       name: AppRouteConfig.calendar,
