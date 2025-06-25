@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/features/projects/data/database/project_datasource.dart';
+import 'package:two_mobile/features/projects/data/model/show_all_project-response_model.dart';
 
 import 'package:two_mobile/features/projects/domain/repo/project_repo.dart';
 
@@ -65,4 +66,16 @@ class ProjectRepoImpl extends ProjectRepo {
       return const Right(unit);
     });
   }
+
+// show all project
+  @override
+  Future<Either<Failure, List<ProjectModel>>> showAllProject(String token) {
+    return wrapHandling(tryCall: () async {
+      await projectDatasource.showAllProject(token);
+      final result = await projectDatasource.showAllProject(token);
+      return Right(result.data);
+    });
+  }
+
+  // show my project
 }

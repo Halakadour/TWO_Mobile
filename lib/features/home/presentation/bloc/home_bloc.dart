@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
+import 'package:two_mobile/features/projects/data/model/show_all_project-response_model.dart';
+import 'package:two_mobile/features/projects/domain/usecase/show_all_project_.dart';
 import 'package:two_mobile/features/projects/domain/usecase/specify_project_team_usecase.dart';
 import 'package:two_mobile/features/projects/domain/usecase/update_project_usecase.dart';
 import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
@@ -13,7 +15,7 @@ import 'package:two_mobile/features/team/domain/usecase/show_team_usecase.dart';
 part 'home_event.dart';
 part 'home_state.dart';
 
-// team & project bloc
+//////////////////////////////// team & project bloc ////////////////////////////
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   // team object from usecase
   final CreateTeamUsecase createTeamUsecase;
@@ -23,7 +25,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   // porject object from usecase
   final UpdateProjectUsecase updateProjectUsecase;
   final SpecifyProjectTeamUsecase specifyProjectTeamUsecase;
+  final ShowAllProjectUsecase showAllProjectUsecase;
   HomeBloc({
+    required this.showAllProjectUsecase,
     required this.specifyProjectTeamUsecase,
     required this.updateProjectUsecase,
     required this.createTeamUsecase,
@@ -156,6 +160,31 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                   specifyProjectTeamStatus: CasualStatus.success,
                 ),
               ));
+    });
+
+    // show all project
+    on<ShowAllProjectEvent>((event, emit) async {
+      emit(state.copyWith(specifyProjectTeamStatus: CasualStatus.loading));
+      final String? token = await SharedPreferencesServices.getUserToken();
+      if (token != null) {
+        final result = await showAllProjectUsecase.call(token);
+        result.fold(
+          (l) => emit(
+            state.copyWith(
+              showAllProjectStatus: CasualStatus.failure,
+              message: l.message,
+            ),
+          ),
+          (r) => emit(
+            state.copyWith(
+              showAllProjectStatus: CasualStatus.success,
+              allProjectList: r,
+            ),
+          ),
+        );
+      } else {
+        emit(state.copyWith(showAllProjectStatus: CasualStatus.notAuthorized));
+      }
     });
   }
 }

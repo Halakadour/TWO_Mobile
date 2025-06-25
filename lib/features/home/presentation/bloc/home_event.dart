@@ -75,3 +75,6 @@ class SpecifyProjectTeamEvent extends HomeEvent {
     required this.token,
   });
 }
+
+// show all project
+class ShowAllProjectEvent extends HomeEvent {}

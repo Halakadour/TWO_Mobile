@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 import 'package:two_mobile/core/error/handling_exception_manager.dart';
+import 'package:two_mobile/features/projects/data/model/show_all_project-response_model.dart';
 
 abstract class ProjectRepo with HandlingExceptionManager {
   // update project
@@ -28,4 +29,7 @@ abstract class ProjectRepo with HandlingExceptionManager {
     String teamId,
     String token,
   );
+
+  // show all project
+  Future<Either<Failure, List<ProjectModel>>> showAllProject(String token);
 }

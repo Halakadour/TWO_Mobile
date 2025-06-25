@@ -1,1 +1,1 @@
-enum CasualStatus { initial, loading, success, failure, noToken }
+enum CasualStatus { initial, loading, success, failure, noToken ,notAuthorized}

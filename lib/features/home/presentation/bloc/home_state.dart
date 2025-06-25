@@ -18,9 +18,13 @@ class HomeState {
   CasualStatus updateProjectStatus;
   String messageUpdateProject;
 
-  // Specify Project Team
+  // Specify Project team
   CasualStatus specifyProjectTeamStatus;
   String messageSpecifyProjectTeam;
+
+// show all project
+  CasualStatus showAllProjectStatus;
+  List<ProjectModel> allProjectList;
 
   HomeState({
     // create team
@@ -43,6 +47,10 @@ class HomeState {
     // Specify Project Team
     this.specifyProjectTeamStatus = CasualStatus.initial,
     this.messageSpecifyProjectTeam = "",
+
+    // show all project
+    this.showAllProjectStatus = CasualStatus.initial,
+    this.allProjectList = const [],
   });
   HomeState copyWith({
     // create team
@@ -67,6 +75,10 @@ class HomeState {
     // Specify Project Team
     CasualStatus? specifyProjectTeamStatus,
     String? messageSpecifyProjectTeam,
+
+    // show all project
+    CasualStatus? showAllProjectStatus,
+    List<ProjectModel>? allProjectList,
   }) {
     return HomeState(
       // create team
@@ -91,6 +103,10 @@ class HomeState {
           messageSpecifyProjectTeam ?? this.messageSpecifyProjectTeam,
       specifyProjectTeamStatus:
           specifyProjectTeamStatus ?? this.specifyProjectTeamStatus,
+
+      // show all project
+      showAllProjectStatus: showAllProjectStatus ?? this.showAllProjectStatus,
+      allProjectList: allProjectList ?? this.allProjectList,
     );
   }
 }
