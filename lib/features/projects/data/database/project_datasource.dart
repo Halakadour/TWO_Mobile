@@ -3,6 +3,7 @@ import 'package:two_mobile/core/api/get_with_token_api.dart';
 import 'package:two_mobile/core/api/post_api_with_token.dart';
 
 import 'package:two_mobile/features/projects/data/model/show_all_project-response_model.dart';
+import 'package:two_mobile/features/projects/data/model/show_my_project_response_model.dart';
 import 'package:two_mobile/features/projects/data/model/specify_project_team_response_model.dart';
 import 'package:two_mobile/features/projects/data/model/update_project_response_model.dart';
 
@@ -35,6 +36,9 @@ abstract class ProjectDatasource {
 
   // show all porject
   Future<ShowProjectsResponseModel> showAllProject(String token);
+
+  // show  my project
+  Future<ShowMyProjectsResponseModel> showMyProject(String token);
 }
 
 class ProjectDatasourceImpl extends ProjectDatasource {
@@ -104,6 +108,16 @@ class ProjectDatasourceImpl extends ProjectDatasource {
         uri: Uri.parse("$baseUri/api/show/all/projects"),
         token: token,
         fromJson: showProjectsResponseModelFromJson);
+    return await result.callRequest();
+  }
+
+  // show my project
+  @override
+  Future<ShowMyProjectsResponseModel> showMyProject(String token) async {
+    final result = GetWithTokenApi(
+        uri: Uri.parse("$baseUri/api/show/my/projects"),
+        token: token,
+        fromJson: showMyProjectsResponseModelFromJson);
     return await result.callRequest();
   }
 }

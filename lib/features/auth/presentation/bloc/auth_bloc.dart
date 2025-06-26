@@ -31,13 +31,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ShowUsersUsecase showUsersUsecase;
 
   AuthBloc(
-      {required this.signUpUsecase,
+      {required this.showClientRoleUsecase,
+        required this.signUpUsecase,
       required this.loginUsecase,
       required this.updateClientProfileUsecase,
       required this.updateProgrammerProfileUsecase,
-      required this.showClientRoleUsecase,
       required this.showProgrammerRoleUsecase,
-      required this.showUsersUsecase})
+      required this.showUsersUsecase,
+     })
       : super(AuthState()) {
     // login
     on<LoginEvent>((event, emit) async {

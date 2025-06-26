@@ -32,13 +32,14 @@ Future<void> init() async {
   // Bloc
   sl.registerFactory(
     () => AuthBloc(
-        loginUsecase: sl(),
-        signUpUsecase: sl(),
-        updateClientProfileUsecase: sl(),
-        updateProgrammerProfileUsecase: sl(),
-        showClientRoleUsecase: sl(),
-        showProgrammerRoleUsecase: sl(),
-        showUsersUsecase: sl()),
+      loginUsecase: sl(),
+      signUpUsecase: sl(),
+      updateClientProfileUsecase: sl(),
+      updateProgrammerProfileUsecase: sl(),
+      showUsersUsecase: sl(),
+      showProgrammerRoleUsecase: sl(),
+      showClientRoleUsecase: sl(),
+    ),
   );
   // Usecases
   sl.registerLazySingleton(() => LoginUsecase(authRepo: sl()));
@@ -60,12 +61,13 @@ Future<void> init() async {
   // Bloc
 
   sl.registerFactory(() => HomeBloc(
-        showTeamUsecase: sl(),
-        addMembersUsecase: sl(),
-        createTeamUsecase: sl(),
-        updateProjectUsecase: sl(),
-        specifyProjectTeamUsecase: sl(),
-      ));
+      showTeamUsecase: sl(),
+      addMembersUsecase: sl(),
+      createTeamUsecase: sl(),
+      updateProjectUsecase: sl(),
+      specifyProjectTeamUsecase: sl(),
+      showAllProjectUsecase: sl(),
+      showMyProjectUsecase: sl()));
 
   /**----------------- ROLE FEATURE -----------------------**/
   // Usecase

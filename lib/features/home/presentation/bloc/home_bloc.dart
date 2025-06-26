@@ -2,7 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
 import 'package:two_mobile/features/projects/data/model/show_all_project-response_model.dart';
+import 'package:two_mobile/features/projects/data/model/show_my_project_response_model.dart';
 import 'package:two_mobile/features/projects/domain/usecase/show_all_project_.dart';
+import 'package:two_mobile/features/projects/domain/usecase/show_my_project.dart';
 import 'package:two_mobile/features/projects/domain/usecase/specify_project_team_usecase.dart';
 import 'package:two_mobile/features/projects/domain/usecase/update_project_usecase.dart';
 import 'package:two_mobile/features/team/data/model/add_member_response_model.dart';
@@ -26,8 +28,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final UpdateProjectUsecase updateProjectUsecase;
   final SpecifyProjectTeamUsecase specifyProjectTeamUsecase;
   final ShowAllProjectUsecase showAllProjectUsecase;
+  final ShowMyProjectUsecase showMyProjectUsecase;
   HomeBloc({
     required this.showAllProjectUsecase,
+    required this.showMyProjectUsecase,
     required this.specifyProjectTeamUsecase,
     required this.updateProjectUsecase,
     required this.createTeamUsecase,
@@ -164,7 +168,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     // show all project
     on<ShowAllProjectEvent>((event, emit) async {
-      emit(state.copyWith(specifyProjectTeamStatus: CasualStatus.loading));
+      emit(state.copyWith(showAllProjectStatus: CasualStatus.loading));
       final String? token = await SharedPreferencesServices.getUserToken();
       if (token != null) {
         final result = await showAllProjectUsecase.call(token);
@@ -183,7 +187,36 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           ),
         );
       } else {
-        emit(state.copyWith(showAllProjectStatus: CasualStatus.notAuthorized));
+        emit(state.copyWith(
+          showAllProjectStatus: CasualStatus.notAuthorized,
+        ));
+      }
+    });
+
+    // show my project
+    on<ShowMyProjectEvent>((event, emit) async {
+      emit(state.copyWith(showMyPorjectStatus: CasualStatus.loading));
+      final String? token = await SharedPreferencesServices.getUserToken();
+      if (token != null) {
+        final result = await showMyProjectUsecase.call(token);
+        result.fold(
+          (l) => emit(
+            state.copyWith(
+              showMyPorjectStatus: CasualStatus.failure,
+              message: l.message,
+            ),
+          ),
+          (r) => emit(
+            state.copyWith(
+              showMyPorjectStatus: CasualStatus.success,
+              myProjectList: r,
+            ),
+          ),
+        );
+      } else {
+        emit(state.copyWith(
+          showMyPorjectStatus: CasualStatus.notAuthorized,
+        ));
       }
     });
   }

@@ -26,6 +26,11 @@ class HomeState {
   CasualStatus showAllProjectStatus;
   List<ProjectModel> allProjectList;
 
+// show my project
+  CasualStatus? showMyProjectStatus;
+  String messageShowmyProject;
+  List<MyProjectModel> myProjectList;
+
   HomeState({
     // create team
     this.message = "",
@@ -51,6 +56,11 @@ class HomeState {
     // show all project
     this.showAllProjectStatus = CasualStatus.initial,
     this.allProjectList = const [],
+
+    // show my project
+    this.messageShowmyProject = "",
+    this.myProjectList = const [],
+    this.showMyProjectStatus = CasualStatus.initial,
   });
   HomeState copyWith({
     // create team
@@ -79,6 +89,11 @@ class HomeState {
     // show all project
     CasualStatus? showAllProjectStatus,
     List<ProjectModel>? allProjectList,
+
+    // show my project
+    CasualStatus? showMyPorjectStatus,
+    List<MyProjectModel>? myProjectList,
+    String? messageShowmyProject,
   }) {
     return HomeState(
       // create team
@@ -107,6 +122,11 @@ class HomeState {
       // show all project
       showAllProjectStatus: showAllProjectStatus ?? this.showAllProjectStatus,
       allProjectList: allProjectList ?? this.allProjectList,
+
+      // show my project
+      showMyProjectStatus: showMyProjectStatus ?? this.showMyProjectStatus,
+      myProjectList: myProjectList ?? this.myProjectList,
+      messageShowmyProject: messageShowmyProject ?? this.messageShowmyProject,
     );
   }
 }
