@@ -19,14 +19,14 @@ class CustomProjectCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SizedBox(
-          height: 260,
           width: 400,
           child: Card(
             elevation: 8,
             shadowColor: AppColors.fontLightColor.withOpacity(0.4),
             color: AppColors.cardColor,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -37,7 +37,7 @@ class CustomProjectCard extends StatelessWidget {
                         child:
                             Image.asset('assets/images/png/Rectangle 2.png')),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 30),
+                      padding: const EdgeInsets.only(top: 20, left: 20),
                       child: Container(
                         width: 100,
                         height: 32,
@@ -62,15 +62,13 @@ class CustomProjectCard extends StatelessWidget {
                     style: const TextStyle(fontWeight: FontWeight.bold),
                     overflow: TextOverflow.ellipsis,
                   ),
-                  PaddingConfig.h16,
-                  Row(
+                  PaddingConfig.h8,
+                  Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Icon(
-                          Iconsax.user_square,
-                          color: AppColors.fontLightColor,
-                        ),
+                      const Icon(
+                        Iconsax.user_square,
+                        color: AppColors.fontLightColor,
                       ),
                       const SizedBox(width: 6),
                       Text(

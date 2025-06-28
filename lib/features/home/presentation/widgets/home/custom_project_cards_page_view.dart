@@ -16,8 +16,7 @@ class _CustomProjectCardsPageViewState
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          const EdgeInsets.only(top: 202, left: 20, right: 20, bottom: 280),
+      padding: const EdgeInsets.only(top: 200, bottom: 270),
       child: BlocBuilder<HomeBloc, HomeState>(
         buildWhen: (previous, current) =>
             previous.showAllProjectStatus != current.showAllProjectStatus,

@@ -82,20 +82,19 @@ class _ProjectsPageState extends State<ProjectsPage> {
                 )),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 170),
-          child: SizedBox(
-            height: 300,
-            width: double.infinity,
-            child: BlocBuilder<HomeBloc, HomeState>(
-              buildWhen: (previous, current) =>
-                  previous.showMyProjectStatus != current.showMyProjectStatus,
-              builder: (context, state) {
-                return ProjectStateHandling().showMyProjectList(state);
-              },
+        Column(
+          children: [
+            Expanded(
+              child: BlocBuilder<HomeBloc, HomeState>(
+                buildWhen: (previous, current) =>
+                    previous.showMyProjectStatus != current.showMyProjectStatus,
+                builder: (context, state) {
+                  return ProjectStateHandling().showMyProjectList(state);
+                },
+              ),
             ),
-          ),
-        )
+          ],
+        ),
       ],
     ));
   }

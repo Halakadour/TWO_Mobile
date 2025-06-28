@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/home/presentation/pages/recent_project_page.dart';
 import 'package:two_mobile/features/projects/data/model/project_model.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
 import 'package:two_mobile/features/projects/presentation/widgets/custom_project_details_column.dart';
@@ -31,12 +31,7 @@ class ProjectDetailesPage extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 0, bottom: 60),
           child: IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RecentprojectPage()));
-              },
+              onPressed: () => context.pop(),
               icon: const Icon(
                 Iconsax.arrow_left,
                 size: 30,
