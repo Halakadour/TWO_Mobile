@@ -8,11 +8,11 @@ import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customGesturedetector.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customcolumn3.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customcolumn4.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customicon&text.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customtabbar.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_gesture_detector.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_sprint_details_column.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/shown_sprint_details_column.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_icon_with_text.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_task_tab_bar.dart';
 
 class SprintDetailesPage extends StatelessWidget {
   const SprintDetailesPage({super.key});
@@ -60,14 +60,14 @@ class SprintDetailesPage extends StatelessWidget {
                   position: PopupMenuPosition.under,
                   itemBuilder: (context) => [
                     PopupMenuItem(
-                      child: Customicon(
+                      child: CustomIconWithText(
                         color: AppColors.blackColor,
                         icon: Iconsax.magicpen,
                         text: 'Edit Sprint',
                       ),
                     ),
                     PopupMenuItem(
-                      child: Customicon(
+                      child: CustomIconWithText(
                         color: AppColors.redColor,
                         icon: Iconsax.trash,
                         text: 'Delete Sprint',
@@ -99,9 +99,9 @@ class SprintDetailesPage extends StatelessWidget {
             PaddingConfig.h24,
             Row(
               children: [
-                CustomcolumnPage3(),
+                CustomSprintDetailsColumn(),
                 PaddingConfig.w24,
-                CustomcolumnPage4(),
+                ShownSprintDetailsColumn(),
               ],
             ),
             PaddingConfig.h24,
@@ -112,7 +112,7 @@ class SprintDetailesPage extends StatelessWidget {
                   onTap: () {
                     context.pushNamed(AppRouteConfig.meeting);
                   },
-                  child: CustomGestureDetectorPage(
+                  child: CustomGestureDetector(
                       icon: Iconsax.video,
                       text: 'Meetings',
                       containercolor: AppColors.Lightblue,
@@ -122,7 +122,7 @@ class SprintDetailesPage extends StatelessWidget {
                   onTap: () {
                     context.pushNamed(AppRouteConfig.payementHistory);
                   },
-                  child: CustomGestureDetectorPage(
+                  child: CustomGestureDetector(
                       icon: Iconsax.wallet_2,
                       text: 'Payments',
                       containercolor: AppColors.Lightgreencolor,
@@ -167,7 +167,7 @@ class SprintDetailesPage extends StatelessWidget {
               ],
             ),
             PaddingConfig.h8,
-            CustomTabBarPage(),
+            CustomTaskTabBar(),
           ],
         ),
       ),

@@ -6,8 +6,8 @@ import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/core/widgets/dialogs/auth_success_dialog.dart';
 import 'package:two_mobile/features/auth/presentation/pages/login_page.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/custom_cofirmpassword.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/custompassword.dart';
+import 'package:two_mobile/features/auth/presentation/widgets/custom_cofirmpassword_field.dart';
+import 'package:two_mobile/features/auth/presentation/widgets/custom_password_field.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   const ForgetPasswordPage({super.key});
@@ -58,9 +58,9 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   style: AppTextStyle.subtitle01(),
                 ),
               ),
-              const CustomPassword(),
+              const CustomPasswordField(),
               PaddingConfig.h8,
-              const CustomConfirmPassword(),
+              const CustomConfirmPasswordField(),
               const SizedBox(
                 height: 100,
               ),

@@ -1,14 +1,11 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/features/home/presentation/pages/today_task_page.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customcalendar.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customlist.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customtab.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customtrainglepainter.dart';
+import 'package:two_mobile/features/home/presentation/widgets/calendar/custom_calendar.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
+import 'package:two_mobile/features/home/presentation/widgets/calendar/custom_calendar_item_list.dart';
+import 'package:two_mobile/features/home/presentation/widgets/calendar/custom_tab_for_calendar.dart';
+import 'package:two_mobile/features/home/presentation/widgets/calendar/custom_traingle_painter.dart';
 
 class CalenderPage extends StatelessWidget {
   const CalenderPage({super.key});
@@ -21,27 +18,20 @@ class CalenderPage extends StatelessWidget {
         backgroundColor: AppColors.cardColor,
         body: Column(
           children: [
-            Padding(
+            const Padding(
               padding: PaddingConfig.pagePadding,
-              child: Customiconback(
-                  onpressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TodayTaskPage()));
-                  },
-                  text: 'Today tasks'),
+              child: CustomBackIconWithText(text: 'Today tasks'),
             ),
-            Customtab(),
-            SizedBox(height: 10),
+            const CustomTab(),
+            const SizedBox(height: 10),
             Expanded(
                 child: TabBarView(children: [
-              CustomCalendar(),
+              const CustomCalendar(),
               Padding(
                 padding: const EdgeInsets.only(top: 40),
                 child: Column(
                   children: [
-                    Customlist(
+                    const CustomCalendarItemList(
                         starttime: '09:10 AM',
                         endtime: '10:00 AM',
                         titletext: 'create leading page',
@@ -50,8 +40,8 @@ class CalenderPage extends StatelessWidget {
                         timetext: 'Now',
                         titlecolor: AppColors.greenColor,
                         proiperitycolor: AppColors.mainblue),
-                    SizedBox(height: 10),
-                    Customlist(
+                    const SizedBox(height: 10),
+                    const CustomCalendarItemList(
                         starttime: '11:00 AM',
                         endtime: '12:00 AM',
                         titletext: 'design wireframe kit',
@@ -60,13 +50,13 @@ class CalenderPage extends StatelessWidget {
                         timetext: '1 hour',
                         titlecolor: AppColors.redColor,
                         proiperitycolor: AppColors.mainyallow),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     CustomPaint(
-                      size: Size(370, 20),
+                      size: const Size(370, 20),
                       painter: TriangleWithLinePainter(),
                     ),
-                    SizedBox(height: 5),
-                    Customlist(
+                    const SizedBox(height: 5),
+                    const CustomCalendarItemList(
                         starttime: '02:00 PM',
                         endtime: '04:50 PM',
                         titletext: 'team meeting',
@@ -75,8 +65,8 @@ class CalenderPage extends StatelessWidget {
                         timetext: '6 hour',
                         titlecolor: AppColors.blueColor,
                         proiperitycolor: AppColors.redColor),
-                    SizedBox(height: 10),
-                    Customlist(
+                    const SizedBox(height: 10),
+                    const CustomCalendarItemList(
                         starttime: '05: 00 PM',
                         endtime: '08:40 PM',
                         titletext: 'coding the home page',
@@ -85,8 +75,8 @@ class CalenderPage extends StatelessWidget {
                         timetext: 'Now',
                         titlecolor: AppColors.blueColor,
                         proiperitycolor: AppColors.mainyallow),
-                    SizedBox(height: 10),
-                    Customlist(
+                    const SizedBox(height: 10),
+                    const CustomCalendarItemList(
                         starttime: '09:10 AM',
                         endtime: '10:00 AM',
                         titletext: 'create leading page',

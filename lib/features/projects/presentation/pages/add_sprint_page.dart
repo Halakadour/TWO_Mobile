@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prfer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -6,9 +6,8 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
-import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
-import 'package:two_mobile/features/projects/presentation/pages/project_detailes_page.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_text_field_for_home.dart';
 import 'package:two_mobile/features/projects/presentation/pages/sprint_detailes_page.dart';
 
 class AddSprintPage extends StatelessWidget {
@@ -23,24 +22,17 @@ class AddSprintPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Customiconback(
-                  onpressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProjectDetailesPage()));
-                  },
-                  text: 'Add New Sprint '),
+              const CustomBackIconWithText(text: 'Add New Sprint '),
               PaddingConfig.h24,
               Text(
                 'Label',
                 style: AppTextStyle.subtitle01(),
               ),
               PaddingConfig.h8,
-              TextFieldPage(
+              const CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.document_text,
@@ -48,7 +40,6 @@ class AddSprintPage extends StatelessWidget {
                 text: 'Sprint Label',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
               Text(
@@ -56,10 +47,10 @@ class AddSprintPage extends StatelessWidget {
                 style: AppTextStyle.subtitle01(),
               ),
               PaddingConfig.h8,
-              TextFieldPage(
+              const CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.element_3,
@@ -67,7 +58,6 @@ class AddSprintPage extends StatelessWidget {
                 text: 'Sprint Description',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
               Text(
@@ -75,10 +65,10 @@ class AddSprintPage extends StatelessWidget {
                 style: AppTextStyle.subtitle01(),
               ),
               PaddingConfig.h8,
-              TextFieldPage(
+              const CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.tick_square,
@@ -86,7 +76,6 @@ class AddSprintPage extends StatelessWidget {
                 text: 'Sprint Goal',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
               Text(
@@ -94,13 +83,13 @@ class AddSprintPage extends StatelessWidget {
                 style: AppTextStyle.subtitle01(),
               ),
               PaddingConfig.h8,
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextFieldPage(
+                  CustomTextFieldForHome(
                     height: 65,
                     width: 160,
-                    bordercolor2: AppColors.fieldfield,
+                    bordercolor: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,
                     prefix: Iconsax.calendar_1,
@@ -108,12 +97,11 @@ class AddSprintPage extends StatelessWidget {
                     text: 'Start Date',
                     textcolor: AppColors.fontLightColor,
                     iconcolor: AppColors.fontLightColor,
-                    bordercolor: AppColors.fieldfield,
                   ),
-                  TextFieldPage(
+                  CustomTextFieldForHome(
                     height: 65,
                     width: 160,
-                    bordercolor2: AppColors.fieldfield,
+                    bordercolor: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,
                     prefix: Iconsax.calendar_1,
@@ -121,7 +109,6 @@ class AddSprintPage extends StatelessWidget {
                     text: 'End Date',
                     textcolor: AppColors.fontLightColor,
                     iconcolor: AppColors.fontLightColor,
-                    bordercolor: AppColors.fieldfield,
                   ),
                 ],
               ),
@@ -130,10 +117,10 @@ class AddSprintPage extends StatelessWidget {
                 style: AppTextStyle.subtitle01(),
               ),
               PaddingConfig.h8,
-              TextFieldPage(
+              const CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.tick_square,
@@ -141,7 +128,6 @@ class AddSprintPage extends StatelessWidget {
                 text: 'Sprint Status',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h64,
               Center(
@@ -150,7 +136,7 @@ class AddSprintPage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SprintDetailesPage()));
+                            builder: (context) => const SprintDetailesPage()));
                   },
                   text: 'Create Sprint',
                   textColor: AppColors.cardColor,

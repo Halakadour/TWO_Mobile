@@ -11,7 +11,7 @@ class UpdateProjectUsecase
   @override
   Future<Either<Failure, Unit>> call(UpdateParameters param) {
     return projectRepo.updateProject(
-        param.flullName,
+        param.fullName,
         param.companyName,
         param.email,
         param.phone,
@@ -30,7 +30,7 @@ class UpdateProjectUsecase
 }
 
 class UpdateParameters {
-  String flullName;
+  String fullName;
   String companyName;
   String email;
   String phone;
@@ -46,7 +46,7 @@ class UpdateParameters {
   String projectId;
   String token;
   UpdateParameters({
-    required this.flullName,
+    required this.fullName,
     required this.companyName,
     required this.email,
     required this.phone,

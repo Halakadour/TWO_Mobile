@@ -5,13 +5,12 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
-import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
 import 'package:two_mobile/core/widgets/status-boxs/loading_status_box.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:two_mobile/features/home/presentation/pages/make_team_page.dart';
-import 'package:two_mobile/features/home/presentation/widgets/custom_employee_card.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
-import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
+import 'package:two_mobile/features/home/presentation/widgets/team/custom_employee_card.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_text_field_for_home.dart';
 import 'package:two_mobile/features/role/data/models/employee_model.dart';
 
 class AddProjectManagerPage extends StatefulWidget {
@@ -41,19 +40,12 @@ class _AddProjectManagerPageState extends State<AddProjectManagerPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Customiconback(
-                  onpressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MainPage()));
-                  },
-                  text: 'Add Project Manger '),
+              const CustomBackIconWithText(text: 'Add Project Manger '),
               const SizedBox(height: 25),
-              const TextFieldPage(
+              const CustomTextFieldForHome(
                 height: 55,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.search_normal_1,
@@ -61,7 +53,6 @@ class _AddProjectManagerPageState extends State<AddProjectManagerPage> {
                 text: 'Search',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               const SizedBox(height: 30),
               SizedBox(

@@ -29,7 +29,7 @@ class HomeState {
 // show my project
   CasualStatus? showMyProjectStatus;
   String messageShowmyProject;
-  List<MyProjectModel> myProjectList;
+  List<ProjectModel> myProjectList;
 
   HomeState({
     // create team
@@ -92,7 +92,7 @@ class HomeState {
 
     // show my project
     CasualStatus? showMyPorjectStatus,
-    List<MyProjectModel>? myProjectList,
+    List<ProjectModel>? myProjectList,
     String? messageShowmyProject,
   }) {
     return HomeState(

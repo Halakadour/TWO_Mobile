@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/features/home/presentation/pages/home_page.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customiconchange.dart';
+import 'package:two_mobile/features/home/presentation/widgets/home/custom_change_icon.dart';
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
 import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
 
@@ -62,13 +62,13 @@ class _MainPageState extends State<MainPage> {
                       color: const Color.from(
                           alpha: 1, red: 0.396, green: 0.835, blue: 0.247),
                       borderRadius: BorderRadius.circular(25)),
-                  child: CustomIconChange(),
+                  child: CustomChangeIcon(),
                 ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: Icon(Iconsax.messages_15), label: 'inbox'),
             BottomNavigationBarItem(
-                icon: Icon(Iconsax.profile_circle5), label: 'profile'),
+                icon: Icon(Icons.person_rounded), label: 'profile'),
           ]),
     );
   }

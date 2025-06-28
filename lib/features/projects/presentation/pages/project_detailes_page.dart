@@ -1,19 +1,19 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/features/home/presentation/pages/recent_project_page.dart';
+import 'package:two_mobile/features/projects/data/model/project_model.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customcolumn1.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customcontainer.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customecolumn2.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customicon&text.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_project_details_column.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_sprint_column.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/shown_project_details_column.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_icon_with_text.dart';
 
 class ProjectDetailesPage extends StatelessWidget {
-  const ProjectDetailesPage({super.key});
+  const ProjectDetailesPage({super.key, required this.projectModel});
+  final ProjectModel projectModel;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class ProjectDetailesPage extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const RecentprojectPage()));
               },
-              icon: Icon(
+              icon: const Icon(
                 Iconsax.arrow_left,
                 size: 30,
                 color: AppColors.cardColor,
@@ -49,36 +49,36 @@ class ProjectDetailesPage extends StatelessWidget {
             child: IconButton(
                 onPressed: () {},
                 icon: PopupMenuButton(
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(12),
                           bottomRight: Radius.circular(12),
                           topLeft: Radius.circular(12))),
                   position: PopupMenuPosition.under,
                   itemBuilder: (context) => [
-                    PopupMenuItem(
-                      child: Customicon(
+                    const PopupMenuItem(
+                      child: CustomIconWithText(
                         color: AppColors.blackColor,
                         icon: Iconsax.gallery,
                         text: 'Change Cover',
                       ),
                     ),
-                    PopupMenuItem(
-                      child: Customicon(
+                    const PopupMenuItem(
+                      child: CustomIconWithText(
                         color: AppColors.blackColor,
                         icon: Iconsax.magicpen,
                         text: 'Edit Project',
                       ),
                     ),
-                    PopupMenuItem(
-                      child: Customicon(
+                    const PopupMenuItem(
+                      child: CustomIconWithText(
                         color: AppColors.redColor,
                         icon: Iconsax.trash,
                         text: 'Delete Project',
                       ),
                     )
                   ],
-                  child: Icon(
+                  child: const Icon(
                     Iconsax.more,
                     color: AppColors.cardColor,
                   ),
@@ -95,20 +95,22 @@ class ProjectDetailesPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Building meat & milk shop ecommerce website',
-                    style: AppTextStyle.subtitle01(),
+                    projectModel.projectType,
+                    style: AppTextStyle.subtitle01(color: AppColors.mainblue),
                   ),
                   PaddingConfig.h16,
                   Text(
-                    'Add Description',
-                    style: AppTextStyle.subtitle01(color: AppColors.mainblue),
+                    projectModel.projectDescription,
+                    style: AppTextStyle.subtitle01(),
                   ),
                   PaddingConfig.h24,
                   Row(
                     children: [
-                      CustomcolumnPage1(),
+                      const CustomProjectDetailsColumn(),
                       PaddingConfig.w16,
-                      CuustomColoumPage2()
+                      ShownProjectDetailsColumn(
+                        projectModel: projectModel,
+                      )
                     ],
                   ),
                   PaddingConfig.h24,
@@ -120,24 +122,25 @@ class ProjectDetailesPage extends StatelessWidget {
                           child: Expanded(
                             child: ListView(
                                 scrollDirection: Axis.horizontal,
+                                // ignore: prefer_const_literals_to_create_immutables
                                 children: [
-                                  CustomContainerPage(
+                                  const CustomSprintColumn(
                                     color: AppColors.mainyallow,
                                     number: '4',
                                     text: 'To-Do',
                                   ),
                                   PaddingConfig.w16,
-                                  CustomContainerPage(
+                                  const CustomSprintColumn(
                                       color: AppColors.mainblue,
                                       number: '2',
                                       text: 'In-Progress'),
                                   PaddingConfig.w16,
-                                  CustomContainerPage(
+                                  const CustomSprintColumn(
                                       color: AppColors.mainColor,
                                       number: '5',
                                       text: 'Complete'),
                                   PaddingConfig.w16,
-                                  CustomContainerPage(
+                                  const CustomSprintColumn(
                                       color: AppColors.redColor,
                                       number: '2',
                                       text: 'Cancele')
@@ -156,12 +159,12 @@ class ProjectDetailesPage extends StatelessWidget {
                                           const AddSprintPage()));
                             },
                             backgroundColor: AppColors.maingreen,
-                            child: Icon(
+                            shape: const CircleBorder(),
+                            child: const Icon(
                               Iconsax.add,
                               color: AppColors.cardColor,
                               size: 35,
                             ),
-                            shape: CircleBorder(),
                           ),
                         ),
                       ),

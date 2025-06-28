@@ -8,7 +8,7 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/paymenttable.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/payment_table.dart';
 
 class PaymentHistoryPage extends StatelessWidget {
   final tableData = [

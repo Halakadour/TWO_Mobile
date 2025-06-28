@@ -2,17 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/core/widgets/bottom_navigation_bar_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/add_new_task_page.dart';
-import 'package:two_mobile/features/home/presentation/pages/calender_page.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customcontainer.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customdialog.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
-import 'package:two_mobile/features/home/presentation/widgets/taskitem.dart';
+import 'package:two_mobile/core/widgets/buttons/custom_add_navy_button.dart';
+import 'package:two_mobile/features/home/presentation/widgets/filters/task_filter_dialog.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
+import 'package:two_mobile/features/home/presentation/widgets/home/today_task_item.dart';
 
 class TodayTaskPage extends StatelessWidget {
   const TodayTaskPage({super.key});
@@ -24,47 +20,20 @@ class TodayTaskPage extends StatelessWidget {
         padding: PaddingConfig.pagePadding,
         child: Column(
           children: [
-            Customiconback(
-                onpressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MainPage()));
-                },
-                text: 'Today tasks'),
+            CustomBackIconWithText(text: 'Today tasks'),
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomAlterDialog(),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AddNewTaskPage()));
-                    },
-                    child: customContainer(
-                        containercolor: AppColors.navyColor,
-                        textcolor: AppColors.cardColor,
-                        text: 'New Task',
-                        iconcolor: AppColors.cardColor,
-                        icon: Icons.add),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const CalenderPage()));
-                    },
-                    child: customContainer(
-                        containercolor: AppColors.navyColor,
-                        textcolor: AppColors.cardColor,
-                        text: 'View on Calendar',
-                        iconcolor: AppColors.cardColor,
-                        icon: Iconsax.calendar_edit),
+                  TaskFilterDialog(),
+                  CustomAddNavyButton(
+                      text: "New Task",
+                      onTap: () =>
+                          context.pushNamed(AppRouteConfig.addNewTask)),
+                  CustomAddNavyButton(
+                    text: "View On Calendar",
+                    onTap: () => context.pushNamed(AppRouteConfig.calendar),
                   )
                 ],
               ),
@@ -74,7 +43,7 @@ class TodayTaskPage extends StatelessWidget {
               onTap: () {
                 context.pushReplacementNamed(AppRouteConfig.taskDetatialsPage);
               },
-              child: TodayTask(
+              child: TodayTaskItem(
                 textcolor: AppColors.mainblue,
                 title: 'create leading page',
                 priority: 'Low',
@@ -85,7 +54,7 @@ class TodayTaskPage extends StatelessWidget {
                 iconcolor: AppColors.mainblue,
               ),
             ),
-            TodayTask(
+            TodayTaskItem(
               textcolor: AppColors.mainyallow,
               title: ' design wireframe kit',
               priority: 'Medium',
@@ -95,7 +64,7 @@ class TodayTaskPage extends StatelessWidget {
               statuscolor: AppColors.redColor,
               iconcolor: AppColors.mainyallow,
             ),
-            TodayTask(
+            TodayTaskItem(
               textcolor: AppColors.redColor,
               title: 'team meeting',
               priority: 'High',
@@ -105,7 +74,7 @@ class TodayTaskPage extends StatelessWidget {
               statuscolor: AppColors.mainblue,
               iconcolor: AppColors.redColor,
             ),
-            TodayTask(
+            TodayTaskItem(
               textcolor: AppColors.mainyallow,
               title: 'coding the home page',
               priority: 'Medium',
@@ -115,7 +84,7 @@ class TodayTaskPage extends StatelessWidget {
               statuscolor: AppColors.mainyallow,
               iconcolor: AppColors.mainyallow,
             ),
-            TodayTask(
+            TodayTaskItem(
               textcolor: AppColors.mainblue,
               title: 'create leading page',
               priority: 'Low',
@@ -125,7 +94,7 @@ class TodayTaskPage extends StatelessWidget {
               statuscolor: AppColors.mainColor,
               iconcolor: AppColors.mainblue,
             ),
-            TodayTask(
+            TodayTaskItem(
               textcolor: AppColors.mainyallow,
               title: ' design wireframe kit',
               priority: 'Medium',
@@ -135,7 +104,7 @@ class TodayTaskPage extends StatelessWidget {
               statuscolor: AppColors.redColor,
               iconcolor: AppColors.mainyallow,
             ),
-            TodayTask(
+            TodayTaskItem(
               textcolor: AppColors.redColor,
               title: 'team meeting',
               priority: 'High',
@@ -145,7 +114,7 @@ class TodayTaskPage extends StatelessWidget {
               statuscolor: AppColors.mainblue,
               iconcolor: AppColors.redColor,
             ),
-            TodayTask(
+            TodayTaskItem(
               textcolor: AppColors.mainyallow,
               title: ' design wireframe kit',
               priority: 'Medium',

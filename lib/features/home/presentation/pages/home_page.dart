@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customcard.dart';
-import 'package:two_mobile/features/home/presentation/widgets/custom_home_header.dart';
-import 'package:two_mobile/features/home/presentation/widgets/textbutton.dart';
-import 'package:two_mobile/features/home/presentation/widgets/taskitem.dart';
+import 'package:two_mobile/features/home/presentation/widgets/home/custom_project_cards_page_view.dart';
+import 'package:two_mobile/features/home/presentation/widgets/home/custom_home_header.dart';
+import 'package:two_mobile/features/home/presentation/widgets/home/see_all_text_button.dart';
+import 'package:two_mobile/features/home/presentation/widgets/home/today_task_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,12 +44,12 @@ class _HomePageState extends State<HomePage> {
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20),
                                   ),
-                                  TextButtonPage(onpressed: () {
+                                  SeeAllTextButton(onpressed: () {
                                     context.pushNamed(AppRouteConfig.toDayTask);
                                   })
                                 ],
                               ),
-                              TodayTask(
+                              const TodayTaskItem(
                                 textcolor: AppColors.mainblue,
                                 title: 'create leading page',
                                 priority: 'Low',
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                                 statuscolor: AppColors.mainColor,
                                 iconcolor: AppColors.mainblue,
                               ),
-                              TodayTask(
+                              const TodayTaskItem(
                                 textcolor: AppColors.mainyallow,
                                 title: ' design wireframe kit',
                                 priority: 'Medium',
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                                 statuscolor: AppColors.redColor,
                                 iconcolor: AppColors.mainyallow,
                               ),
-                              TodayTask(
+                              const TodayTaskItem(
                                 textcolor: AppColors.redColor,
                                 title: 'team meeting',
                                 priority: 'High',
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                     ))
               ],
             ),
-            const Customcard(),
+            const CustomProjectCardsPageView(),
           ],
         ));
   }

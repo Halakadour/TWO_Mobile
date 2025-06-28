@@ -7,9 +7,9 @@ import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_meeting_page.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/custommeetingbutton.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/custommeetingcalendar.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/meetingbottomsheet.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_meeting_button.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_meeting_calendar.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/meeting_bottom_sheet.dart';
 
 class MeetingPage extends StatefulWidget {
   const MeetingPage({super.key});

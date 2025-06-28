@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
 
 import 'package:two_mobile/core/usecase/usecase.dart';
-import 'package:two_mobile/features/projects/data/model/show_all_project-response_model.dart';
+import 'package:two_mobile/features/projects/data/model/project_model.dart';
 import 'package:two_mobile/features/projects/domain/repo/project_repo.dart';
 
 class ShowAllProjectUsecase

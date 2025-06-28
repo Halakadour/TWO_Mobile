@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/services/shared_preferences_services.dart';
-import 'package:two_mobile/features/projects/data/model/show_all_project-response_model.dart';
-import 'package:two_mobile/features/projects/data/model/show_my_project_response_model.dart';
+import 'package:two_mobile/features/projects/data/model/project_model.dart';
 import 'package:two_mobile/features/projects/domain/usecase/show_all_project_.dart';
 import 'package:two_mobile/features/projects/domain/usecase/show_my_project.dart';
 import 'package:two_mobile/features/projects/domain/usecase/specify_project_team_usecase.dart';
@@ -114,34 +113,43 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     // update project
     on<UpdateProjectEvent>((event, emit) async {
       emit(state.copyWith(updateProjectStatus: CasualStatus.loading));
-      final result = await updateProjectUsecase.call(UpdateParameters(
-          flullName: event.flullName,
-          companyName: event.companyName,
-          email: event.email,
-          phone: event.phone,
-          projectType: event.projectType,
-          projectDescraption: event.projectDescraption,
-          cost: event.cost,
-          duration: event.duration,
-          document: event.document,
-          requirements: event.requirements,
-          cooperationType: event.cooperationType,
-          contactTime: event.contactTime,
-          private: event.private,
-          projectId: event.projectId,
-          token: event.token));
-      result.fold(
-          (l) => emit(
-                state.copyWith(
-                  updateProjectStatus: CasualStatus.failure,
-                  messageUpdateProject: l.message,
+      String? token = await SharedPreferencesServices.getUserToken();
+      if (token != null) {
+        final result = await updateProjectUsecase.call(UpdateParameters(
+            fullName: event.flullName,
+            companyName: event.companyName,
+            email: event.email,
+            phone: event.phone,
+            projectType: event.projectType,
+            projectDescraption: event.projectDescraption,
+            cost: event.cost,
+            duration: event.duration,
+            document: event.document,
+            requirements: event.requirements,
+            cooperationType: event.cooperationType,
+            contactTime: event.contactTime,
+            private: event.private,
+            projectId: event.projectId,
+            token: token));
+        result.fold(
+            (l) => emit(
+                  state.copyWith(
+                    updateProjectStatus: CasualStatus.failure,
+                    messageUpdateProject: l.message,
+                  ),
                 ),
-              ),
-          (r) => emit(
-                state.copyWith(
-                  updateProjectStatus: CasualStatus.success,
-                ),
-              ));
+            (r) => emit(
+                  state.copyWith(
+                    updateProjectStatus: CasualStatus.success,
+                  ),
+                ));
+      } else {
+        emit(
+          state.copyWith(
+            updateProjectStatus: CasualStatus.notAuthorized,
+          ),
+        );
+      }
     });
 
     // Specify Project Team

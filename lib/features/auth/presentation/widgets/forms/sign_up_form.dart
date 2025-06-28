@@ -11,7 +11,7 @@ import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/core/widgets/main_text_field.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:two_mobile/features/auth/presentation/pages/login_page.dart';
-import 'package:two_mobile/features/auth/presentation/widgets/custom_google_githup_buttons.dart';
+import 'package:two_mobile/features/auth/presentation/widgets/custom_google_githup_column.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -155,7 +155,7 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             const SizedBox(height: SizesConfig.spaceBtwItems),
             // Google Githup Sign
-            const CustomGoogleGitHupButtons(),
+            const CustomGoogleGitHupColumn(),
             PaddingConfig.h16,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

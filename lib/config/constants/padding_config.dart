@@ -23,6 +23,7 @@ class PaddingConfig {
   static const SizedBox h56 = SizedBox(height: 56);
   static const SizedBox h64 = SizedBox(height: 64);
   static const SizedBox h72 = SizedBox(height: 72);
+  static const SizedBox h170 = SizedBox(height: 170);
   static const SizedBox h180 = SizedBox(height: 180);
   static const SizedBox h250 = SizedBox(height: 250);
 

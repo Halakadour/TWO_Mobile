@@ -23,6 +23,7 @@ class ErrorStatusBox extends StatelessWidget {
         Text(
           errorMessage,
           style: AppTextStyle.buttonStyle(color: AppColors.redColor),
+          textAlign: TextAlign.center,
         ),
       ],
     );

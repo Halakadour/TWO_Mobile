@@ -1,16 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
-import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customuser_selector_widget.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
-import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
+import 'package:two_mobile/features/home/presentation/widgets/home/custom_user_selector_widget.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_text_field_for_home.dart';
 import 'package:two_mobile/features/projects/presentation/pages/sprint_detailes_page.dart';
 
 class AddNewTaskPage extends StatefulWidget {
@@ -34,19 +32,16 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Customiconback(
-                onpressed: () {
-                  context.pushNamed(AppRouteConfig.toDayTask);
-                },
+              CustomBackIconWithText(
                 text: 'Add New Task',
               ),
               PaddingConfig.h8,
               Text('Title', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
-              TextFieldPage(
+              CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.document_text,
@@ -54,15 +49,14 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
                 text: 'Task Title',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
               Text('Description', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
-              TextFieldPage(
+              CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.element_3,
@@ -70,15 +64,14 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
                 text: 'Task Description',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
               Text('Status', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
-              TextFieldPage(
+              CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.tick_square,
@@ -86,7 +79,6 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
                 text: 'Task Status',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h16,
               Text('Due Date', style: AppTextStyle.subtitle01()),
@@ -94,10 +86,10 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextFieldPage(
+                  CustomTextFieldForHome(
                     height: 60,
                     width: 160,
-                    bordercolor2: AppColors.fieldfield,
+                    bordercolor: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,
                     prefix: Iconsax.calendar_1,
@@ -105,12 +97,11 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
                     text: 'Start Date',
                     textcolor: AppColors.fontLightColor,
                     iconcolor: AppColors.fontLightColor,
-                    bordercolor: AppColors.fieldfield,
                   ),
-                  TextFieldPage(
+                  CustomTextFieldForHome(
                     height: 60,
                     width: 160,
-                    bordercolor2: AppColors.fieldfield,
+                    bordercolor: AppColors.fieldfield,
                     textfield: AppColors.blackColor,
                     color: AppColors.fieldfield,
                     prefix: Iconsax.calendar_1,
@@ -118,17 +109,16 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
                     text: 'End Date',
                     textcolor: AppColors.fontLightColor,
                     iconcolor: AppColors.fontLightColor,
-                    bordercolor: AppColors.fieldfield,
                   ),
                 ],
               ),
               PaddingConfig.h16,
               Text('Priority', style: AppTextStyle.subtitle01()),
               PaddingConfig.h8,
-              TextFieldPage(
+              CustomTextFieldForHome(
                 height: 60,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.flag,
@@ -136,7 +126,6 @@ class _AddNewTaskPageState extends State<AddNewTaskPage> {
                 text: 'Task Priority',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               PaddingConfig.h8,
               Row(

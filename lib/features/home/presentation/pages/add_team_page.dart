@@ -10,8 +10,8 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/functions/bloc_state_handling/team_state_handling.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customiconback.dart';
-import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_text_field_for_home.dart';
 
 class AddTeamPage extends StatefulWidget {
   const AddTeamPage({super.key});
@@ -36,16 +36,12 @@ class _AddTeamPageState extends State<AddTeamPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Customiconback(
-                  onpressed: () {
-                    context.pop();
-                  },
-                  text: 'Add Team'),
+              CustomBackIconWithText(text: 'Add Team'),
               SizedBox(height: 25),
-              TextFieldPage(
+              CustomTextFieldForHome(
                 height: 55,
                 width: 340,
-                bordercolor2: AppColors.fieldfield,
+                bordercolor: AppColors.fieldfield,
                 textfield: AppColors.blackColor,
                 color: AppColors.fieldfield,
                 prefix: Iconsax.search_normal_1,
@@ -53,7 +49,6 @@ class _AddTeamPageState extends State<AddTeamPage> {
                 text: 'Search',
                 textcolor: AppColors.fontLightColor,
                 iconcolor: AppColors.fontLightColor,
-                bordercolor: AppColors.fieldfield,
               ),
               SizedBox(height: 30),
               SizedBox(

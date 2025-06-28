@@ -16,6 +16,7 @@ import 'package:two_mobile/features/home/presentation/pages/today_task_page.dart
 import 'package:two_mobile/features/inbox/presentation/pages/inbox_page.dart';
 import 'package:two_mobile/features/intro/pages/on_board_page.dart';
 import 'package:two_mobile/features/profile/presentation/pages/profile_page.dart';
+import 'package:two_mobile/features/projects/data/model/project_model.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_meeting_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
 import 'package:two_mobile/features/projects/presentation/pages/meeting_page.dart';
@@ -29,7 +30,7 @@ import '../../features/intro/pages/splash_page.dart';
 import 'app_route_config.dart';
 
 class AppRouter {
-  GoRouter router = GoRouter(initialLocation: '/onboard', routes: [
+  GoRouter router = GoRouter(initialLocation: '/', routes: [
     GoRoute(
       name: AppRouteConfig.splash,
       path: '/',
@@ -93,7 +94,8 @@ class AppRouter {
     GoRoute(
       name: AppRouteConfig.projectDetailes,
       path: '/projectDetailes',
-      builder: (context, state) => const ProjectDetailesPage(),
+      builder: (context, state) =>
+          ProjectDetailesPage(projectModel: state.extra as ProjectModel),
     ),
     GoRoute(
       name: AppRouteConfig.recentproject,

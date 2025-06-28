@@ -7,11 +7,11 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customcommentitem.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customcummentinput.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customcolumn5.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customculomn6.dart';
-import 'package:two_mobile/features/projects/presentation/widgets/customicon&text.dart';
+import 'package:two_mobile/features/home/presentation/widgets/comment/custom_comment_item.dart';
+import 'package:two_mobile/features/home/presentation/widgets/comment/custom_cumment_input.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_task_details_column.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/shown_task_details_column.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_icon_with_text.dart';
 
 class TaskDetailsPage extends StatelessWidget {
   const TaskDetailsPage({super.key});
@@ -55,14 +55,14 @@ class TaskDetailsPage extends StatelessWidget {
                   position: PopupMenuPosition.under,
                   itemBuilder: (context) => [
                     PopupMenuItem(
-                      child: Customicon(
+                      child: CustomIconWithText(
                         color: AppColors.blackColor,
                         icon: Iconsax.magicpen,
                         text: 'Edit Sprint',
                       ),
                     ),
                     PopupMenuItem(
-                      child: Customicon(
+                      child: CustomIconWithText(
                         color: AppColors.redColor,
                         icon: Iconsax.trash,
                         text: 'Delete Sprint',
@@ -93,9 +93,9 @@ class TaskDetailsPage extends StatelessWidget {
             PaddingConfig.h24,
             Row(
               children: [
-                CustomcolumnPage5(),
+                CustomTaskDetailsColumn(),
                 PaddingConfig.w24,
-                CustomcolumnPage6(),
+                ShownTaskDetailsColumn(),
               ],
             ),
             PaddingConfig.h24,

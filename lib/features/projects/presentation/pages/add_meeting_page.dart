@@ -8,7 +8,7 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_text_field_for_home.dart';
 
 class AddMeetingPage extends StatelessWidget {
   const AddMeetingPage({super.key});
@@ -50,10 +50,10 @@ class AddMeetingPage extends StatelessWidget {
                 PaddingConfig.h8,
                 Text('Title', style: AppTextStyle.subtitle01()),
                 PaddingConfig.h8,
-                TextFieldPage(
+                CustomTextFieldForHome(
                   height: 60,
                   width: 340,
-                  bordercolor2: AppColors.fieldfield,
+                  bordercolor: AppColors.fieldfield,
                   textfield: AppColors.blackColor,
                   color: AppColors.fieldfield,
                   prefix: Iconsax.document_text,
@@ -61,15 +61,14 @@ class AddMeetingPage extends StatelessWidget {
                   text: 'Meeting Title',
                   textcolor: AppColors.fontLightColor,
                   iconcolor: AppColors.fontLightColor,
-                  bordercolor: AppColors.fieldfield,
                 ),
                 PaddingConfig.h16,
                 Text('Type', style: AppTextStyle.subtitle01()),
                 PaddingConfig.h8,
-                TextFieldPage(
+                CustomTextFieldForHome(
                   height: 60,
                   width: 340,
-                  bordercolor2: AppColors.fieldfield,
+                  bordercolor: AppColors.fieldfield,
                   textfield: AppColors.blackColor,
                   color: AppColors.fieldfield,
                   prefix: Iconsax.tick_square,
@@ -77,15 +76,14 @@ class AddMeetingPage extends StatelessWidget {
                   text: 'Meeting Type',
                   textcolor: AppColors.fontLightColor,
                   iconcolor: AppColors.fontLightColor,
-                  bordercolor: AppColors.fieldfield,
                 ),
                 PaddingConfig.h16,
                 Text('Date', style: AppTextStyle.subtitle01()),
                 PaddingConfig.h8,
-                TextFieldPage(
+                CustomTextFieldForHome(
                   height: 60,
                   width: 340,
-                  bordercolor2: AppColors.fieldfield,
+                  bordercolor: AppColors.fieldfield,
                   textfield: AppColors.blackColor,
                   color: AppColors.fieldfield,
                   prefix: Iconsax.calendar_1,
@@ -93,7 +91,6 @@ class AddMeetingPage extends StatelessWidget {
                   text: 'Meeting Date',
                   textcolor: AppColors.fontLightColor,
                   iconcolor: AppColors.fontLightColor,
-                  bordercolor: AppColors.fieldfield,
                 ),
                 PaddingConfig.h16,
                 Text('Time', style: AppTextStyle.subtitle01()),
@@ -101,10 +98,10 @@ class AddMeetingPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextFieldPage(
+                    CustomTextFieldForHome(
                       height: 60,
                       width: 160,
-                      bordercolor2: AppColors.fieldfield,
+                      bordercolor: AppColors.fieldfield,
                       textfield: AppColors.blackColor,
                       color: AppColors.fieldfield,
                       prefix: Iconsax.clock,
@@ -112,12 +109,11 @@ class AddMeetingPage extends StatelessWidget {
                       text: 'Start Time',
                       textcolor: AppColors.fontLightColor,
                       iconcolor: AppColors.fontLightColor,
-                      bordercolor: AppColors.fieldfield,
                     ),
-                    TextFieldPage(
+                    CustomTextFieldForHome(
                       height: 60,
                       width: 160,
-                      bordercolor2: AppColors.fieldfield,
+                      bordercolor: AppColors.fieldfield,
                       textfield: AppColors.blackColor,
                       color: AppColors.fieldfield,
                       prefix: Iconsax.clock,
@@ -125,7 +121,6 @@ class AddMeetingPage extends StatelessWidget {
                       text: 'End Time',
                       textcolor: AppColors.fontLightColor,
                       iconcolor: AppColors.fontLightColor,
-                      bordercolor: AppColors.fieldfield,
                     ),
                   ],
                 ),

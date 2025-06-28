@@ -1,15 +1,26 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/home/presentation/widgets/customcountainercard.dart';
-import 'package:two_mobile/features/home/presentation/widgets/textfield.dart';
+import 'package:two_mobile/core/functions/bloc_state_handling/project_state_handling.dart';
+import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
+import 'package:two_mobile/features/home/presentation/widgets/custom_text_field_for_home.dart';
 
-class ProjectsPage extends StatelessWidget {
+class ProjectsPage extends StatefulWidget {
   const ProjectsPage({super.key});
+
+  @override
+  State<ProjectsPage> createState() => _ProjectsPageState();
+}
+
+class _ProjectsPageState extends State<ProjectsPage> {
+  @override
+  void didChangeDependencies() {
+    context.read<HomeBloc>().add(ShowMyProjectEvent());
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +32,9 @@ class ProjectsPage extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: Container(
+                  decoration: const BoxDecoration(
+                    color: AppColors.navColor,
+                  ),
                   child: Padding(
                     padding: PaddingConfig.pagePadding,
                     child: Column(
@@ -43,10 +57,10 @@ class ProjectsPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        TextFieldPage(
+                        const CustomTextFieldForHome(
                           height: 55,
                           width: 340,
-                          bordercolor2: AppColors.iconColor,
+                          bordercolor: AppColors.iconColor,
                           textfield: AppColors.cardColor,
                           text: 'Search your task',
                           color: AppColors.navColor,
@@ -54,50 +68,32 @@ class ProjectsPage extends StatelessWidget {
                           suffix: Iconsax.menu,
                           textcolor: AppColors.iconColor,
                           iconcolor: AppColors.iconColor,
-                          bordercolor: AppColors.iconColor,
                         ),
                       ],
                     ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.navColor,
                   ),
                 )),
             Expanded(
                 flex: 1,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppColors.cardColor,
                   ),
                 )),
           ],
         ),
         Padding(
-          padding: EdgeInsets.only(top: 170, right: 20, left: 20),
-          child: ListView(
-            children: [
-              CustomContainerCard(
-                Datetext: 'Dec 20-2024',
-                Nametext: 'Hala Kadour',
-                Titletext: 'Building meat & milk shop ecommerce website',
-                containertext: '2 days left',
-                image: 'assets/images/png/Rectangle.png',
-              ),
-              CustomContainerCard(
-                Datetext: 'Dec 22-2024',
-                Nametext: 'Hala Kadour',
-                Titletext: 'Building flutter app for math and physics kids',
-                containertext: '3 days left',
-                image: 'assets/images/png/Rectangle 1.png',
-              ),
-              CustomContainerCard(
-                Datetext: 'Dec 24-2024',
-                Nametext: 'Hala Kadour',
-                Titletext: 'Building flutter app for math and physics kids',
-                containertext: '5 days left',
-                image: 'assets/images/png/Rectangle 2.png',
-              )
-            ],
+          padding: const EdgeInsets.only(top: 170),
+          child: SizedBox(
+            height: 300,
+            width: double.infinity,
+            child: BlocBuilder<HomeBloc, HomeState>(
+              buildWhen: (previous, current) =>
+                  previous.showMyProjectStatus != current.showMyProjectStatus,
+              builder: (context, state) {
+                return ProjectStateHandling().showMyProjectList(state);
+              },
+            ),
           ),
         )
       ],

@@ -44,7 +44,6 @@ class UpdateProjectEvent extends HomeEvent {
   String contactTime;
   String private;
   String projectId;
-  String token;
   UpdateProjectEvent({
     required this.flullName,
     required this.companyName,
@@ -60,7 +59,6 @@ class UpdateProjectEvent extends HomeEvent {
     required this.contactTime,
     required this.private,
     required this.projectId,
-    required this.token,
   });
 }
 

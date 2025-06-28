@@ -8,7 +8,7 @@ import 'package:two_mobile/core/widgets/dialogs/do_not_have_account_dialog.dart'
 import 'package:two_mobile/core/widgets/status-boxs/error_status_box.dart';
 import 'package:two_mobile/core/widgets/status-boxs/loading_status_box.dart';
 import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
-import 'package:two_mobile/features/home/presentation/widgets/custom_team_card.dart';
+import 'package:two_mobile/features/home/presentation/widgets/team/custom_team_card.dart';
 
 import '../../../config/routes/app_route_config.dart';
 

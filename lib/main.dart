@@ -20,7 +20,8 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => di.sl<AuthBloc>()),
-        BlocProvider(create: (context) => di.sl<HomeBloc>()),
+        BlocProvider(
+            create: (context) => di.sl<HomeBloc>()..add(ShowAllProjectEvent())),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

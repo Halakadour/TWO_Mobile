@@ -11,6 +11,13 @@ import 'package:two_mobile/features/auth/domain/usecase/update_client_profile_us
 import 'package:two_mobile/features/auth/domain/usecase/update_programmer_profile_usecase.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
+import 'package:two_mobile/features/projects/data/datasource/project_datasource.dart';
+import 'package:two_mobile/features/projects/data/repo/project_repo_impl.dart';
+import 'package:two_mobile/features/projects/domain/repo/project_repo.dart';
+import 'package:two_mobile/features/projects/domain/usecase/show_all_project_.dart';
+import 'package:two_mobile/features/projects/domain/usecase/show_my_project.dart';
+import 'package:two_mobile/features/projects/domain/usecase/specify_project_team_usecase.dart';
+import 'package:two_mobile/features/projects/domain/usecase/update_project_usecase.dart';
 import 'package:two_mobile/features/role/data/datasources/role_local_datasource.dart';
 import 'package:two_mobile/features/role/data/datasources/role_remote_datasource.dart';
 import 'package:two_mobile/features/role/data/repos/role_repo_impl.dart';
@@ -98,6 +105,21 @@ Future<void> init() async {
   // DataSource
   sl.registerLazySingleton<TeamDatasource>(
     () => TeamDatasourceImpl(),
+  );
+
+  /**----------------- PROJECT FEATURE -----------------------**/
+  // Usecase
+  sl.registerLazySingleton(() => UpdateProjectUsecase(projectRepo: sl()));
+  sl.registerLazySingleton(() => SpecifyProjectTeamUsecase(projectRepo: sl()));
+  sl.registerLazySingleton(() => ShowAllProjectUsecase(projectRepo: sl()));
+  sl.registerLazySingleton(() => ShowMyProjectUsecase(projectRepo: sl()));
+
+  // Repos
+  sl.registerLazySingleton<ProjectRepo>(
+      () => ProjectRepoImpl(projectDatasource: sl()));
+  // DataSource
+  sl.registerLazySingleton<ProjectDatasource>(
+    () => ProjectDatasourceImpl(),
   );
 
   ///////////////////////////////////////////////////////////////////////////////////////
