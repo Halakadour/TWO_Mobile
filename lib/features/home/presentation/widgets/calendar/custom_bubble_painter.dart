@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/features/home/presentation/widgets/home/custom_create_new_project_dialog.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_create_new_project_dialog.dart';
 
 class CustomBubblePainter extends StatelessWidget {
   const CustomBubblePainter({super.key});

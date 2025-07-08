@@ -7,7 +7,7 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/projects/presentation/pages/add_sprint_page.dart';
+import 'package:two_mobile/features/sprint/presentation/pages/add_sprint_page.dart';
 import 'package:two_mobile/features/projects/presentation/widgets/custom_gesture_detector.dart';
 import 'package:two_mobile/features/projects/presentation/widgets/custom_sprint_details_column.dart';
 import 'package:two_mobile/features/projects/presentation/widgets/shown_sprint_details_column.dart';

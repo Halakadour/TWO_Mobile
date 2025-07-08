@@ -8,7 +8,7 @@ import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/core/widgets/buttons/custom_add_navy_button.dart';
 import 'package:two_mobile/features/home/presentation/widgets/filters/task_filter_dialog.dart';
 import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
-import 'package:two_mobile/features/home/presentation/widgets/home/today_task_item.dart';
+import 'package:two_mobile/features/task/presentation/widgets/today_task_item.dart';
 
 class TodayTaskPage extends StatelessWidget {
   const TodayTaskPage({super.key});

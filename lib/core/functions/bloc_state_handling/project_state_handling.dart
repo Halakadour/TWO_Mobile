@@ -4,7 +4,7 @@ import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/widgets/status-boxs/error_status_box.dart';
 import 'package:two_mobile/core/widgets/status-boxs/loading_status_box.dart';
 import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
-import 'package:two_mobile/features/home/presentation/widgets/home/custom_project_card.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_project_card.dart';
 import 'package:two_mobile/features/projects/data/model/project_model.dart';
 
 class ProjectStateHandling {
