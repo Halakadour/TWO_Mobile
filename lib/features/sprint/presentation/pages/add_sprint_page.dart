@@ -8,7 +8,7 @@ import 'package:two_mobile/config/theme/text_style.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
 import 'package:two_mobile/features/home/presentation/widgets/custom_text_field_for_home.dart';
-import 'package:two_mobile/features/projects/presentation/pages/sprint_detailes_page.dart';
+import 'package:two_mobile/features/sprint/presentation/pages/sprint_detailes_page.dart';
 
 class AddSprintPage extends StatelessWidget {
   const AddSprintPage({super.key});

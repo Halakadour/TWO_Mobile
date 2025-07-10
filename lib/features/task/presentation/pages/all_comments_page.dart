@@ -7,7 +7,7 @@ import 'package:two_mobile/config/constants/padding_config.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
 import 'package:two_mobile/config/theme/text_style.dart';
-import 'package:two_mobile/features/home/presentation/widgets/comment/custom_comment_item.dart';
+import 'package:two_mobile/features/task/presentation/widgets/custom_comment_item.dart';
 
 class AllCommentsPage extends StatelessWidget {
   const AllCommentsPage({super.key});

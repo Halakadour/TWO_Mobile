@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:two_mobile/core/network/enums.dart';
 import 'package:two_mobile/core/widgets/status-boxs/loading_status_box.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:two_mobile/features/home/presentation/widgets/team/custom_employee_card.dart';
+import 'package:two_mobile/features/team/presentation/widgets/custom_employee_card.dart';
 import 'package:two_mobile/features/role/data/models/employee_model.dart';
 
 class MembersListTab extends StatelessWidget {

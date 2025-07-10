@@ -11,12 +11,12 @@ import 'package:two_mobile/core/widgets/buttons/custom_add_green_button.dart';
 import 'package:two_mobile/core/widgets/buttons/gradient_outline_button.dart';
 import 'package:two_mobile/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:two_mobile/features/home/presentation/bloc/home_bloc.dart';
-import 'package:two_mobile/features/home/presentation/pages/team_name_text_field.dart';
+import 'package:two_mobile/features/team/presentation/widgets/team_name_text_field.dart';
 import 'package:two_mobile/features/home/presentation/widgets/custom_back_icon_with_text.dart';
-import 'package:two_mobile/features/home/presentation/widgets/team/custom_roles_tab_bar.dart';
-import 'package:two_mobile/features/home/presentation/widgets/team/members_list_tab.dart';
-import 'package:two_mobile/features/home/presentation/widgets/team/selected_manager_chip_card.dart';
-import 'package:two_mobile/features/home/presentation/widgets/team/selected_members_chip_card.dart';
+import 'package:two_mobile/features/team/presentation/widgets/custom_roles_tab_bar.dart';
+import 'package:two_mobile/features/team/presentation/widgets/members_list_tab.dart';
+import 'package:two_mobile/features/team/presentation/widgets/selected_manager_chip_card.dart';
+import 'package:two_mobile/features/team/presentation/widgets/selected_members_chip_card.dart';
 import 'package:two_mobile/features/role/data/models/employee_model.dart';
 import 'package:two_mobile/features/role/data/models/role_response_model.dart';
 

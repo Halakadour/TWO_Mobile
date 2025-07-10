@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:two_mobile/config/routes/app_route_config.dart';
 import 'package:two_mobile/config/theme/color.dart';
-import 'package:two_mobile/features/home/presentation/widgets/home/custom_project_cards_page_view.dart';
+import 'package:two_mobile/features/projects/presentation/widgets/custom_project_cards_page_view.dart';
 import 'package:two_mobile/features/home/presentation/widgets/home/custom_home_header.dart';
 import 'package:two_mobile/features/home/presentation/widgets/home/see_all_text_button.dart';
-import 'package:two_mobile/features/home/presentation/widgets/home/today_task_item.dart';
+import 'package:two_mobile/features/task/presentation/widgets/today_task_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
