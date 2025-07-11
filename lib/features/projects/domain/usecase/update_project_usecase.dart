@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
-import 'package:two_mobile/core/usecase/usecase.dart';
+import 'package:two_mobile/core/usecases/usecase.dart';
 import 'package:two_mobile/features/projects/domain/repo/project_repo.dart';
 
 class UpdateProjectUsecase
-    extends Usecase<Future<Either<Failure, Unit>>, UpdateParameters> {
+    extends UseCase<Future<Either<Failure, Unit>>, UpdateParameters> {
   final ProjectRepo projectRepo;
 
   UpdateProjectUsecase({required this.projectRepo});

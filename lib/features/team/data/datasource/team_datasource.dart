@@ -34,7 +34,7 @@ class TeamDatasourceImpl extends TeamDatasource {
     String teamManager,
     List<int> treamMember,
   ) async {
-    final result = PostApiWithToken(
+    final result = PostWithTokenApi(
         token: token,
         uri: Uri.parse("$baseUri/api/create/team"),
         body: ({
@@ -53,7 +53,7 @@ class TeamDatasourceImpl extends TeamDatasource {
     String teamId,
     List<int> teamMembers,
   ) async {
-    final result = PostApiWithToken(
+    final result = PostWithTokenApi(
         uri: Uri.parse("$baseUri/api/add/members"),
         token: token,
         body: ({

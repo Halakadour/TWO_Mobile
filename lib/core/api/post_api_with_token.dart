@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import 'get_api.dart';
 import '../error/handling_exception_request.dart';
 
-class PostApiWithToken<T> with HandlingExceptionRequest {
+class PostWithTokenApi<T> with HandlingExceptionRequest {
   final Uri uri;
   final Map body;
   final FromJson fromJson;
@@ -15,7 +15,7 @@ class PostApiWithToken<T> with HandlingExceptionRequest {
   final Duration timeout;
   final String token;
 
-  const PostApiWithToken({
+  const PostWithTokenApi({
     required this.uri,
     required this.token,
     required this.body,

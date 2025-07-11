@@ -64,7 +64,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
   @override
   Future<UpdateClientProfileResponseModel> cleintUpdateProfile(
       String token, String roleId, String image) async {
-    final result = PostApiWithToken(
+    final result = PostWithTokenApi(
         uri: Uri.parse("$baseUri/api/update/freelancer/profile"),
         body: ({
           "role_id": roleId,
@@ -83,7 +83,7 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
     String cv,
     String roleId,
   ) async {
-    final result = PostApiWithToken(
+    final result = PostWithTokenApi(
       uri: Uri.parse("$baseUri/api/update/employee/profile"),
       token: token,
       body: ({

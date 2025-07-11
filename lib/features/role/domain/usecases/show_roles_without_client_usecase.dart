@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
-import 'package:two_mobile/core/usecase/no_param_usecase.dart';
+import 'package:two_mobile/core/usecases/no_param_usecase.dart';
 import 'package:two_mobile/features/role/data/models/role_response_model.dart';
 import 'package:two_mobile/features/role/domain/repos/role_repo.dart';
 

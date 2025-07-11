@@ -60,7 +60,7 @@ class ProjectDatasourceImpl extends ProjectDatasource {
     String projectId,
     String token,
   ) async {
-    final result = PostApiWithToken(
+    final result = PostWithTokenApi(
         uri: Uri.parse("$baseUri/api/update/project"),
         token: token,
         body: ({
@@ -88,7 +88,7 @@ class ProjectDatasourceImpl extends ProjectDatasource {
   @override
   Future<SpecifyProjectTeamResponseModel> specifyProjectTeam(
       String projectId, String teamId, String token) async {
-    final result = PostApiWithToken(
+    final result = PostWithTokenApi(
         uri: Uri.parse("$baseUri/api/specify/project/team"),
         token: token,
         body: ({

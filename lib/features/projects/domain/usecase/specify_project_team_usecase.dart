@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
-import 'package:two_mobile/core/usecase/usecase.dart';
+import 'package:two_mobile/core/usecases/usecase.dart';
 import 'package:two_mobile/features/projects/domain/repo/project_repo.dart';
 
-class SpecifyProjectTeamUsecase extends Usecase<Future<Either<Failure, Unit>>,
+class SpecifyProjectTeamUsecase extends UseCase<Future<Either<Failure, Unit>>,
     SpecifyProjectTeamParameters> {
   final ProjectRepo projectRepo;
 

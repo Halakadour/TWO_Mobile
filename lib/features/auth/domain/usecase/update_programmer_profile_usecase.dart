@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
-import 'package:two_mobile/core/usecase/usecase.dart';
+import 'package:two_mobile/core/usecases/usecase.dart';
 import 'package:two_mobile/features/auth/data/models/update_programmer_profile_response_model.dart';
 import 'package:two_mobile/features/auth/domain/repo/auth_repo.dart';
 
-class UpdateProgrammerProfileUsecase extends Usecase<
+class UpdateProgrammerProfileUsecase extends UseCase<
     Future<Either<Failure, UpdateEmployeeProfileResponseModel>>,
     UpdateProgrammerParams> {
   final AuthRepo authRepo;

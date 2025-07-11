@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
-import 'package:two_mobile/core/usecase/usecase.dart';
+import 'package:two_mobile/core/usecases/usecase.dart';
 import 'package:two_mobile/features/role/data/models/employee_model.dart';
 import 'package:two_mobile/features/role/domain/repos/role_repo.dart';
 
-class ShowUsersUsecase extends Usecase<
+class ShowUsersUsecase extends UseCase<
     Future<Either<Failure, List<EmployeeModel>>>, ShowUsersParam> {
   final RoleRepo roleRepo;
 

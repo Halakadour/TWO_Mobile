@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:two_mobile/core/error/failures.dart';
-import 'package:two_mobile/core/usecase/usecase.dart';
+import 'package:two_mobile/core/usecases/usecase.dart';
 import 'package:two_mobile/features/auth/data/models/sign_up_response_model.dart';
 import 'package:two_mobile/features/auth/domain/repo/auth_repo.dart';
 
-class SignUpUsecase extends Usecase<
+class SignUpUsecase extends UseCase<
     Future<Either<Failure, SignupResponseModel>>, SignUpParams> {
   final AuthRepo authRepo;
 
